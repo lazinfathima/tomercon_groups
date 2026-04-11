@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Tomercon Groups | About & Contact</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
+      transition: background-color 0.3s ease, color 0.2s ease;
+      line-height: 1.5;
+      overflow-x: hidden;
+    }
+    :root {
+      --bg-primary: #ffffff;
+      --bg-secondary: #f8fafc;
+      --bg-card: rgba(255, 255, 255, 0.96);
+      --text-primary: #0f172a;
+      --text-secondary: #334155;
+      --text-muted: #64748b;
+      --border: #e2e8f0;
+      --primary: #0f3b5c;
+      --accent: #0f766e;
+      --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+      --gradient-primary: linear-gradient(135deg, #0f3b5c, #0f766e);
+      --gradient-hero: linear-gradient(120deg, rgba(15,59,92,0.03) 0%, rgba(15,118,110,0.02) 100%);
+      --glass-bg: rgba(255, 255, 255, 0.8);
+    }
+    body.dark {
+      --bg-primary: #0a0f1c;
+      --bg-secondary: #111827;
+      --bg-card: rgba(17, 24, 39, 0.9);
+      --text-primary: #f1f5f9;
+      --text-secondary: #cbd5e1;
+      --border: #1e293b;
+      --primary: #2c6e9e;
+      --accent: #2dd4bf;
+      --glass-bg: rgba(15, 23, 42, 0.8);
+    }
+    html { scroll-behavior: smooth; }
+    .container { max-width: 1280px; margin: 0 auto; padding: 0 1.5rem; }
+    section { padding: 5rem 0; }
+    
+    /* Replayable animations */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.8s cubic-bezier(0.2, 0.9, 0.4, 1.1), transform 0.8s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+    }
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .zoom-in {
+      opacity: 0;
+      transform: scale(0.96);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .zoom-in.visible {
+      opacity: 1;
+      transform: scale(1);
+    }
+    
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--gradient-primary);
+      color: white;
+      font-weight: 600;
+      padding: 0.85rem 2rem;
+      border-radius: 2rem;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      border: none;
+      cursor: pointer;
+    }
+    .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 12px 20px -8px rgba(0,0,0,0.2); filter: brightness(1.05); }
+    .section-title {
+      font-size: 2.8rem;
+      font-weight: 700;
+      font-family: 'DM Serif Display', serif;
+      text-align: center;
+      margin-bottom: 1rem;
+      position: relative;
+      display: inline-block;
+      width: 100%;
+    }
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 70px;
+      height: 3px;
+      background: var(--gradient-primary);
+      border-radius: 3px;
+    }
+    .section-subtitle {
+      text-align: center;
+      color: var(--text-secondary);
+      max-width: 700px;
+      margin: 0 auto 3rem auto;
+      font-size: 1.2rem;
+    }
+    /* Navbar (same as index) */
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(12px);
+      background: var(--glass-bg);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 1.5rem;
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 700;
+      font-family: 'DM Serif Display', serif;
+      background: var(--gradient-primary);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      text-decoration: none;
+    }
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text-primary);
+      font-weight: 500;
+      transition: 0.2s;
+      position: relative;
+    }
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--gradient-primary);
+      transition: width 0.3s;
+    }
+    .nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
+    .dark-toggle {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      padding: 0.5rem;
+      border-radius: 2rem;
+      cursor: pointer;
+      width: 40px;
+      text-align: center;
+    }
+     body.dark .dark-toggle i {
+      color: #ffffff ;
+    }
+    
+    body:not(.dark) .dark-toggle i {
+      color: #0f172a ;
+    }
+    .dark-toggle:hover {
+      background: var(--accent);
+      border-color: var(--accent);
+      transform: rotate(8deg);
+    }
+    .dark-toggle:hover i {
+      color: white ;
+    }
+    .mobile-menu-btn {
+      display: none;
+      font-size: 1.5rem;
+      background: none;
+      border: none;
+      color: var(--text-primary);
+      cursor: pointer;
+    }
+    .mobile-nav {
+      display: none;
+      flex-direction: column;
+      padding: 1rem;
+      border-top: 1px solid var(--border);
+      background: var(--glass-bg);
+      backdrop-filter: blur(12px);
+    }
+    .mobile-nav a { padding: 0.5rem 0; text-decoration: none; color: var(--text-primary); }
+    
+    
+    .about-two-col {
+      display: flex;
+      gap: 3rem;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .about-image, .about-content {
+      flex: 1;
+    }
+    .about-image {
+      text-align: center;
+    }
+    .about-image img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 1.5rem;
+      box-shadow: var(--shadow-md);
+      transition: transform 0.3s;
+    }
+    .about-image img:hover {
+      transform: scale(1.02);
+    }
+    .about-content h3 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--accent);
+      margin-top: 1.5rem;
+      margin-bottom: 0.75rem;
+    }
+    .about-content h3:first-of-type { margin-top: 0; }
+    .about-content p { color: var(--text-secondary); line-height: 1.6; }
+    .mission-list-about {
+      list-style: none;
+      margin-top: 0.5rem;
+    }
+    .mission-list-about li {
+      margin-bottom: 0.8rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .mission-list-about li i {
+      color: var(--accent);
+      font-size: 1.2rem;
+    }
+    
+    /* Contact section */
+    .contact-wrapper {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+    .contact-form, .contact-info {
+      flex: 1;
+      background: var(--bg-card);
+      border-radius: 1.5rem;
+      padding: 2rem;
+      border: 1px solid var(--border);
+      transition: all 0.3s;
+    }
+    .contact-form:hover, .contact-info:hover { border-color: var(--accent); box-shadow: var(--shadow-md); }
+    .form-group { margin-bottom: 1.2rem; }
+    label { font-weight: 600; margin-bottom: 0.5rem; display: block; }
+    input, textarea {
+      width: 100%;
+      padding: 0.8rem;
+      border: 1px solid var(--border);
+      border-radius: 1rem;
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      font-family: inherit;
+      transition: 0.2s;
+    }
+    input:focus, textarea:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px rgba(15,118,110,0.1); }
+    .info-item {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+      align-items: flex-start;
+    }
+    .info-item i { font-size: 1.4rem; color: var(--accent); margin-top: 0.2rem; }
+    
+    footer {
+      background: var(--bg-secondary);
+      border-top: 1px solid var(--border);
+      padding: 2rem 0;
+      text-align: center;
+    }
+    .social-links a { color: var(--text-muted); margin: 0 0.5rem; font-size: 1.2rem; transition: color 0.2s; }
+    .social-links a:hover { color: var(--accent); }
+    
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .mobile-menu-btn { display: block; }
+      .about-two-col { flex-direction: column; }
+      .about-image { order: -1; }
+      .contact-wrapper { flex-direction: column; }
+      section { padding: 3rem 0; }
+      .section-title { font-size: 2rem; }
+    }
+  </style>
+</head>
+<body>
+<nav class="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="logo">Tomercon Groups</a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html" class="active">About</a>
+      <a href="index.html#model">Model</a>
+      <a href="index.html#companies">Companies</a>
+      <a href="index.html#ventures">Ventures</a>
+      <a href="index.html#blog">Blog</a>
+      <a href="#contact">Contact</a>
+      <button class="dark-toggle" id="darkModeToggle"><i class="fas fa-moon"></i></button>
+    </div>
+    <button class="mobile-menu-btn" id="mobileMenuBtn"><i class="fas fa-bars"></i></button>
+  </div>
+  <div class="mobile-nav" id="mobileNav">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="index.html#model">Model</a>
+    <a href="index.html#companies">Companies</a>
+    <a href="index.html#ventures">Ventures</a>
+    <a href="index.html#blog">Blog</a>
+    <a href="#contact">Contact</a>
+    <button class="dark-toggle" id="mobileDarkToggle"><i class="fas fa-moon"></i> Dark Mode</button>
+  </div>
+</nav>
+<main>
+  <!-- About Section with fade-up animation -->
+  <section id="about">
+    <div class="container">
+      <h2 class="section-title fade-up">About Tomercon Groups</h2>
+      <div class="about-two-col">
+        <div class="about-image fade-up">
+          <!-- Replace with your own image path -->
+          <img src="img3.jpg" alt="Tomercon Office">
+        </div>
+        <div class="about-content fade-up">
+          <h3>Who We Are</h3>
+          <p>Tomercon Groups is a growing business ecosystem built to create, scale, and sustain impactful ventures across industries. Our approach focuses on solving real-world problems through structured execution and innovation.</p>
+          <h3>Our Vision</h3>
+          <p style="border-left: 3px solid var(--accent); padding-left: 1rem;">To build a powerful ecosystem of companies that drive innovation and create sustainable impact.</p>
+          <h3>Our Mission</h3>
+          <ul class="mission-list-about">
+            <li><i class="fas fa-check-circle"></i> Develop scalable business solutions</li>
+            <li><i class="fas fa-check-circle"></i> Leverage technology for problem-solving</li>
+            <li><i class="fas fa-check-circle"></i> Empower students and professionals</li>
+            <li><i class="fas fa-check-circle"></i> Contribute to education and sports development</li>
+          </ul>
+          <h3>Our Approach</h3>
+          <p>We focus on execution over ideas. Every initiative we build is designed to deliver measurable outcomes and long-term value.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section with zoom-in animation -->
+  <section id="contact" style="background: var(--bg-secondary);">
+    <div class="container">
+      <h2 class="section-title fade-up">Let's Connect</h2>
+      <p class="section-subtitle fade-up">Ready to build something impactful? Reach out to our team.</p>
+      <div class="contact-wrapper zoom-in">
+        <div class="contact-form">
+          <form id="contactForm">
+            <div class="form-group"><label>Full name *</label><input type="text" id="name" placeholder="John Carter"></div>
+            <div class="form-group"><label>Email address *</label><input type="email" id="email" placeholder="hello@company.com"></div>
+            <div class="form-group"><label>Message *</label><textarea rows="4" id="message" placeholder="Tell us about your project..."></textarea></div>
+            <button type="submit" class="btn-primary" style="width:100%; justify-content:center;">Send Message <i class="fas fa-paper-plane"></i></button>
+            <div id="formStatus" style="margin-top:1rem; text-align:center; display:none;"></div>
+          </form>
+        </div>
+        <div class="contact-info">
+          <div class="info-item"><i class="fas fa-map-marker-alt"></i><div><h4>Visit Us</h4><p>Tomercon Developers, Thalancheri Paramba,<br>Kozhikode, Kerala - 673003, India</p></div></div>
+          <div class="info-item"><i class="fas fa-envelope"></i><div><h4>Email Us</h4><p>hello@tomercon.com<br>support@tomercon.com</p></div></div>
+          <div class="info-item"><i class="fas fa-phone-alt"></i><div><h4>Call Us</h4><p>+91 1234567890</p></div></div>
+          <div class="info-item"><i class="fas fa-clock"></i><div><h4>Working Hours</h4><p>Mon–Sat: 10AM – 6PM</p></div></div>
+          <div class="social-links"><a href="#"><i class="fab fa-linkedin-in"></i></a><a href="#"><i class="fab fa-twitter"></i></a><a href="#"><i class="fab fa-instagram"></i></a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <p>&copy; 2025 Tomercon Groups — tomerconbusiness.com | Global Ecosystem Architects</p>
+    <div class="social-links"><a href="#"><i class="fab fa-linkedin-in"></i></a><a href="#"><i class="fab fa-twitter"></i></a><a href="#"><i class="fab fa-instagram"></i></a></div>
+  </div>
+</footer>
+
+<script>
+  const darkToggle = document.getElementById('darkModeToggle');
+  const mobileDarkToggle = document.getElementById('mobileDarkToggle');
+  const setDark = (isDark) => {
+    if (isDark) document.body.classList.add('dark');
+    else document.body.classList.remove('dark');
+    localStorage.setItem('darkMode', isDark);
+    const icon = darkToggle?.querySelector('i');
+    if (icon) icon.className = isDark ? 'fas fa-sun' : 'fas fa-moon';
+    if (mobileDarkToggle?.querySelector('i')) mobileDarkToggle.querySelector('i').className = isDark ? 'fas fa-sun' : 'fas fa-moon';
+  };
+  const saved = localStorage.getItem('darkMode') === 'true';
+  setDark(saved);
+  darkToggle?.addEventListener('click', () => setDark(!document.body.classList.contains('dark')));
+  mobileDarkToggle?.addEventListener('click', () => setDark(!document.body.classList.contains('dark')));
+
+  const mobileBtn = document.getElementById('mobileMenuBtn');
+  const mobileNav = document.getElementById('mobileNav');
+  mobileBtn?.addEventListener('click', () => { mobileNav.style.display = mobileNav.style.display === 'flex' ? 'none' : 'flex'; });
+  document.querySelectorAll('.mobile-nav a').forEach(link => { link.addEventListener('click', () => mobileNav.style.display = 'none'); });
+
+  // Replayable animations for all .fade-up and .zoom-in elements
+  const animatedElements = document.querySelectorAll('.fade-up, .zoom-in');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      } else {
+        entry.target.classList.remove('visible');
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -20px 0px' });
+  animatedElements.forEach(el => observer.observe(el));
+
+  // Active nav highlight
+  const sections = document.querySelectorAll('section[id]');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(section => {
+      const top = section.offsetTop - 150;
+      if (pageYOffset >= top) current = section.getAttribute('id');
+    });
+    document.querySelectorAll('.nav-link').forEach(link => {
+      link.classList.remove('active');
+      if (link.getAttribute('href') === `#${current}`) link.classList.add('active');
+    });
+  });
+
+  // Contact form simulation
+  const form = document.getElementById('contactForm');
+  form?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const status = document.getElementById('formStatus');
+    status.style.display = 'block';
+    status.innerHTML = '<i class="fas fa-spinner fa-pulse"></i> Sending...';
+    setTimeout(() => {
+      status.innerHTML = '<i class="fas fa-check-circle"></i> Thank you! We\'ll respond within 24 hours.';
+      form.reset();
+      setTimeout(() => status.style.display = 'none', 4000);
+    }, 1500);
+  });
+</script>
+</body>
+</html>

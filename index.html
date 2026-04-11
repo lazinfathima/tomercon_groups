@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Tomercon Groups | Global Ecosystem Architects</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
+      transition: background-color 0.3s ease, color 0.2s ease;
+      line-height: 1.5;
+      overflow-x: hidden;
+    }
+    :root {
+      --bg-primary: #ffffff;
+      --bg-secondary: #f8fafc;
+      --bg-card: rgba(255, 255, 255, 0.96);
+      --text-primary: #0f172a;
+      --text-secondary: #334155;
+      --text-muted: #64748b;
+      --border: #e2e8f0;
+      --primary: #0f3b5c;
+      --accent: #0f766e;
+      --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+      --gradient-primary: linear-gradient(135deg, #0f3b5c, #0f766e);
+      --gradient-hero: linear-gradient(120deg, rgba(15,59,92,0.03) 0%, rgba(15,118,110,0.02) 100%);
+      --glass-bg: rgba(255, 255, 255, 0.8);
+    }
+    body.dark {
+      --bg-primary: #0a0f1c;
+      --bg-secondary: #111827;
+      --bg-card: rgba(17, 24, 39, 0.9);
+      --text-primary: #f1f5f9;
+      --text-secondary: #cbd5e1;
+      --border: #1e293b;
+      --primary: #2c6e9e;
+      --accent: #2dd4bf;
+      --glass-bg: rgba(15, 23, 42, 0.8);
+    }
+    html { scroll-behavior: smooth; }
+    .container { max-width: 1280px; margin: 0 auto; padding: 0 1.5rem; }
+    section { padding: 5rem 0; }
+    
+    /* Replayable animations */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.8s cubic-bezier(0.2, 0.9, 0.4, 1.1), transform 0.8s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+    }
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .zoom-in {
+      opacity: 0;
+      transform: scale(0.96);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .zoom-in.visible {
+      opacity: 1;
+      transform: scale(1);
+    }
+    
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--gradient-primary);
+      color: white;
+      font-weight: 600;
+      padding: 0.85rem 2rem;
+      border-radius: 2rem;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      border: none;
+      cursor: pointer;
+    }
+    .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 12px 20px -8px rgba(0,0,0,0.2); filter: brightness(1.05); }
+    .section-title {
+      font-size: 2.8rem;
+      font-weight: 700;
+      font-family: 'DM Serif Display', serif;
+      text-align: center;
+      margin-bottom: 2rem;
+      position: relative;
+      display: inline-block;
+      width: 100%;
+    }
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 70px;
+      height: 3px;
+      background: var(--gradient-primary);
+      border-radius: 3px;
+    }
+    .section-subtitle {
+      text-align: center;
+      color: var(--text-secondary);
+      max-width: 700px;
+      margin: 0 auto 3rem auto;
+      font-size: 1.2rem;
+    }
+    /* Navbar */
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(12px);
+      background: var(--glass-bg);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 1.5rem;
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 700;
+      font-family: 'DM Serif Display', serif;
+      background: var(--gradient-primary);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      text-decoration: none;
+    }
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text-primary);
+      font-weight: 500;
+      transition: 0.2s;
+      position: relative;
+    }
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--gradient-primary);
+      transition: width 0.3s;
+    }
+    .nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
+    .dark-toggle {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      padding: 0.5rem;
+      border-radius: 2rem;
+      cursor: pointer;
+      width: 40px;
+      text-align: center;
+    }
+     body.dark .dark-toggle i {
+      color: #ffffff ;
+    }
+    /* Ensure high contrast on light mode */
+    body:not(.dark) .dark-toggle i {
+      color: #0f172a ;
+    }
+    .dark-toggle:hover {
+      background: var(--accent);
+      border-color: var(--accent);
+      transform: rotate(8deg);
+    }
+    .dark-toggle:hover i {
+      color: white ;
+    }
+    .mobile-menu-btn {
+      display: none;
+      font-size: 1.5rem;
+      background: none;
+      border: none;
+      color: var(--text-primary);
+      cursor: pointer;
+    }
+    .mobile-nav {
+      display: none;
+      flex-direction: column;
+      padding: 1rem;
+      border-top: 1px solid var(--border);
+      background: var(--glass-bg);
+      backdrop-filter: blur(12px);
+    }
+    .mobile-nav a { padding: 0.5rem 0; text-decoration: none; color: var(--text-primary); }
+    
+    .hero {
+      background: var(--gradient-hero);
+      min-height: 85vh;
+      display: flex;
+      align-items: center;
+    }
+    .hero-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 3rem;
+      flex-wrap: wrap;
+    }
+    .hero-left {
+      flex: 1.2;
+    }
+    .hero-left h1 {
+      font-size: 3.8rem;
+      font-weight: 700;
+      font-family: 'DM Serif Display', serif;
+      margin-bottom: 1.5rem;
+      line-height: 1.2;
+    }
+    .hero-left h1 span {
+      background: var(--gradient-primary);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+    .hero-left p {
+      font-size: 1.2rem;
+      color: var(--text-secondary);
+      margin-bottom: 2rem;
+    }
+    .hero-right {
+      flex: 0.9;
+      text-align: center;
+    }
+    .hero-image {
+      width: 100%;
+      max-width: 500px;
+      height: auto;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      border-radius: 1.5rem;
+      box-shadow: var(--shadow-lg);
+      transition: transform 0.5s ease, box-shadow 0.3s ease, filter 0.3s ease;
+      animation: fadeInScale 0.8s ease-out;
+    
+    }
+    .hero-image:hover {
+      transform: scale(1.02) translateY(-5px);
+      box-shadow: 0 25px 40px -12px rgba(0,0,0,0.25);
+
+    }
+    @keyframes fadeInScale {
+      0% { opacity: 0; transform: scale(0.92); filter: blur(5px); }
+      100% { opacity: 1; transform: scale(1); filter: blur(3px); }
+    }
+    /* Cards (distinct styles) */
+    .ecosystem-card {
+      background: var(--bg-card);
+      backdrop-filter: blur(8px);
+      border-radius: 2rem;
+      padding: 2rem;
+      border: 1px solid rgba(14,165,233,0.2);
+      transition: all 0.35s;
+      text-align: center;
+    }
+    .ecosystem-card:hover { transform: translateY(-8px); border-color: var(--accent); box-shadow: 0 20px 30px -12px rgba(0,0,0,0.15); }
+    .featured-card {
+      background: var(--bg-card);
+      border-radius: 1rem;
+      border: #adcdc1 solid 0.1px;
+      padding: 2rem;
+      border-top: 4px solid var(--accent);
+      transition: all 0.3s;
+      text-align: center;
+    }
+    .featured-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
+    
+    
+    .venture-card {
+      background: linear-gradient(145deg, rgba(15,59,92,0.05) 0%, rgba(15,118,110,0.08) 100%);
+      backdrop-filter: blur(4px);
+      border-radius: 1.5rem;
+      padding: 2rem;
+      transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+      text-align: center;
+      border: 1px solid rgba(14,165,233,0.2);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.03);
+    }
+    .venture-card:hover {
+      transform: translateY(-8px) scale(1.02);
+      background: linear-gradient(145deg, var(--primary), var(--accent));
+      border-color: transparent;
+      box-shadow: 0 20px 35px -10px rgba(15,59,92,0.4);
+    }
+    .venture-card:hover i,
+    .venture-card:hover h3,
+    .venture-card:hover p {
+      color: white;
+    }
+    .venture-card i {
+      font-size: 2.5rem;
+      color: var(--accent);
+      margin-bottom: 1rem;
+      display: inline-block;
+      transition: color 0.3s;
+    }
+    .venture-card h3 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+      transition: color 0.3s;
+    }
+    .venture-card p {
+      color: var(--text-secondary);
+      transition: color 0.3s;
+      line-height: 1.5;
+    }
+    
+    .why-card {
+      background: var(--bg-card);
+      border-radius: 1.2rem;
+      padding: 1.8rem;
+      border: 1px solid var(--border);
+      transition: all 0.3s;
+      text-align: center;
+    }
+    .why-card:hover { transform: translateY(-5px); background: var(--gradient-primary); color: white; }
+    .why-card:hover .why-icon, .why-card:hover p, .why-card:hover h4 { color: white; }
+    .why-card .why-icon { font-size: 2.2rem; color: var(--accent); margin-bottom: 1rem; display: inline-block; }
+    .blog-card {
+      background: var(--bg-card);
+      border-radius: 1.5rem;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      transition: all 0.35s;
+    }
+    .blog-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-lg); }
+    .blog-img { height: 200px; background: var(--gradient-primary); display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem; }
+    .blog-content { padding: 1.5rem; }
+    .blog-date { font-size: 0.8rem; color: var(--accent); margin-bottom: 0.5rem; }
+    .read-more { color: var(--accent); text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 0.5rem; margin-top: 1rem; }
+    /* Grids */
+    .grid-ecosystem, .grid-featured, .grid-ventures, .grid-why, .blog-grid {
+      display: grid;
+      gap: 2rem;
+    }
+    .grid-ecosystem { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
+    .grid-featured { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+    .grid-ventures { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+    .grid-why { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+    .blog-grid { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+    /* Intro two-column */
+    .intro-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 3rem;
+      flex-wrap: wrap;
+    }
+    .intro-text, .intro-image {
+      flex: 1;
+    }
+    .intro-image {
+      text-align: center;
+    }
+    .intro-image img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 1.5rem;
+      box-shadow: var(--shadow-md);
+      transition: transform 0.3s;
+    }
+    .intro-image img:hover {
+      transform: scale(1.02);
+    }
+    .cta-section {
+      background: var(--gradient-primary);
+      text-align: center;
+      border-radius: 2rem;
+      margin: 2rem 0;
+      padding: 4rem 2rem;
+      color: white;
+    }
+    .cta-section .btn-primary { background: white; color: var(--primary); }
+    footer {
+      background: var(--bg-secondary);
+      border-top: 1px solid var(--border);
+      padding: 2rem 0;
+      text-align: center;
+    }
+    .social-links a { color: var(--text-muted); margin: 0 0.5rem; font-size: 1.2rem; transition: color 0.2s; }
+    .social-links a:hover { color: var(--accent); }
+    @media (max-width: 1024px) {
+      .hero-left h1 { font-size: 2.8rem; }
+    }
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .mobile-menu-btn { display: block; }
+      .hero-left h1 { font-size: 2.2rem; }
+      .hero-container { flex-direction: column; text-align: center; }
+      .hero-left { text-align: center; }
+      .hero-image { max-width: 80%; margin: 0 auto; }
+      .intro-wrapper { flex-direction: column; text-align: center; }
+      .intro-image { order: -1; }
+      section { padding: 3rem 0; }
+      .section-title { font-size: 2rem; }
+    }
+  </style>
+</head>
+<body>
+<nav class="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="logo">Tomercon Groups</a>
+    <div class="nav-links">
+      <a href="index.html" class="nav-link active">Home</a>
+      <a href="about.html">About</a>
+      <a href="#model">Model</a>
+      <a href="#companies">Companies</a>
+      <a href="#ventures">Ventures</a>
+      <a href="#blog">Blog</a>
+      <a href="about.html#contact">Contact</a>
+      <button class="dark-toggle" id="darkModeToggle"><i class="fas fa-moon"></i></button>
+    </div>
+    <button class="mobile-menu-btn" id="mobileMenuBtn"><i class="fas fa-bars"></i></button>
+  </div>
+  <div class="mobile-nav" id="mobileNav">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="#model">Model</a>
+    <a href="#companies">Companies</a>
+    <a href="#ventures">Ventures</a>
+    <a href="#blog">Blog</a>
+    <a href="about.html#contact">Contact</a>
+    <button class="dark-toggle" id="mobileDarkToggle"><i class="fas fa-moon"></i> Dark Mode</button>
+  </div>
+</nav>
+<main>
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="container hero-container">
+      <div class="hero-left">
+        <h1 class="fade-up visible">We Don’t Just Build Businesses.<br><span>We Build Ecosystems.</span></h1>
+        <p class="fade-up visible" style="transition-delay: 0.1s;">A multi-industry group driving innovation across technology, marketing, education, and sports. Build. Scale. Lead.</p>
+        <a href="about.html#contact" class="btn-primary fade-up visible" style="transition-delay: 0.2s;">Explore Ecosystem <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="hero-right">
+        <img src="img2.jpg" alt="Tomercon Global" class="hero-image">
+      </div>
+    </div>
+  </section>
+
+  <!-- Introduction -->
+  <section>
+    <div class="container intro-wrapper">
+      <div class="intro-text fade-up">
+        <span style="color: var(--accent); font-weight: 600;">INTEGRATED ECOSYSTEM</span>
+        <h2 class="section-title" style="text-align: left; margin-bottom: 1.5rem;">Introduction</h2>
+        <p style="font-size: 1.1rem; color: var(--text-secondary);">Tomercon Groups is a diversified business ecosystem focused on building scalable ventures and delivering real-world solutions. We combine technology, strategy, and creativity to create businesses that are not only profitable but impactful. Our strength lies in integration — every company within the group contributes to a larger ecosystem designed for growth and sustainability.</p>
+      </div>
+      <div class="intro-image fade-up">
+        <img src="img1.cms" alt="Ecosystem Illustration">
+      </div>
+    </div>
+  </section>
+
+  <!-- Ecosystem Model -->
+  <section id="model" style="background: var(--bg-secondary);">
+    <div class="container">
+      <h2 class="section-title fade-up">Our Ecosystem Model</h2>
+      <p class="section-subtitle fade-up">We operate through a structured ecosystem where each vertical supports and strengthens the others.</p>
+      <div class="grid-ecosystem">
+        <div class="ecosystem-card fade-up"><i class="fas fa-microchip" style="font-size:2.5rem; color:var(--accent); margin-bottom:1rem;"></i><h3>Technology Development</h3><p>Building scalable digital infrastructure and software solutions.</p></div>
+        <div class="ecosystem-card fade-up"><i class="fas fa-chart-line" style="font-size:2.5rem; color:var(--accent); margin-bottom:1rem;"></i><h3>Marketing & Growth</h3><p>Data-driven user acquisition and brand scaling.</p></div>
+        <div class="ecosystem-card fade-up"><i class="fas fa-bullhorn" style="font-size:2.5rem; color:var(--accent); margin-bottom:1rem;"></i><h3>Business Strategy</h3><p>High-level consulting for market expansion.</p></div>
+        <div class="ecosystem-card fade-up"><i class="fas fa-brain" style="font-size:2.5rem; color:var(--accent); margin-bottom:1rem;"></i><h3>Innovation & AI</h3><p>Cutting-edge AI integration and future-tech labs.</p></div>
+        <div class="ecosystem-card fade-up"><i class="fas fa-film" style="font-size:2.5rem; color:var(--accent); margin-bottom:1rem;"></i><h3>Media & Content</h3><p>Storytelling and creative production power.</p></div>
+        <div class="ecosystem-card fade-up"><i class="fas fa-graduation-cap" style="font-size:2.5rem; color:var(--accent); margin-bottom:1rem;"></i><h3>Education & Career Platforms</h3><p>Empowering learners and professionals worldwide.</p></div>
+        <div class="ecosystem-card fade-up"><i class="fas fa-futbol" style="font-size:2.5rem; color:var(--accent); margin-bottom:1rem;"></i><h3>Sports & Social Development</h3><p>Community-driven sports initiatives and impact.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Companies -->
+  <section id="companies">
+    <div class="container">
+      <h2 class="section-title fade-up">Featured Companies</h2>
+      <p class="section-subtitle fade-up">Flagship ventures driving the Tomercon ecosystem.</p>
+      <div class="grid-featured">
+        <div class="featured-card fade-up"><i class="fas fa-laptop-code" style="font-size:2.5rem; color:var(--accent); margin-bottom:1rem;"></i><h3>Tomercon Developers LLP</h3><p>The technology backbone building apps and digital systems.</p></div>
+        <div class="featured-card fade-up"><i class="fas fa-chart-line" style="font-size:2.5rem; color:var(--accent); margin-bottom:1rem;"></i><h3>Tomercon Ads</h3><p>Growth engine driving marketing and user acquisition.</p></div>
+        <div class="featured-card fade-up"><i class="fas fa-handshake" style="font-size:2.5rem; color:var(--accent); margin-bottom:1rem;"></i><h3>Tomercon Consultancy</h3><p>Strategy unit focused on business scaling.</p></div>
+        <div class="featured-card fade-up"><i class="fas fa-flask" style="font-size:2.5rem; color:var(--accent); margin-bottom:1rem;"></i><h3>Tomercon Fusion Labs</h3><p>Innovation hub for AI and future technologies.</p></div>
+        <div class="featured-card fade-up"><i class="fas fa-video" style="font-size:2.5rem; color:var(--accent); margin-bottom:1rem;"></i><h3>FGT Studios</h3><p>Creative production and storytelling unit.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ventures Section -->
+  <section id="ventures" style="background: var(--bg-secondary);">
+    <div class="container">
+      <h2 class="section-title fade-up">Ventures</h2>
+      <p class="section-subtitle fade-up">Next-generation platforms reshaping education and career discovery.</p>
+      <div class="grid-ventures">
+        <div class="venture-card fade-up">
+          <i class="fas fa-robot"></i>
+          <h3>Learnyor</h3>
+          <p>AI-powered learning platform simplifying education for global learners.</p>
+        </div>
+        <div class="venture-card fade-up">
+          <i class="fas fa-briefcase"></i>
+          <h3>QITE</h3>
+          <p>Career experience platform helping individuals choose the right path.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Tomercon -->
+  <section>
+    <div class="container">
+      <h2 class="section-title fade-up">Why Tomercon Groups</h2>
+      <div class="grid-why">
+        <div class="why-card fade-up"><i class="fas fa-industry why-icon"></i><h4>Multi-industry expertise</h4><p>Deep knowledge across tech, marketing, education & sports</p></div>
+        <div class="why-card fade-up"><i class="fas fa-rocket why-icon"></i><h4>Strong execution mindset</h4><p>Ideas transformed into scalable realities</p></div>
+        <div class="why-card fade-up"><i class="fas fa-lightbulb why-icon"></i><h4>Innovation-driven approach</h4><p>AI-first, future-ready methodologies</p></div>
+        <div class="why-card fade-up"><i class="fas fa-link why-icon"></i><h4>Integrated ecosystem advantage</h4><p>Synergies that multiply growth potential</p></div>
+        <div class="why-card fade-up"><i class="fas fa-chart-line why-icon"></i><h4>Focus on long-term impact</h4><p>Sustainable value creation for all stakeholders</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Blog -->
+  <section id="blog" style="background: var(--bg-secondary);">
+    <div class="container">
+      <h2 class="section-title fade-up">Insights & Stories</h2>
+      <p class="section-subtitle fade-up">Latest thoughts from our ecosystem leaders.</p>
+      <div class="blog-grid">
+        <div class="blog-card fade-up"><div class="blog-img"><i class="fas fa-chart-line"></i></div><div class="blog-content"><div class="blog-date"><i class="far fa-calendar-alt"></i> March 15, 2025</div><h3>Why Ecosystems Beat Standalone Businesses</h3><p>Exploring how interconnected ventures create exponential value.</p><a href="#" class="read-more">Read more <i class="fas fa-arrow-right"></i></a></div></div>
+        <div class="blog-card fade-up"><div class="blog-img"><i class="fas fa-microchip"></i></div><div class="blog-content"><div class="blog-date"><i class="far fa-calendar-alt"></i> March 5, 2025</div><h3>AI in Education: The Learnyor Approach</h3><p>How adaptive learning platforms are closing skill gaps.</p><a href="#" class="read-more">Read more <i class="fas fa-arrow-right"></i></a></div></div>
+        <div class="blog-card fade-up"><div class="blog-img"><i class="fas fa-futbol"></i></div><div class="blog-content"><div class="blog-date"><i class="far fa-calendar-alt"></i> February 20, 2025</div><h3>Sports & Social Development: Our Commitment</h3><p>Building community through grassroots sports.</p><a href="#" class="read-more">Read more <i class="fas fa-arrow-right"></i></a></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <div class="container">
+    <div class="cta-section zoom-in">
+      <h2>Let’s Build Something Impactful Together</h2>
+      <p style="margin-bottom:1.5rem;">Partner with Tomercon Groups to scale your vision.</p>
+      <a href="about.html#contact" class="btn-primary">Get in touch <i class="fas fa-arrow-right"></i></a>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    <p>&copy; 2025 Tomercon Groups — tomerconbusiness.com | Global Ecosystem Architects</p>
+    <div class="social-links"><a href="#"><i class="fab fa-linkedin-in"></i></a><a href="#"><i class="fab fa-twitter"></i></a><a href="#"><i class="fab fa-instagram"></i></a></div>
+  </div>
+</footer>
+
+<script>
+  const darkToggle = document.getElementById('darkModeToggle');
+  const mobileDarkToggle = document.getElementById('mobileDarkToggle');
+  const setDark = (isDark) => {
+    if (isDark) document.body.classList.add('dark');
+    else document.body.classList.remove('dark');
+    localStorage.setItem('darkMode', isDark);
+    const icon = darkToggle?.querySelector('i');
+    if (icon) icon.className = isDark ? 'fas fa-sun' : 'fas fa-moon';
+    if (mobileDarkToggle?.querySelector('i')) mobileDarkToggle.querySelector('i').className = isDark ? 'fas fa-sun' : 'fas fa-moon';
+  };
+  const saved = localStorage.getItem('darkMode') === 'true';
+  setDark(saved);
+  darkToggle?.addEventListener('click', () => setDark(!document.body.classList.contains('dark')));
+  mobileDarkToggle?.addEventListener('click', () => setDark(!document.body.classList.contains('dark')));
+
+  const mobileBtn = document.getElementById('mobileMenuBtn');
+  const mobileNav = document.getElementById('mobileNav');
+  mobileBtn?.addEventListener('click', () => { mobileNav.style.display = mobileNav.style.display === 'flex' ? 'none' : 'flex'; });
+  document.querySelectorAll('.mobile-nav a').forEach(link => { link.addEventListener('click', () => mobileNav.style.display = 'none'); });
+
+  // Replayable animations for all elements with .fade-up and .zoom-in
+  const animatedElements = document.querySelectorAll('.fade-up, .zoom-in');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      } else {
+        entry.target.classList.remove('visible');
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -20px 0px' });
+  animatedElements.forEach(el => observer.observe(el));
+
+  // Active nav highlight
+  const sections = document.querySelectorAll('section[id]');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(section => {
+      const top = section.offsetTop - 150;
+      if (pageYOffset >= top) current = section.getAttribute('id');
+    });
+    document.querySelectorAll('.nav-link').forEach(link => {
+      link.classList.remove('active');
+      if (link.getAttribute('href') === `#${current}`) link.classList.add('active');
+    });
+  });
+</script>
+</body>
+</html>
