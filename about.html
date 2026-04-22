@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Tomercon Groups | About & Contact</title>
+    <title>Tomercon Groups | About – Professional</title>
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     <!-- Font Awesome -->
@@ -36,57 +36,46 @@
             border-radius: 10px;
         }
 
-        /* Sections with parallax backgrounds – BRAND NEW UNIQUE IMAGES */
-        section {
+        /* Parallax background */
+        .about-section {
             position: relative;
-            min-height: 85vh;
+            min-height: 100vh;
             display: flex;
             align-items: center;
-            padding: 5rem 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 6rem 0;
+            background-image: url('https://images.pexels.com/photos/3184298/pexels-photo-3184298.jpeg?auto=compress&cs=tinysrgb&w=1600');
             background-size: cover;
             background-position: center;
-            background-repeat: no-repeat;
             background-attachment: fixed;
         }
-        section::before {
+        .about-section::before {
             content: "";
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(135deg, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.75) 100%);
+            background: linear-gradient(135deg, rgba(0,0,0,0.88), rgba(0,0,0,0.78));
             z-index: 0;
         }
-        section::after {
+        .about-section::after {
             content: "";
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: radial-gradient(circle at 20% 40%, rgba(59, 158, 255, 0.08) 0%, transparent 70%);
+            background: radial-gradient(circle at 20% 40%, rgba(59,158,255,0.06), transparent 70%);
             z-index: 0;
             pointer-events: none;
         }
         .container {
             position: relative;
             z-index: 2;
-            max-width: 1400px;
+            max-width: 1200px;
             margin: 0 auto;
             padding: 0 5%;
             width: 100%;
-        }
-
-        /* ALL NEW BACKGROUNDS – completely different from any previous version */
-        #about { 
-            background-image: url('https://images.pexels.com/photos/3184298/pexels-photo-3184298.jpeg?auto=compress&cs=tinysrgb&w=1600'); 
-            background-position: center 25%; 
-        }
-        #contact { 
-            background-image: url('https://images.pexels.com/photos/3184303/pexels-photo-3184303.jpeg?auto=compress&cs=tinysrgb&w=1600'); 
-            background-position: center 55%; 
         }
 
         /* Typography */
@@ -97,174 +86,209 @@
         }
         .section-badge {
             display: inline-block;
-            font-size: 0.8rem;
+            font-size: 1rem;
+            margin-top: 3rem;
             text-transform: uppercase;
-            letter-spacing: 4px;
+            letter-spacing: 5px;
             font-weight: 600;
             color: #3b9eff;
-            margin-bottom: 0.8rem;
+            margin-bottom: 1rem;
             border-left: 3px solid #3b9eff;
-            padding-left: 12px;
+            padding-left: 14px;
         }
         .section-title {
-            font-size: clamp(1.8rem, 4vw, 3rem);
-            margin-bottom: 1rem;
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            margin-bottom: 1.5rem;
             color: #ffffff;
-            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
         }
-        .section-subtitle {
-            font-size: 1.05rem;
-            line-height: 1.55;
-            color: #ececec;
-            max-width: 700px;
-            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
-            margin: 0 auto 2rem auto;
+
+        /* Hero area – clean, no card */
+        .about-hero {
             text-align: center;
+            margin-bottom: 4rem;
         }
-
-        /* Glass card style */
-        .glass-card {
-            background: rgba(10, 10, 18, 0.85);
-            backdrop-filter: blur(12px);
-            border-radius: 28px;
-            padding: 1.8rem;
-            border: 1px solid rgba(59, 158, 255, 0.35);
-            transition: all 0.3s ease;
-            box-shadow: 0 10px 25px -8px rgba(0, 0, 0, 0.5);
-            
+        .about-hero h1 {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            background: linear-gradient(125deg, #FFFFFF, #3b9eff);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            margin-bottom: 1rem;
         }
-        .glass-card:hover {
-            transform: translateY(-6px);
-            border-color: rgba(59, 158, 255, 0.8);
-            background: rgba(20, 20, 32, 0.92);
-        }
-
-        /* About two-column layout */
-        .about-two-col {
-            display: flex;
-            gap: 3rem;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-        .about-image, .about-content {
-            flex: 1;
-        }
-        .about-image img {
-            max-width: 100%;
-            border-radius: 28px;
-            box-shadow: 0 15px 35px -12px black;
-            border: 1px solid rgba(59,158,255,0.4);
-            transition: transform 0.3s;
-        }
-        .about-image img:hover {
-            transform: scale(1.02);
-        }
-        .about-content h3 {
-            font-size: 1.8rem;
-            color: #3b9eff;
-            margin-top: 1.5rem;
-            margin-bottom: 0.75rem;
-        }
-        .about-content h3:first-of-type { margin-top: 0; }
-        .about-content p {
+        .about-hero p {
+            font-size: 1.2rem;
             color: #e0e0e0;
-            line-height: 1.6;
+            max-width: 700px;
+            margin: 0 auto;
         }
-        .mission-list {
-            list-style: none;
-            margin-top: 0.5rem;
+
+        /* Two-column layout for Who We Are & Vision (no cards) */
+        .two-col {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-bottom: 3rem;
+
         }
-        .mission-list li {
-            margin-bottom: 0.8rem;
+        
+        .plain-text p {
+            font-size: 1.2rem;
+            line-height: 1.7;
+            color: #e0e0e0;
+            margin-bottom: 1rem;
+        }
+        .vision-quote {
+            border-left: 3px solid #3b9eff;
+            padding-left: 1.2rem;
+            font-style: italic;
+            font-size: 1.2rem;
+            color: #ccddf8;
+            margin-top: 2.5rem;
+        }
+
+        /* ===== UNIQUE FEATURED CARD (Mission) – different style ===== */
+        .featured-card {
+            background: rgba(8, 18, 32, 0.8);
+            backdrop-filter: blur(12px);
+            border-radius: 2rem;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            border: none;
+            box-shadow: 0 20px 35px -12px rgba(0,0,0,0.5);
+        }
+        /* Gradient border effect (unique) */
+        .featured-card::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            border-radius: 2rem;
+            padding: 2px;
+            background: linear-gradient(135deg, #3b9eff, #a8e6cf, #3b9eff);
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            pointer-events: none;
+        }
+        /* Glow on hover */
+        .featured-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 25px 40px -14px rgba(59,158,255,0.3);
+        }
+        .featured-card:hover::before {
+            background: linear-gradient(135deg, #5aabff, #c0f0e0, #ff5ab3);
+        }
+        .featured-card h3 {
+            color: #3b9eff;
+            margin-bottom: 1.2rem;
             display: flex;
             align-items: center;
             gap: 0.75rem;
+            font-size: 1.6rem;
+        }
+        .mission-list {
+            list-style: none;
+        }
+        .mission-list li {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px dashed rgba(59,158,255,0.25);
+            font-size: 1rem;
         }
         .mission-list li i {
+            color: #a8e6cf;
+            font-size: 1.1rem;
+        }
+
+        /* Approach – simple columns (no cards) */
+        .approach-section {
+            margin: 5rem 0;
+
+        }
+        .approach-section h3 {
+            text-align: center;
             color: #3b9eff;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        .approach-desc {
+            text-align: center;
+            margin-bottom: 2rem;
             font-size: 1.2rem;
+            color: #ccddf8;
         }
-
-        /* Contact section with glass cards */
-        .contact-wrapper {
+        .approach-steps {
             display: flex;
-            gap: 2rem;
             flex-wrap: wrap;
-            margin-top: 2rem;
-        }
-        .contact-form, .contact-info {
-            flex: 1;
-        }
-        .form-group { margin-bottom: 1.2rem; }
-        label {
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-            display: block;
-            color: #e0e0e0;
-        }
-        input, textarea {
-            width: 100%;
-            padding: 0.8rem 1rem;
-            background: rgba(25, 25, 35, 0.9);
-            border: 1px solid rgba(59, 158, 255, 0.5);
-            border-radius: 40px;
-            color: white;
-            font-family: 'Inter', sans-serif;
-            outline: none;
-            font-size: 0.95rem;
-        }
-        textarea {
-            border-radius: 24px;
-            resize: vertical;
-        }
-        input:focus, textarea:focus {
-            border-color: #3b9eff;
-            background: rgba(30, 30, 45, 0.95);
-        }
-        .info-item {
-            display: flex;
-            gap: 1rem;
-            margin-bottom: 1.5rem;
-            align-items: flex-start;
-        }
-        .info-item i {
-            font-size: 1.4rem;
-            color: #3b9eff;
-            margin-top: 0.2rem;
-        }
-        .info-item h4 {
-            color: white;
-            margin-bottom: 0.2rem;
-        }
-        .info-item p {
-            color: #e0e0e0;
-        }
-
-        /* Button */
-        .btn-primary {
-            background: linear-gradient(135deg, #a8e6cf, #3b9eff);
-            border: none;
-            color: #0a0a0a;
-            padding: 0.8rem 2rem;
-            border-radius: 40px;
-            font-weight: 700;
-            cursor: pointer;
-            transition: 0.3s;
-            font-size: 0.95rem;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            text-decoration: none;
-            width: 100%;
+            gap: 2rem;
             justify-content: center;
         }
-        .btn-primary:hover {
-            background: linear-gradient(135deg, #bcf0e0, #5aabff);
-            transform: scale(1.02);
-            box-shadow: 0 0 15px rgba(59, 158, 255, 0.6);
+        .step-item {
+            flex: 1;
+            min-width: 200px;
+            text-align: center;
+            padding: 1rem;
+            border-right: 1px solid rgba(59,158,255,0.2);
+        }
+        .step-item:last-child {
+            border-right: none;
+        }
+        .step-icon {
+            font-size: 2.3rem;
+            color: #3b9eff;
+            margin-bottom: 1rem;
+        }
+        .step-item h4 {
+            margin-bottom: 0.5rem;
+            font-size: 1.5rem;
+        }
+        .step-item p {
+            font-size: 1rem;
+            color: #ccddf8;
+        }
+        @media (max-width: 768px) {
+            .approach-steps { flex-direction: column; }
+            .step-item { border-right: none; border-bottom: 1px solid rgba(59,158,255,0.2); padding-bottom: 1.5rem; }
+            .step-item:last-child { border-bottom: none; }
         }
 
-        /* Navbar (sticky glass) */
+        /* Stats – minimal pills */
+        .stats-row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 1rem;
+            margin: 3rem 0;
+        }
+        .stat-pill {
+            flex: 1;
+            text-align: center;
+            background: rgba(10, 18, 28, 0.5);
+            border-radius: 60px;
+            padding: 1rem 1.5rem;
+            border: 1px solid rgba(59,158,255,0.2);
+            transition: 0.2s;
+        }
+        .stat-pill:hover {
+            border-color: #3b9eff;
+            background: rgba(20, 30, 48, 0.6);
+        }
+        .stat-number {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: #3b9eff;
+        }
+        .stat-label {
+            font-size: 0.9rem;
+            color: #ccddf8;
+        }
+
+        /* Navbar */
         .navbar {
             position: fixed;
             top: 0;
@@ -272,22 +296,21 @@
             width: 100%;
             z-index: 100;
             backdrop-filter: blur(12px);
-            background: rgba(10, 20, 36, 0.85);
+            background: rgba(10,20,36,0.85);
             border-bottom: 1px solid #1f4562;
         }
         .nav-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1rem 1.5rem;
-            max-width: 1280px;
+            padding: 1rem 2rem;
+            max-width: 1400px;
             margin: 0 auto;
-            width: 100%;
         }
         .logo {
             font-size: 1.8rem;
             font-weight: 700;
-            font-family: 'DM Serif Display', serif;
+            font-family: 'Space Grotesk', sans-serif;
             background: linear-gradient(135deg, #a8e6cf, #3b9eff);
             background-clip: text;
             -webkit-background-clip: text;
@@ -297,8 +320,6 @@
         .nav-links {
             display: flex;
             gap: 2rem;
-            align-items: center;
-            flex-wrap: wrap;
         }
         .nav-links a {
             text-decoration: none;
@@ -334,7 +355,7 @@
             flex-direction: column;
             padding: 1rem;
             border-top: 1px solid #1f4562;
-            background: rgba(10, 20, 36, 0.85);
+            background: rgba(10,20,36,0.85);
             backdrop-filter: blur(12px);
         }
         .mobile-nav a {
@@ -345,19 +366,18 @@
         @media (max-width: 768px) {
             .nav-links { display: none; }
             .mobile-menu-btn { display: block; }
-            .about-two-col { flex-direction: column; }
-            .about-image { order: -1; }
-            .contact-wrapper { flex-direction: column; }
+            .two-col { flex-direction: column; }
+            .stats-row { flex-direction: column; }
+            .stat-pill { border-radius: 40px; }
         }
 
         /* Footer */
         footer {
             text-align: center;
-            padding: 1.5rem;
+            padding: 2rem;
             background: #050505;
-            font-size: 0.8rem;
+            border-top: 1px solid rgba(59,158,255,0.2);
             color: #bbb;
-            border-top: 1px solid rgba(59, 158, 255, 0.2);
         }
         .social-links a {
             color: #bbb;
@@ -384,7 +404,7 @@
             <a href="index.html#companies">Companies</a>
             <a href="index.html#ventures">Ventures</a>
             <a href="index.html#blog">Blog</a>
-            <a href="#contact">Contact</a>
+            <a href="contact.html">Contact</a>
         </div>
         <button class="mobile-menu-btn" id="mobileMenuBtn"><i class="fas fa-bars"></i></button>
     </div>
@@ -395,112 +415,84 @@
         <a href="index.html#companies">Companies</a>
         <a href="index.html#ventures">Ventures</a>
         <a href="index.html#blog">Blog</a>
-        <a href="#contact">Contact</a>
+        <a href="contact.html">Contact</a>
     </div>
 </div>
 
 <main>
-    <!-- About Section -->
-    <section id="about">
+    <div class="about-section">
         <div class="container">
-            <div data-aos="fade-up">
+            <!-- Hero intro -->
+            <div class="about-hero" data-aos="fade-up">
                 <span class="section-badge">WHO WE ARE</span>
-                <h2 class="section-title">About Tomercon Groups</h2>
+                <h1>About Tomercon Groups</h1>
+                <p>A growing business ecosystem built to create, scale, and sustain impactful ventures across industries.</p>
             </div>
-            <div class="about-two-col">
-                <div class="about-image" data-aos="fade-right" data-aos-delay="100">
-                    <img src="img3.jpg" alt="Tomercon Office">
+
+            <!-- Who We Are + Vision (plain text, no cards) -->
+            <div class="two-col" data-aos="fade-up" data-aos-delay="100">
+                <div class="plain-text">
+                    <p>Tomercon Groups is a diversified business ecosystem focused on building scalable ventures and delivering real-world solutions. We combine technology, strategy, and creativity to create businesses that are not only profitable but impactful.</p>
+                    <p>Our strength lies in integration — every company within the group contributes to a larger ecosystem designed for growth and sustainability.</p>
+                    <div class="vision-quote">
+                        <strong style="color: #3b9eff;">Our Vision:</strong> To build a powerful ecosystem of companies that drive innovation and create sustainable impact.
+                    </div>
                 </div>
-                <div class="about-content" data-aos="fade-left" data-aos-delay="150">
-                    <h3>Who We Are</h3>
-                    <p>Tomercon Groups is a growing business ecosystem built to create, scale, and sustain impactful ventures across industries. Our approach focuses on solving real-world problems through structured execution and innovation.</p>
-                    <h3>Our Vision</h3>
-                    <p style="border-left: 3px solid #3b9eff; padding-left: 1rem;">To build a powerful ecosystem of companies that drive innovation and create sustainable impact.</p>
-                    <h3>Our Mission</h3>
+                <!-- EMPTY SPACE – the featured card will be placed below, but we keep layout balanced -->
+                <div></div>
+            </div>
+
+            <!-- UNIQUE FEATURED CARD (Mission) – different style, gradient border -->
+            <div data-aos="fade-up" data-aos-delay="150">
+                <div class="featured-card">
+                    <h3> Our Mission</h3>
                     <ul class="mission-list">
                         <li><i class="fas fa-check-circle"></i> Develop scalable business solutions</li>
                         <li><i class="fas fa-check-circle"></i> Leverage technology for problem-solving</li>
                         <li><i class="fas fa-check-circle"></i> Empower students and professionals</li>
                         <li><i class="fas fa-check-circle"></i> Contribute to education and sports development</li>
                     </ul>
-                    <h3>Our Approach</h3>
-                    <p>We focus on execution over ideas. Every initiative we build is designed to deliver measurable outcomes and long-term value.</p>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Contact Section -->
-    <section id="contact">
-        <div class="container">
-            <div data-aos="fade-up">
-                <span class="section-badge">CONNECT WITH US</span>
-                <h2 class="section-title">Let's Connect</h2>
-                <p class="section-subtitle">Ready to build something impactful? Reach out to our team.</p>
+            <!-- Approach (simple columns, no cards) -->
+            <div class="approach-section" data-aos="fade-up" data-aos-delay="200">
+                <h3>Our Approach</h3>
+                <p class="approach-desc">We focus on execution over ideas. Every initiative is designed to deliver measurable outcomes.</p>
+                <div class="approach-steps">
+                    <div class="step-item">
+                        <div class="step-icon"><i class="fas fa-lightbulb"></i></div>
+                        <h4>Ideate</h4>
+                        <p>Identify real problems and validate solutions through market research.</p>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-icon"><i class="fas fa-cogs"></i></div>
+                        <h4>Build</h4>
+                        <p>Structured execution using agile methodologies and modern technology.</p>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-icon"><i class="fas fa-chart-line"></i></div>
+                        <h4>Scale</h4>
+                        <p>Data‑driven growth strategies to expand reach and maximize impact.</p>
+                    </div>
+                </div>
             </div>
-            <div class="contact-wrapper">
-                <div class="contact-form glass-card" data-aos="fade-right" data-aos-delay="100">
-                    <form id="contactForm">
-                        <div class="form-group">
-                            <label>Full name *</label>
-                            <input type="text" id="name" placeholder="John Carter">
-                        </div>
-                        <div class="form-group">
-                            <label>Email address *</label>
-                            <input type="email" id="email" placeholder="hello@company.com">
-                        </div>
-                        <div class="form-group">
-                            <label>Message *</label>
-                            <textarea rows="4" id="message" placeholder="Tell us about your project..."></textarea>
-                        </div>
-                        <button type="submit" class="btn-primary">Send Message <i class="fas fa-paper-plane"></i></button>
-                        <div id="formStatus" style="margin-top:1rem; text-align:center; display:none;"></div>
-                    </form>
-                </div>
-                <div class="contact-info glass-card" data-aos="fade-left" data-aos-delay="150">
-                    <div class="info-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <div>
-                            <h4>Visit Us</h4>
-                            <p>Tomercon Developers, Thalancheri Paramba,<br>Kozhikode, Kerala - 673003, India</p>
-                        </div>
-                    </div>
-                    <div class="info-item">
-                        <i class="fas fa-envelope"></i>
-                        <div>
-                            <h4>Email Us</h4>
-                            <p>hello@tomercon.com<br>support@tomercon.com</p>
-                        </div>
-                    </div>
-                    <div class="info-item">
-                        <i class="fas fa-phone-alt"></i>
-                        <div>
-                            <h4>Call Us</h4>
-                            <p>+91 1234567890</p>
-                        </div>
-                    </div>
-                    <div class="info-item">
-                        <i class="fas fa-clock"></i>
-                        <div>
-                            <h4>Working Hours</h4>
-                            <p>Mon–Sat: 10AM – 6PM</p>
-                        </div>
-                    </div>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
+
+            <!-- Stats – pill style (minimal) -->
+            <div class="stats-row" data-aos="zoom-in" data-aos-delay="250">
+                <div class="stat-pill"><div class="stat-number">7+</div><div class="stat-label">Verticals</div></div>
+                <div class="stat-pill"><div class="stat-number">50+</div><div class="stat-label">Team Members</div></div>
+                <div class="stat-pill"><div class="stat-number">5</div><div class="stat-label">Flagship Cos</div></div>
+                <div class="stat-pill"><div class="stat-number">1000+</div><div class="stat-label">Students Impacted</div></div>
             </div>
         </div>
-    </section>
+    </div>
 </main>
 
 <footer>
     <div class="container">
         <p>© 2025 Tomercon Groups — tomerconbusiness.com | Global Ecosystem Architects</p>
-        <div class="social-links">
+        <div class="social-links" style="margin-top: 0.5rem;">
             <a href="#"><i class="fab fa-linkedin-in"></i></a>
             <a href="#"><i class="fab fa-twitter"></i></a>
             <a href="#"><i class="fab fa-instagram"></i></a>
@@ -512,7 +504,7 @@
 <script>
     AOS.init({ duration: 700, once: true, offset: 60, easing: 'ease-out-quad' });
 
-    // Mobile menu toggle
+    // Mobile menu
     const mobileBtn = document.getElementById('mobileMenuBtn');
     const mobileNav = document.getElementById('mobileNav');
     if (mobileBtn && mobileNav) {
@@ -524,56 +516,15 @@
         });
     }
 
-    // Smooth scroll for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                e.preventDefault();
-                target.scrollIntoView({ behavior: 'smooth' });
-            }
-        });
-    });
-
     // Active nav highlight
-    const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('.nav-link');
-    function updateActiveLink() {
-        let current = '';
-        const scrollPos = window.scrollY + 150;
-        sections.forEach(section => {
-            const top = section.offsetTop;
-            const bottom = top + section.offsetHeight;
-            if (scrollPos >= top && scrollPos < bottom) {
-                current = section.getAttribute('id');
-            }
-        });
-        navLinks.forEach(link => {
+    navLinks.forEach(link => {
+        if (link.getAttribute('href') === 'about.html') {
+            link.classList.add('active');
+        } else {
             link.classList.remove('active');
-            const href = link.getAttribute('href');
-            if (href === `#${current}` || (current === 'about' && href === 'about.html')) {
-                link.classList.add('active');
-            }
-        });
-    }
-    window.addEventListener('scroll', updateActiveLink);
-    window.addEventListener('load', updateActiveLink);
-
-    // Contact form simulation
-    const form = document.getElementById('contactForm');
-    if (form) {
-        form.addEventListener('submit', (e) => {
-            e.preventDefault();
-            const status = document.getElementById('formStatus');
-            status.style.display = 'block';
-            status.innerHTML = '<i class="fas fa-spinner fa-pulse"></i> Sending...';
-            setTimeout(() => {
-                status.innerHTML = '<i class="fas fa-check-circle"></i> Thank you! We\'ll respond within 24 hours.';
-                form.reset();
-                setTimeout(() => status.style.display = 'none', 4000);
-            }, 1500);
-        });
-    }
+        }
+    });
 </script>
 </body>
 </html>
