@@ -589,7 +589,7 @@
             line-height: 1.5;
         }
 
-        /* === VENTURES & ASSOCIATIONS TABS === */
+        /* === VENTURES & ASSOCIATIONS TABS - UNIFIED CARD STYLE === */
         .section-header-wrapper {
             text-align: center;
             margin-bottom: 1rem;
@@ -641,7 +641,8 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        .ventures-grid {
+        /* Unified card grid for both ventures and associations */
+        .ventures-grid, .associations-grid {
             display: flex;
             flex-wrap: wrap;
             gap: 2rem;
@@ -649,72 +650,8 @@
             justify-content: center;
         }
 
-        .venture-card {
-            flex: 1;
-            min-width: 300px;
-            max-width: 500px;
-            background: rgb(15 25 45/12%);
-            backdrop-filter: blur(8px);
-            border-radius: 24px;
-            padding: 2rem;
-            display: flex;
-            gap: 1.5rem;
-            transition: all 0.3s ease;
-            border: 1px solid rgba(59,158,255,0.25);
-        }
-
-        .venture-card:hover {
-            transform: translateY(-5px);
-            border-color: #3b9eff;
-            background: rgba(59,158,255,0.12);
-        }
-
-        .venture-icon {
-            flex-shrink: 0;
-            width: 70px;
-            height: 70px;
-            background: rgba(59,158,255,0.2);
-            border-radius: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .venture-icon i { font-size: 2.2rem; color: #5aabff; }
-        .venture-content h3 {
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
-            color: #ffffff;
-        }
-        .venture-content p {
-            font-size: 0.95rem;
-            color: #d0d0d0;
-            margin-bottom: 1rem;
-        }
-        .venture-details {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-        }
-        .venture-details span {
-            font-size: 0.75rem;
-            color: #5aabff;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.4rem;
-            background: rgba(59,158,255,0.15);
-            padding: 0.3rem 0.8rem;
-            border-radius: 50px;
-        }
-
-        .associations-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 2rem;
-            margin-top: 2rem;
-            justify-content: center;
-        }
-
-        .association-card {
+        /* Single card style (used for both venture and association cards) */
+        .venture-card, .association-card {
             flex: 1;
             min-width: 300px;
             max-width: 350px;
@@ -729,7 +666,8 @@
             overflow: hidden;
         }
 
-        .association-card::before {
+        /* Hover background image effect (shared) */
+        .venture-card::before, .association-card::before {
             content: "";
             position: absolute;
             top: 0;
@@ -744,7 +682,7 @@
             z-index: 0;
             border-radius: 24px;
         }
-        .association-card::after {
+        .venture-card::after, .association-card::after {
             content: "";
             position: absolute;
             top: 0;
@@ -757,13 +695,18 @@
             transition: opacity 0.4s ease;
             z-index: 0;
         }
-        .association-card:hover::before { opacity: 0.7; }
-        .association-card:hover::after { opacity: 0.65; }
-        .association-card:hover {
+        .venture-card:hover::before, .association-card:hover::before { opacity: 0.7; }
+        .venture-card:hover::after, .association-card:hover::after { opacity: 0.65; }
+        .venture-card:hover, .association-card:hover {
             transform: translateY(-8px);
             border-color: #3b9eff;
             box-shadow: 0 20px 35px -12px rgba(0,0,0,0.6);
         }
+
+        .venture-card .venture-icon,
+        .venture-card h3,
+        .venture-card p,
+        .venture-card .venture-details,
         .association-card .association-icon,
         .association-card h3,
         .association-card p,
@@ -771,7 +714,8 @@
             position: relative;
             z-index: 2;
         }
-        .association-icon {
+
+        .venture-icon, .association-icon {
             width: 70px;
             height: 70px;
             margin: 0 auto 1rem auto;
@@ -782,29 +726,45 @@
             border-radius: 20px;
             transition: all 0.3s ease;
         }
+        .venture-card:hover .venture-icon,
         .association-card:hover .association-icon {
             background: rgba(0,0,0,0.6);
             transform: scale(1.05);
         }
-        .association-icon i { font-size: 2rem; color: #5aabff; }
-        .association-card h3 {
+        .venture-icon i, .association-icon i {
+            font-size: 2rem;
+            color: #5aabff;
+            transition: all 0.3s ease;
+        }
+        .venture-card:hover .venture-icon i,
+        .association-card:hover .association-icon i {
+            color: #ffffff;
+        }
+
+        .venture-card h3, .association-card h3 {
             font-size: 1.2rem;
             font-weight: 700;
             margin-bottom: 0.6rem;
             color: #ffffff;
         }
-        .association-card p {
+        .venture-card p, .association-card p {
             font-size: 0.85rem;
             color: #c0c0c0;
+            line-height: 1.5;
             margin-bottom: 1rem;
         }
-        .association-stats {
+        .venture-card:hover p, .association-card:hover p {
+            color: #f0f0f0;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+        }
+
+        .venture-details, .association-stats {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             gap: 0.8rem;
         }
-        .association-stats span {
+        .venture-details span, .association-stats span {
             font-size: 0.7rem;
             color: #5aabff;
             display: inline-flex;
@@ -813,16 +773,21 @@
             background: rgba(59,158,255,0.15);
             padding: 0.25rem 0.6rem;
             border-radius: 50px;
+            transition: all 0.3s ease;
+        }
+        .venture-card:hover .venture-details span,
+        .association-card:hover .association-stats span {
+            background: rgba(0,0,0,0.6);
+            color: #8bcbff;
         }
 
-        /* === MOBILE RESPONSIVE (image first, all features preserved) === */
+        /* === MOBILE RESPONSIVE === */
         @media (max-width: 768px) {
             .nav-links { display: none; }
             .mobile-menu-btn { display: block; }
             .grid-why { grid-template-columns: 1fr; }
             .container { padding: 0 5%; }
             
-            /* Intro: image first, text second */
             .intro-wrapper { flex-direction: column; gap: 2rem; }
             .intro-image { order: 1; }
             .intro-text { order: 2; }
@@ -849,13 +814,11 @@
             
             .tab-buttons { gap: 0.8rem; flex-wrap: wrap; }
             .tab-btn { padding: 0.6rem 1rem; font-size: 0.85rem; }
+            
             .venture-card, .association-card {
-                flex-direction: column;
-                text-align: center;
                 max-width: 100%;
+                min-width: auto;
             }
-            .venture-icon, .association-icon { margin: 0 auto 1rem auto; }
-            .venture-details, .association-stats { justify-content: center; }
             
             .cta-card { padding: 2rem 1.2rem; }
             .btn-primary { padding: 0.8rem 1.8rem; font-size: 0.9rem; }
@@ -973,7 +936,6 @@
                 <div class="fullwidth-scroll-container">
                     <div class="continuous-scroll-wrapper">
                         <div class="featured-horizontal-grid" id="featuredGrid">
-                            <!-- original set -->
                             <a href="https://abhiramimurali363-code.github.io/TOMERCON-DEVELOPERS/" class="featured-box" data-bg="https://images.pexels.com/photos/1181244/pexels-photo-1181244.jpeg?auto=compress&cs=tinysrgb&w=600">
                                 <div class="box-icon"><i class="fas fa-laptop-code"></i></div>
                                 <h3>TOMERCON DEVELOPERS LLP</h3>
@@ -999,7 +961,6 @@
                                 <h3>FGT Studios</h3>
                                 <p>Creative production and storytelling unit.</p>
                             </a>
-                            <!-- duplicate for seamless scroll -->
                             <a href="https://abhiramimurali363-code.github.io/TOMERCON-DEVELOPERS/" class="featured-box" data-bg="https://images.pexels.com/photos/1181244/pexels-photo-1181244.jpeg?auto=compress&cs=tinysrgb&w=600">
                                 <div class="box-icon"><i class="fas fa-laptop-code"></i></div>
                                 <h3>TOMERCON DEVELOPERS LLP</h3>
@@ -1044,28 +1005,26 @@
                 </div>
                 <div class="tab-content active" id="ventures-tab">
                     <div class="ventures-grid">
-                        <div class="venture-card animate-on-scroll fade-right" data-animate data-delay="100">
+                        <!-- Venture card 1 - now same style as association cards -->
+                        <div class="venture-card" data-bg="https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=600">
                             <div class="venture-icon"><i class="fas fa-robot"></i></div>
-                            <div class="venture-content">
-                                <h3>Learnyor</h3>
-                                <p>AI-powered learning platform simplifying education for global learners.</p>
-                                <div class="venture-details">
-                                    <span><i class="fas fa-users"></i> 50K+ Learners</span>
-                                    <span><i class="fas fa-globe"></i> 25+ Countries</span>
-                                    <span><i class="fas fa-certificate"></i> 100+ Courses</span>
-                                </div>
+                            <h3>Learnyor</h3>
+                            <p>AI-powered learning platform simplifying education for global learners.</p>
+                            <div class="venture-details">
+                                <span><i class="fas fa-users"></i> 50K+ Learners</span>
+                                <span><i class="fas fa-globe"></i> 25+ Countries</span>
+                                <span><i class="fas fa-certificate"></i> 100+ Courses</span>
                             </div>
                         </div>
-                        <div class="venture-card animate-on-scroll fade-left" data-animate data-delay="150">
+                        <!-- Venture card 2 -->
+                        <div class="venture-card" data-bg="https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=600">
                             <div class="venture-icon"><i class="fas fa-briefcase"></i></div>
-                            <div class="venture-content">
-                                <h3>QITE</h3>
-                                <p>Career experience platform helping individuals choose the right path.</p>
-                                <div class="venture-details">
-                                    <span><i class="fas fa-user-graduate"></i> 10K+ Mentors</span>
-                                    <span><i class="fas fa-building"></i> 500+ Partners</span>
-                                    <span><i class="fas fa-chart-line"></i> 85% Success Rate</span>
-                                </div>
+                            <h3>QITE</h3>
+                            <p>Career experience platform helping individuals choose the right path.</p>
+                            <div class="venture-details">
+                                <span><i class="fas fa-user-graduate"></i> 10K+ Mentors</span>
+                                <span><i class="fas fa-building"></i> 500+ Partners</span>
+                                <span><i class="fas fa-chart-line"></i> 85% Success Rate</span>
                             </div>
                         </div>
                     </div>
@@ -1231,14 +1190,14 @@
             style.textContent = `.featured-box::before { background-image: var(--hover-bg, none); opacity: var(--bg-opacity, 0); }`;
             document.head.appendChild(style);
 
-            // Association cards background images
-            const assocCards = document.querySelectorAll('.association-card');
-            const assocStyle = document.createElement('style');
-            assocStyle.textContent = `.association-card::before { background-image: var(--hover-bg-assoc, none); }`;
-            document.head.appendChild(assocStyle);
-            assocCards.forEach(card => {
+            // Unified hover background for venture & association cards
+            const allCards = document.querySelectorAll('.venture-card, .association-card');
+            const cardStyle = document.createElement('style');
+            cardStyle.textContent = `.venture-card::before, .association-card::before { background-image: var(--hover-bg-card, none); }`;
+            document.head.appendChild(cardStyle);
+            allCards.forEach(card => {
                 const bg = card.getAttribute('data-bg');
-                if (bg) card.style.setProperty('--hover-bg-assoc', `url('${bg}')`);
+                if (bg) card.style.setProperty('--hover-bg-card', `url('${bg}')`);
             });
 
             // Tabs functionality with auto-switch and dynamic headings
