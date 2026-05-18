@@ -46,8 +46,6 @@
             display: flex;
             align-items: center;
             padding: 6rem 0;
-            /* Increased padding for more breathing room */
-
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -83,7 +81,6 @@
             max-width: 1400px;
             margin: 0 auto;
             padding: 0 6%;
-            /* Slightly wider side padding */
             width: 100%;
         }
 
@@ -124,8 +121,6 @@
             min-height: 60vh;
         }
 
-       
-
         /* Typography - INCREASED SIZES */
         h1,
         h2,
@@ -137,7 +132,6 @@
 
         .hero-title {
             font-size: clamp(3.5rem, 9vw, 5rem);
-            /* Larger hero */
             background: linear-gradient(125deg, #FFFFFF 20%, #4548c0d6 50%, #3143dec7 90%);
             -webkit-background-clip: text;
             background-clip: text;
@@ -149,10 +143,8 @@
 
         .hero-sub {
             font-size: clamp(1.2rem, 2.8vw, 1.6rem);
-            /* Bigger subtext */
             color: #f5f5f5;
             max-width: 650px;
-            /* More width */
             margin-bottom: 2.5rem;
             text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
             line-height: 1.4;
@@ -161,7 +153,6 @@
         .section-badge {
             display: inline-block;
             font-size: 0.95rem;
-            /* Slightly larger */
             text-transform: uppercase;
             letter-spacing: 5px;
             font-weight: 700;
@@ -173,13 +164,11 @@
 
         .section-title {
             font-size: clamp(2.2rem, 5vw, 3.8rem);
-            /* Bigger titles */
             margin-bottom: 1.2rem;
             color: #ffffff;
             text-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
             line-height: 1.2;
         }
-
 
         /* Grid layouts - more gap for spaciousness */
         .grid-ecosystem,
@@ -189,7 +178,6 @@
         .blog-grid {
             display: grid;
             gap: 2.5rem;
-            /* Increased gap */
             margin-top: 3rem;
         }
 
@@ -197,12 +185,10 @@
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
         }
 
-        /* wider min */
         .grid-featured {
             grid-template-columns: repeat(5, minmax(240px, 1fr));
         }
 
-        /* slightly wider */
         .grid-ventures {
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
         }
@@ -221,7 +207,6 @@
         .why-item,
         .blog-item {
             padding: 1.5rem 0;
-            /* more vertical padding */
             border-bottom: 1px solid rgba(59, 158, 255, 0.3);
             transition: all 0.3s ease;
             background: transparent;
@@ -244,7 +229,6 @@
         .venture-item i,
         .why-item i {
             font-size: 2.4rem;
-            /* bigger icons */
             background: linear-gradient(135deg, #a8e6cf, #3b9eff);
             background-clip: text;
             -webkit-background-clip: text;
@@ -259,7 +243,6 @@
         .why-item h3,
         .why-item h4 {
             font-size: 1.5rem;
-            /* larger headings */
             margin-bottom: 0.75rem;
             color: #ffffff;
         }
@@ -270,7 +253,6 @@
         .why-item p {
             color: #e0e0e0;
             font-size: 1rem;
-            /* bigger text */
             line-height: 1.5;
         }
 
@@ -487,7 +469,6 @@
             display: flex;
             flex-wrap: wrap;
             gap: 4rem;
-            /* more gap */
             align-items: center;
         }
 
@@ -750,6 +731,221 @@
                 font-size: 1.1rem;
             }
         }
+
+        /* ========== NEW MOBILE FIXES ========== */
+        /* Prevent any accidental horizontal overflow */
+        body {
+            overflow-x: hidden;
+            width: 100%;
+        }
+
+        /* Fix fullwidth scroll container for mobile to avoid scrolling body */
+        @media (max-width: 768px) {
+            .fullwidth-scroll-container {
+                width: 100%;
+                left: 0;
+                right: 0;
+                margin-left: 0;
+                margin-right: 0;
+                overflow-x: hidden;
+            }
+            
+            .featured-horizontal-grid {
+                padding: 0.5rem 1rem;
+                gap: 1.2rem;
+                animation: scrollRightToLeft 22s linear infinite;
+            }
+            
+            .featured-box {
+                width: 270px;
+                min-height: 280px;
+                padding: 1.8rem 1rem;
+            }
+            
+            .box-icon {
+                width: 60px;
+                height: 60px;
+                margin-bottom: 0.8rem;
+            }
+            
+            .box-icon i {
+                font-size: 1.8rem;
+            }
+            
+            .featured-box h3 {
+                font-size: 1.1rem;
+            }
+            
+            .featured-box p {
+                font-size: 0.8rem;
+            }
+            
+            /* Tab buttons responsive */
+            .tab-buttons {
+                gap: 0.8rem;
+                flex-wrap: wrap;
+            }
+            
+            .tab-btn {
+                padding: 0.6rem 1rem;
+                font-size: 0.85rem;
+            }
+            
+            .tab-btn i {
+                font-size: 0.9rem;
+            }
+            
+            /* Fix venture & association cards on small screens */
+            .ventures-grid,
+            .associations-grid {
+                gap: 1.5rem;
+            }
+            
+            .venture-card,
+            .association-card {
+                flex-direction: column;
+                text-align: center;
+                min-width: auto;
+                width: 100%;
+                max-width: 100%;
+                padding: 1.5rem;
+            }
+            
+            .venture-icon,
+            .association-icon {
+                margin: 0 auto 1rem auto;
+            }
+            
+            .venture-details,
+            .association-stats {
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+            
+            /* Intro section image full width */
+            .intro-wrapper {
+                gap: 2rem;
+            }
+            
+            .intro-image img {
+                width: 100%;
+                height: auto;
+            }
+            
+            /* cta card padding */
+            .cta-card {
+                padding: 2rem 1.2rem;
+            }
+            
+            .cta-card p {
+                font-size: 1rem;
+            }
+            
+            .btn-primary {
+                padding: 0.8rem 1.8rem;
+                font-size: 0.9rem;
+            }
+            
+            /* Navbar inner spacing */
+            .nav-container {
+                padding: 0.8rem 1.2rem;
+            }
+            
+            .logo {
+                font-size: 1.5rem;
+            }
+            
+            /* Grid ecosystem items */
+            .grid-ecosystem {
+                gap: 1.2rem;
+            }
+            
+            .eco-item {
+                padding: 1rem 0;
+            }
+            
+            .eco-item h3 {
+                font-size: 1.3rem;
+            }
+            
+            /* why grid one column */
+            .grid-why {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            /* hero adjustments */
+            .hero-title {
+                margin-bottom: 1rem;
+            }
+            
+            .hero-sub {
+                margin-bottom: 1.8rem;
+                max-width: 100%;
+            }
+            
+            /* section padding reduce on mobile for better flow */
+            section {
+                padding: 4rem 0;
+                background-attachment: scroll;
+            }
+            
+            .section-title {
+                margin-bottom: 0.8rem;
+            }
+        }
+        
+        /* small devices (<=480px) make boxes even smoother */
+        @media (max-width: 480px) {
+            .featured-box {
+                width: 250px;
+                min-height: 260px;
+                padding: 1.5rem 0.8rem;
+            }
+            
+            .featured-box h3 {
+                font-size: 1rem;
+            }
+            
+            .box-icon {
+                width: 50px;
+                height: 50px;
+            }
+            
+            .box-icon i {
+                font-size: 1.5rem;
+            }
+            
+            .tab-btn {
+                font-size: 0.75rem;
+                padding: 0.4rem 0.8rem;
+            }
+            
+            .venture-content h3, .association-card h3 {
+                font-size: 1.2rem;
+            }
+            
+            .venture-details span, .association-stats span {
+                font-size: 0.65rem;
+            }
+            
+            .container {
+                padding: 0 4%;
+            }
+        }
+        
+        /* Fix for tablets: ensure fullwidth scroll does not overflow */
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .featured-box {
+                width: 290px;
+            }
+            .fullwidth-scroll-container {
+                width: 100%;
+                left: 0;
+                margin-left: 0;
+                margin-right: 0;
+            }
+        }
     </style>
 </head>
 
@@ -950,8 +1146,7 @@
                         </div>
                     </div>
                 </div>
-
-
+            </div>
         </section>
 
         <style>
@@ -1138,186 +1333,9 @@
                 color: #c0c0c0;
                 line-height: 1.5;
             }
-
-            /* Scroll controls */
-            .scroll-controls {
-                display: flex;
-                justify-content: center;
-                gap: 1rem;
-                margin-top: 2rem;
-                position: relative;
-                z-index: 5;
-            }
-
-            .scroll-btn {
-                background: rgba(59, 158, 255, 0.2);
-                border: 1px solid rgba(59, 158, 255, 0.5);
-                border-radius: 50px;
-                padding: 0.6rem 1.5rem;
-                font-size: 0.9rem;
-                font-weight: 600;
-                color: #3b9eff;
-                cursor: pointer;
-                transition: 0.25s;
-                display: inline-flex;
-                align-items: center;
-                gap: 0.5rem;
-                backdrop-filter: blur(4px);
-            }
-
-            .scroll-btn:hover {
-                background: #3b9eff;
-                color: #0a0a0a;
-                border-color: transparent;
-            }
-
-            /* Responsive */
-            @media (max-width: 768px) {
-                .featured-box {
-                    width: 280px;
-                    min-height: 280px;
-                    padding: 2rem 1.2rem;
-                }
-
-                .box-icon {
-                    width: 65px;
-                    height: 65px;
-                }
-
-                .box-icon i {
-                    font-size: 2rem;
-                }
-
-                .featured-box h3 {
-                    font-size: 1.1rem;
-                }
-
-                .featured-box p {
-                    font-size: 0.85rem;
-                }
-
-                .featured-horizontal-grid {
-                    gap: 1.5rem;
-                    padding: 0.5rem 1rem;
-                }
-            }
-
-            @media (max-width: 480px) {
-                .featured-box {
-                    width: 260px;
-                    min-height: 260px;
-                    padding: 1.8rem 1rem;
-                }
-            }
         </style>
 
-        <script>
-            // CONTINUOUS AUTO-SCROLL with hover image effects
-            (function () {
-                const wrapper = document.querySelector('.continuous-scroll-wrapper');
-                const leftBtn = document.getElementById('scrollLeftBtn');
-                const rightBtn = document.getElementById('scrollRightBtn');
-                const grid = document.getElementById('featuredGrid');
-
-                // Apply background images on hover
-                const boxes = document.querySelectorAll('.featured-box');
-
-                // Add style for background images
-                const style = document.createElement('style');
-                style.textContent = `
-        .featured-box::before {
-            background-image: var(--hover-bg, none);
-            opacity: var(--bg-opacity, 0);
-        }
-    `;
-                document.head.appendChild(style);
-
-                // Initialize all boxes with their background
-                boxes.forEach(box => {
-                    const bg = box.getAttribute('data-bg');
-                    if (bg) {
-                        box.style.setProperty('--hover-bg', `url('${bg}')`);
-                    }
-
-                    // Handle hover opacity
-                    box.addEventListener('mouseenter', function () {
-                        this.style.setProperty('--bg-opacity', '0.85');
-                    });
-                    box.addEventListener('mouseleave', function () {
-                        this.style.setProperty('--bg-opacity', '0');
-                    });
-                });
-
-                // Store animation state
-                let currentTranslate = 0;
-
-                // Manual scroll buttons
-                if (leftBtn && grid) {
-                    leftBtn.addEventListener('click', () => {
-                        // Get current transform
-                        const transform = window.getComputedStyle(grid).transform;
-                        if (transform !== 'none') {
-                            const matrix = transform.match(/matrix.*\((.+)\)/);
-                            if (matrix) {
-                                currentTranslate = parseFloat(matrix[1].split(', ')[4]) || 0;
-                            }
-                        }
-
-                        // Calculate new position (shift right)
-                        let newTranslate = currentTranslate - 300;
-                        const totalWidth = grid.scrollWidth / 2;
-                        if (Math.abs(newTranslate) >= totalWidth) {
-                            newTranslate = 0;
-                        }
-
-                        // Pause animation and apply new position
-                        grid.style.animation = 'none';
-                        grid.offsetHeight;
-                        grid.style.transform = `translateX(${newTranslate}px)`;
-                        currentTranslate = newTranslate;
-
-                        // Restart animation
-                        setTimeout(() => {
-                            grid.style.transform = '';
-                            grid.style.animation = 'scrollRightToLeft 25s linear infinite';
-                        }, 50);
-                    });
-                }
-
-                if (rightBtn && grid) {
-                    rightBtn.addEventListener('click', () => {
-                        // Get current transform
-                        const transform = window.getComputedStyle(grid).transform;
-                        if (transform !== 'none') {
-                            const matrix = transform.match(/matrix.*\((.+)\)/);
-                            if (matrix) {
-                                currentTranslate = parseFloat(matrix[1].split(', ')[4]) || 0;
-                            }
-                        }
-
-                        // Calculate new position (shift left)
-                        let newTranslate = currentTranslate + 300;
-                        const totalWidth = grid.scrollWidth / 2;
-                        if (Math.abs(newTranslate) >= totalWidth) {
-                            newTranslate = 0;
-                        }
-
-                        // Pause animation and apply new position
-                        grid.style.animation = 'none';
-                        grid.offsetHeight;
-                        grid.style.transform = `translateX(${newTranslate}px)`;
-                        currentTranslate = newTranslate;
-
-                        // Restart animation
-                        setTimeout(() => {
-                            grid.style.transform = '';
-                            grid.style.animation = 'scrollRightToLeft 25s linear infinite';
-                        }, 50);
-                    });
-                }
-            })();
-        </script>
-                <!-- Ventures & Association Section – Fixed (No scroll, grid layout for associations) -->
+        <!-- Ventures & Association Section – Fixed (No scroll, grid layout for associations) -->
         <section id="ventures">
             <div class="container">
                 <div class="section-header-wrapper animate-on-scroll fade-up" data-animate>
@@ -1406,419 +1424,6 @@
             </div>
         </section>
 
-        <style>
-            /* ========== GLOBAL STYLES (keep existing) ========== */
-            .section-header-wrapper {
-                text-align: center;
-                margin-bottom: 1rem;
-            }
-            .section-badge {
-                display: inline-block;
-                font-size: 0.95rem;
-                text-transform: uppercase;
-                letter-spacing: 5px;
-                font-weight: 700;
-                color: #3b9eff;
-                margin-bottom: 1rem;
-                border-left: 3px solid #3b9eff;
-                padding-left: 14px;
-                transition: all 0.3s ease;
-            }
-            .section-title {
-                font-size: clamp(2.2rem, 5vw, 3.8rem);
-                margin-bottom: 1rem;
-                color: #ffffff;
-                text-shadow: 0 2px 5px rgba(0,0,0,0.4);
-                line-height: 1.2;
-            }
-            .section-desc {
-                font-size: 1.1rem;
-                line-height: 1.6;
-                color: #c4dafb;
-                max-width: 700px;
-                margin: 0 auto;
-            }
-
-            /* Tab Buttons */
-            .tab-buttons {
-                display: flex;
-                justify-content: center;
-                gap: 1.5rem;
-                margin: 2rem 0 1rem 0;
-            }
-            .tab-btn {
-                background: rgba(59,158,255,0.1);
-                border: 1px solid rgba(59,158,255,0.3);
-                border-radius: 50px;
-                padding: 0.8rem 2rem;
-                font-size: 1rem;
-                font-weight: 600;
-                color: #ffffff;
-                cursor: pointer;
-                transition: all 0.3s ease;
-                display: inline-flex;
-                align-items: center;
-                gap: 0.6rem;
-                backdrop-filter: blur(4px);
-            }
-            .tab-btn i {
-                font-size: 1.1rem;
-                color: #3b9eff;
-                transition: all 0.3s ease;
-            }
-            .tab-btn:hover {
-                background: rgba(59,158,255,0.2);
-                border-color: #3b9eff;
-                transform: translateY(-2px);
-            }
-            .tab-btn.active {
-                background: linear-gradient(135deg, #3b9eff, #2563eb);
-                border-color: transparent;
-                color: #ffffff;
-            }
-            .tab-btn.active i {
-                color: #ffffff;
-            }
-
-            /* Tab Content */
-            .tab-content {
-                display: none;
-                animation: fadeIn 0.5s ease;
-            }
-            .tab-content.active {
-                display: block;
-            }
-            @keyframes fadeIn {
-                from { opacity: 0; transform: translateY(10px); }
-                to { opacity: 1; transform: translateY(0); }
-            }
-
-            /* Ventures Grid (existing) */
-            .ventures-grid {
-                display: flex;
-                flex-wrap: wrap;
-                gap: 2rem;
-                margin-top: 2rem;
-                justify-content: center;
-            }
-            .venture-card {
-                flex: 1;
-                min-width: 300px;
-                max-width: 500px;
-                background: rgb(15 25 45/12%);
-                backdrop-filter: blur(8px);
-                border-radius: 24px;
-                padding: 2rem;
-                display: flex;
-                gap: 1.5rem;
-                transition: all 0.3s ease;
-                border: 1px solid rgba(59,158,255,0.25);
-            }
-            .venture-card:hover {
-                transform: translateY(-5px);
-                border-color: #3b9eff;
-                background: rgba(59,158,255,0.12);
-                box-shadow: 0 15px 30px -12px rgba(0,0,0,0.5);
-            }
-            .venture-icon {
-                flex-shrink: 0;
-                width: 70px;
-                height: 70px;
-                background: rgba(59,158,255,0.2);
-                border-radius: 20px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-            }
-            .venture-icon i {
-                font-size: 2.2rem;
-                color: #5aabff;
-            }
-            .venture-content {
-                flex: 1;
-            }
-            .venture-content h3 {
-                font-size: 1.5rem;
-                margin-bottom: 0.5rem;
-                color: #ffffff;
-            }
-            .venture-content p {
-                font-size: 0.95rem;
-                color: #d0d0d0;
-                line-height: 1.5;
-                margin-bottom: 1rem;
-            }
-            .venture-details {
-                display: flex;
-                flex-wrap: wrap;
-                gap: 1rem;
-                margin-top: 0.5rem;
-            }
-            .venture-details span {
-                font-size: 0.75rem;
-                color: #5aabff;
-                display: inline-flex;
-                align-items: center;
-                gap: 0.4rem;
-                background: rgba(59,158,255,0.15);
-                padding: 0.3rem 0.8rem;
-                border-radius: 50px;
-            }
-
-            /* NEW Associations Grid (no scroll, same style as ventures) */
-            .associations-grid {
-                display: flex;
-                flex-wrap: wrap;
-                gap: 2rem;
-                margin-top: 2rem;
-                justify-content: center;
-            }
-            .association-card {
-                flex: 1;
-                min-width: 300px;
-                max-width: 350px;
-                background: rgb(15 25 45/12%);
-                backdrop-filter: blur(8px);
-                border-radius: 24px;
-                padding: 2rem 1.5rem;
-                text-align: center;
-                transition: all 0.3s ease;
-                border: 1px solid rgba(59,158,255,0.25);
-                position: relative;
-                overflow: hidden;
-            }
-            /* Hover background image effect (same as before) */
-            .association-card::before {
-                content: "";
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background-size: cover;
-                background-position: center;
-                background-repeat: no-repeat;
-                opacity: 0;
-                transition: opacity 0.4s ease;
-                z-index: 0;
-                border-radius: 24px;
-            }
-            .association-card::after {
-                content: "";
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background: linear-gradient(135deg, rgba(0,0,0,0.75), rgba(0,0,0,0.85));
-                border-radius: 24px;
-                opacity: 0;
-                transition: opacity 0.4s ease;
-                z-index: 0;
-            }
-            .association-card:hover::before {
-                opacity: 0.7;
-            }
-            .association-card:hover::after {
-                opacity: 0.65;
-            }
-            .association-card:hover {
-                transform: translateY(-8px);
-                border-color: #3b9eff;
-                box-shadow: 0 20px 35px -12px rgba(0,0,0,0.6);
-            }
-            .association-card .association-icon,
-            .association-card h3,
-            .association-card p,
-            .association-card .association-stats {
-                position: relative;
-                z-index: 2;
-                transition: all 0.3s ease;
-            }
-            .association-icon {
-                width: 70px;
-                height: 70px;
-                margin: 0 auto 1rem auto;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                background: rgba(59,158,255,0.2);
-                border-radius: 20px;
-                transition: all 0.3s ease;
-            }
-            .association-card:hover .association-icon {
-                background: rgba(0,0,0,0.6);
-                transform: scale(1.05);
-            }
-            .association-icon i {
-                font-size: 2rem;
-                color: #5aabff;
-                transition: all 0.3s ease;
-            }
-            .association-card:hover .association-icon i {
-                color: #ffffff;
-            }
-            .association-card h3 {
-                font-size: 1.2rem;
-                font-weight: 700;
-                margin-bottom: 0.6rem;
-                color: #ffffff;
-            }
-            .association-card:hover h3 {
-                text-shadow: 0 2px 4px rgba(0,0,0,0.5);
-            }
-            .association-card p {
-                font-size: 0.85rem;
-                color: #c0c0c0;
-                line-height: 1.5;
-                margin-bottom: 1rem;
-            }
-            .association-card:hover p {
-                color: #f0f0f0;
-                text-shadow: 0 1px 2px rgba(0,0,0,0.5);
-            }
-            .association-stats {
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 0.8rem;
-                margin-top: 0.5rem;
-            }
-            .association-stats span {
-                font-size: 0.7rem;
-                color: #5aabff;
-                display: inline-flex;
-                align-items: center;
-                gap: 0.3rem;
-                background: rgba(59,158,255,0.15);
-                padding: 0.25rem 0.6rem;
-                border-radius: 50px;
-                transition: all 0.3s ease;
-            }
-            .association-card:hover .association-stats span {
-                background: rgba(0,0,0,0.6);
-                color: #8bcbff;
-            }
-
-            /* Responsive */
-            @media (max-width: 768px) {
-                .tab-buttons { gap: 1rem; }
-                .tab-btn { padding: 0.6rem 1.2rem; font-size: 0.85rem; }
-                .venture-card, .association-card { flex-direction: column; text-align: center; align-items: center; }
-                .venture-details, .association-stats { justify-content: center; }
-                .section-desc { font-size: 0.95rem; padding: 0 1rem; }
-            }
-        </style>
-
-        <script>
-            // Auto-switch between Ventures and Associations every 5 seconds with dynamic headings
-            (function () {
-                const tabBtns = document.querySelectorAll('.tab-btn');
-                const tabContents = document.querySelectorAll('.tab-content');
-                const sectionBadge = document.getElementById('sectionBadge');
-                const sectionTitle = document.getElementById('sectionTitle');
-                const sectionDesc = document.getElementById('sectionDesc');
-
-                let autoSwitchInterval;
-                let isAutoSwitching = true;
-                let isTransitioning = false;
-
-                const venturesContent = {
-                    badge: "NEXT‑GEN PLATFORMS",
-                    title: "Ventures & Associations",
-                    desc: "Next-generation platforms reshaping education and career discovery."
-                };
-                const associationsContent = {
-                    badge: "OUR NETWORK",
-                    title: "Associations & Partners",
-                    desc: "Our extended network of partners and branches driving global impact across multiple sectors."
-                };
-
-                function updateHeadings(badge, title, desc) {
-                    if (isTransitioning) return;
-                    isTransitioning = true;
-                    sectionBadge.style.opacity = '0';
-                    sectionTitle.style.opacity = '0';
-                    sectionDesc.style.opacity = '0';
-                    setTimeout(() => {
-                        sectionBadge.textContent = badge;
-                        sectionTitle.textContent = title;
-                        sectionDesc.textContent = desc;
-                        sectionBadge.style.opacity = '1';
-                        sectionTitle.style.opacity = '1';
-                        sectionDesc.style.opacity = '1';
-                        setTimeout(() => { isTransitioning = false; }, 300);
-                    }, 300);
-                }
-
-                function switchToTab(tabId) {
-                    tabBtns.forEach(btn => btn.classList.remove('active'));
-                    tabContents.forEach(content => content.classList.remove('active'));
-                    const targetBtn = document.querySelector(`.tab-btn[data-tab="${tabId}"]`);
-                    const targetContent = document.getElementById(tabId);
-                    if (targetBtn && targetContent) {
-                        targetBtn.classList.add('active');
-                        targetContent.classList.add('active');
-                        if (tabId === 'ventures-tab') {
-                            updateHeadings(venturesContent.badge, venturesContent.title, venturesContent.desc);
-                        } else if (tabId === 'associations-tab') {
-                            updateHeadings(associationsContent.badge, associationsContent.title, associationsContent.desc);
-                        }
-                    }
-                }
-
-                function getNextTab(currentTabId) {
-                    return currentTabId === 'ventures-tab' ? 'associations-tab' : 'ventures-tab';
-                }
-
-                function startAutoSwitch() {
-                    if (autoSwitchInterval) clearInterval(autoSwitchInterval);
-                    autoSwitchInterval = setInterval(() => {
-                        if (isAutoSwitching && !isTransitioning) {
-                            let activeTabId = null;
-                            tabContents.forEach(content => {
-                                if (content.classList.contains('active')) activeTabId = content.id;
-                            });
-                            if (activeTabId) switchToTab(getNextTab(activeTabId));
-                        }
-                    }, 5000);
-                }
-
-                function stopAutoSwitchTemporarily() {
-                    isAutoSwitching = false;
-                    if (autoSwitchInterval) clearInterval(autoSwitchInterval);
-                    setTimeout(() => {
-                        isAutoSwitching = true;
-                        startAutoSwitch();
-                    }, 10000);
-                }
-
-                tabBtns.forEach(btn => {
-                    btn.addEventListener('click', () => {
-                        const tabId = btn.getAttribute('data-tab');
-                        switchToTab(tabId);
-                        stopAutoSwitchTemporarily();
-                    });
-                });
-
-                sectionBadge.style.transition = 'opacity 0.3s ease';
-                sectionTitle.style.transition = 'opacity 0.3s ease';
-                sectionDesc.style.transition = 'opacity 0.3s ease';
-                startAutoSwitch();
-            })();
-
-            // Association background images on hover
-            (function () {
-                const cards = document.querySelectorAll('.association-card');
-                const style = document.createElement('style');
-                style.textContent = `.association-card::before { background-image: var(--hover-bg-association, none); }`;
-                document.head.appendChild(style);
-                cards.forEach(card => {
-                    const bg = card.getAttribute('data-bg');
-                    if (bg) card.style.setProperty('--hover-bg-association', `url('${bg}')`);
-                });
-            })();
-        </script>
         <!-- Why Tomercon -->
         <section id="why">
             <div class="container">
@@ -1855,8 +1460,6 @@
                 </div>
             </div>
         </section>
-
-
 
         <!-- CTA Section -->
         <section id="cta">
