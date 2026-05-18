@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>FGT Studios | Brand Storytelling & Creative Agency</title>
-    <!-- Google Fonts & Font Awesome -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <title>FGT Studios | Stories That Build Brands — Modern Creative Agency</title>
+    <!-- Google Fonts + Font Awesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         * {
@@ -16,24 +16,22 @@
 
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #ffffff;
-            color: #0a1c2f;
+            background: #ffffff;
+            color: #111827;
             line-height: 1.5;
             scroll-behavior: smooth;
         }
 
-        /* Color Palette — Blue Theme */
         :root {
-            --primary-deep: #0a2b5e;
-            --primary: #1a4c8c;
-            --primary-light: #2b6eb3;
-            --primary-soft: #eef4fc;
-            --accent: #0f6cbd;
-            --gray-light: #f8fafc;
-            --gray-border: #e2edf7;
-            --shadow-sm: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.02);
-            --shadow-md: 0 20px 25px -12px rgba(0, 0, 0, 0.08);
-            --transition: all 0.3s ease;
+            --primary-dark: #0e2b4f;
+            --primary: #1e5a9c;
+            --primary-light: #3b82f6;
+            --primary-soft: #eef4ff;
+            --gray-light: #f9fafb;
+            --gray-border: #e5e7eb;
+            --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.02);
+            --shadow-md: 0 10px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.02);
+            --transition: all 0.25s ease;
         }
 
         .container {
@@ -42,11 +40,10 @@
             padding: 0 2rem;
         }
 
-        /* Header / Navigation */
+        /* Modern Navbar */
         header {
-            background: rgba(255, 255, 255, 0.96);
-            backdrop-filter: blur(2px);
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
             position: sticky;
             top: 0;
             z-index: 100;
@@ -57,24 +54,24 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1.2rem 0;
+            padding: 1rem 0;
             flex-wrap: wrap;
-            gap: 1rem;
+            gap: 1.5rem;
         }
 
         .logo {
-            font-size: 1.8rem;
+            font-size: 1.7rem;
             font-weight: 800;
             letter-spacing: -0.02em;
-            background: linear-gradient(135deg, var(--primary-deep), var(--primary-light));
-            -webkit-background-clip: text;
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary));
             background-clip: text;
+            -webkit-background-clip: text;
             color: transparent;
         }
 
         .nav-links {
             display: flex;
-            gap: 2.2rem;
+            gap: 2rem;
             align-items: center;
             flex-wrap: wrap;
         }
@@ -82,9 +79,9 @@
         .nav-links a {
             text-decoration: none;
             font-weight: 500;
-            color: #1e2f44;
+            color: #1e293b;
             transition: var(--transition);
-            font-size: 1rem;
+            font-size: 0.95rem;
         }
 
         .nav-links a:hover {
@@ -92,12 +89,12 @@
         }
 
         .btn-outline-nav {
-            background: transparent;
             border: 1.5px solid var(--primary);
             padding: 0.5rem 1.2rem;
-            border-radius: 40px;
+            border-radius: 2rem;
             color: var(--primary);
             font-weight: 600;
+            transition: var(--transition);
         }
 
         .btn-outline-nav:hover {
@@ -110,32 +107,29 @@
             background: var(--primary);
             color: white;
             border: none;
-            padding: 0.9rem 2rem;
-            border-radius: 40px;
+            padding: 0.75rem 1.8rem;
+            border-radius: 2.5rem;
             font-weight: 600;
-            font-size: 1rem;
-            cursor: pointer;
             transition: var(--transition);
             display: inline-block;
             text-decoration: none;
-            box-shadow: 0 2px 6px rgba(26, 76, 140, 0.2);
+            box-shadow: 0 2px 6px rgba(30, 90, 156, 0.2);
         }
 
         .btn-primary:hover {
-            background: var(--primary-deep);
+            background: var(--primary-dark);
             transform: translateY(-2px);
-            box-shadow: 0 12px 20px -12px rgba(10, 43, 94, 0.3);
+            box-shadow: 0 12px 20px -12px rgba(14, 43, 79, 0.3);
         }
 
         .btn-secondary {
             background: transparent;
             border: 1.5px solid var(--primary);
             color: var(--primary);
-            padding: 0.8rem 1.8rem;
-            border-radius: 40px;
+            padding: 0.7rem 1.6rem;
+            border-radius: 2.5rem;
             font-weight: 600;
             transition: var(--transition);
-            cursor: pointer;
             display: inline-block;
         }
 
@@ -147,42 +141,66 @@
         /* Hero Section */
         .hero {
             padding: 5rem 0 6rem;
-            background: linear-gradient(145deg, #ffffff 0%, var(--primary-soft) 100%);
-            border-bottom: 1px solid rgba(26, 76, 140, 0.1);
+            background: linear-gradient(145deg, #ffffff, var(--primary-soft));
+            position: relative;
+            overflow: hidden;
         }
 
         .hero-grid {
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
-            max-width: 800px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
         }
 
-        .hero h1 {
-            font-size: 3.8rem;
+        .hero-content h1 {
+            font-size: 3.5rem;
             font-weight: 800;
-            line-height: 1.2;
             letter-spacing: -0.02em;
-            background: linear-gradient(120deg, #0a2b5e, #1e5a9c);
-            -webkit-background-clip: text;
+            background: linear-gradient(120deg, var(--primary-dark), var(--primary-light));
             background-clip: text;
+            -webkit-background-clip: text;
             color: transparent;
+            margin-bottom: 1rem;
         }
 
-        .hero p {
-            font-size: 1.25rem;
-            color: #2c4258;
-            max-width: 650px;
+        .hero-tagline {
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 1rem;
         }
 
-        .hero-buttons {
-            display: flex;
-            gap: 1.2rem;
-            flex-wrap: wrap;
-            margin-top: 0.5rem;
+        .hero-desc {
+            font-size: 1.1rem;
+            color: #374151;
+            margin-bottom: 2rem;
         }
 
-        /* Section Styling */
+        .hero-image img {
+            width: 100%;
+            border-radius: 1.5rem;
+            box-shadow: var(--shadow-md);
+            transition: transform 0.3s;
+        }
+
+        .hero-image img:hover {
+            transform: scale(1.02);
+        }
+
+        /* Badge style */
+        .badge {
+            display: inline-block;
+            background: rgba(30, 90, 156, 0.1);
+            color: var(--primary);
+            border-radius: 2rem;
+            padding: 0.2rem 0.8rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        /* Section common */
         section {
             padding: 5rem 0;
         }
@@ -192,32 +210,31 @@
         }
 
         .section-title {
-            font-size: 2.2rem;
+            font-size: 2rem;
             font-weight: 700;
             margin-bottom: 1rem;
-            color: var(--primary-deep);
+            color: var(--primary-dark);
             letter-spacing: -0.01em;
         }
 
         .section-subhead {
             font-size: 1.1rem;
-            color: #4a627a;
+            color: #4b5563;
             max-width: 680px;
-            margin-bottom: 3rem;
+            margin-bottom: 2.5rem;
         }
 
-        /* Cards grid (about / services) */
+        /* Cards grid */
         .cards-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
-            margin-top: 1rem;
         }
 
         .card {
             background: white;
             border-radius: 1.5rem;
-            padding: 2rem 1.5rem;
+            padding: 2rem;
             transition: var(--transition);
             border: 1px solid var(--gray-border);
             box-shadow: var(--shadow-sm);
@@ -226,111 +243,112 @@
         .card:hover {
             transform: translateY(-6px);
             box-shadow: var(--shadow-md);
-            border-color: rgba(27, 86, 156, 0.2);
+            border-color: var(--primary-light);
         }
 
         .card-icon {
             font-size: 2.5rem;
             color: var(--primary);
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .service-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 1rem;
+            margin-bottom: 1.2rem;
         }
 
         .card h3 {
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             font-weight: 700;
-            margin-bottom: 0.75rem;
+            margin-bottom: 0.5rem;
         }
 
         .card p {
-            color: #4a5b6e;
-            line-height: 1.5;
+            color: #4b5563;
         }
 
-        /* Stats / Strength */
-        .strength-wrapper {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 3rem;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .strength-left {
-            flex: 1;
-        }
-
-        .stats-row {
-            flex: 1;
-            display: flex;
-            flex-wrap: wrap;
+        /* Double feature (Key Strength + Role) */
+        .double-feature {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
             gap: 2rem;
-            justify-content: space-between;
+            margin: 2rem 0;
         }
 
-        .stat-card {
+        .strength-card {
             background: white;
-            border-radius: 2rem;
-            padding: 1.5rem;
+            border-radius: 1.5rem;
+            padding: 2rem;
             text-align: center;
-            min-width: 150px;
-            flex: 1;
-            box-shadow: var(--shadow-sm);
             border: 1px solid var(--gray-border);
+            transition: var(--transition);
+            box-shadow: var(--shadow-sm);
         }
 
-        .stat-number {
-            font-size: 2.8rem;
-            font-weight: 800;
+        .strength-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--primary);
+        }
+
+        .strength-card i {
+            font-size: 2.5rem;
             color: var(--primary);
-            line-height: 1;
+            margin-bottom: 1rem;
         }
 
-        .stat-label {
-            font-weight: 500;
-            color: #2c3e50;
-            margin-top: 0.5rem;
+        .strength-card h3 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
         }
 
-        /* Ecosystem 4 cols */
+        .strength-card p {
+            font-size: 1rem;
+            color: #374151;
+        }
+
+        /* Ecosystem grid */
         .eco-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            margin: 2rem 0 2rem;
+            gap: 1.5rem;
+            margin-top: 2rem;
         }
 
         .eco-item {
-            text-align: center;
             background: white;
-            border-radius: 1.5rem;
-            padding: 1.8rem 1rem;
+            border-radius: 1.2rem;
+            padding: 1.5rem;
+            text-align: center;
             transition: var(--transition);
             border: 1px solid var(--gray-border);
         }
 
         .eco-item i {
-            font-size: 2.3rem;
+            font-size: 2rem;
             color: var(--primary);
-            margin-bottom: 1rem;
+            margin-bottom: 0.8rem;
         }
 
         .eco-item h4 {
-            font-size: 1.25rem;
             font-weight: 700;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.3rem;
         }
 
-        /* Contact Section */
+        /* Contact section */
         .contact-grid {
             display: grid;
             grid-template-columns: 1fr 1.2fr;
-            gap: 3rem;
+            gap: 2rem;
         }
 
         .contact-info {
             background: var(--primary-soft);
+            border-radius: 1.5rem;
             padding: 2rem;
-            border-radius: 2rem;
         }
 
         .contact-detail {
@@ -341,26 +359,26 @@
         }
 
         .contact-detail i {
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             width: 2rem;
             color: var(--primary);
         }
 
         .contact-form {
             background: white;
+            border-radius: 1.5rem;
             padding: 2rem;
-            border-radius: 2rem;
-            box-shadow: var(--shadow-sm);
             border: 1px solid var(--gray-border);
+            box-shadow: var(--shadow-sm);
         }
 
         .form-group {
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.2rem;
         }
 
         .form-group input, .form-group textarea {
             width: 100%;
-            padding: 1rem;
+            padding: 0.8rem 1rem;
             border-radius: 1rem;
             border: 1px solid var(--gray-border);
             font-family: inherit;
@@ -370,64 +388,57 @@
         .form-group input:focus, .form-group textarea:focus {
             outline: none;
             border-color: var(--primary);
-            box-shadow: 0 0 0 3px rgba(26, 76, 140, 0.1);
+            box-shadow: 0 0 0 3px rgba(30, 90, 156, 0.1);
         }
 
         /* Footer */
         footer {
-            background: #0a1c2f;
-            color: #cbdde9;
+            background: #0f172a;
+            color: #94a3b8;
             padding: 2.5rem 0;
             text-align: center;
-            border-top: 1px solid #1e3a5f;
         }
 
         /* Responsive */
         @media (max-width: 900px) {
-            .hero h1 {
-                font-size: 2.7rem;
+            .hero-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .hero-content h1 {
+                font-size: 2.5rem;
             }
             .contact-grid {
                 grid-template-columns: 1fr;
             }
-            .strength-wrapper {
-                flex-direction: column;
-                align-items: stretch;
+            .double-feature {
+                grid-template-columns: 1fr;
             }
             .navbar {
                 flex-direction: column;
+                text-align: center;
             }
             .container {
                 padding: 0 1.5rem;
             }
-            .section-title {
-                font-size: 1.9rem;
+            section {
+                padding: 3rem 0;
             }
         }
 
         @media (max-width: 550px) {
-            .hero h1 {
-                font-size: 2.2rem;
+            .hero-tagline {
+                font-size: 1.2rem;
             }
             .nav-links {
-                gap: 1.2rem;
+                gap: 1rem;
                 justify-content: center;
             }
         }
 
-        .badge-blue {
-            display: inline-block;
-            background: rgba(26, 76, 140, 0.1);
-            color: var(--primary);
-            border-radius: 40px;
-            padding: 0.25rem 1rem;
-            font-weight: 500;
-            font-size: 0.8rem;
-            margin-bottom: 1rem;
-        }
-
-        .text-center {
-            text-align: center;
+        /* Additional modern touches */
+        .glow-text {
+            text-shadow: 0 0 8px rgba(59,130,246,0.2);
         }
     </style>
 </head>
@@ -441,162 +452,153 @@
                 <a href="#home">Home</a>
                 <a href="#about">About</a>
                 <a href="#services">Services</a>
-                <a href="#strength">Edge</a>
+                <a href="#strength">Strength</a>
                 <a href="#ecosystem">Ecosystem</a>
                 <a href="#contact">Contact</a>
-                <a href="#contact" class="btn-outline-nav">Get Started</a>
+                <a href="#contact" class="btn-outline-nav">Start Project</a>
             </div>
         </div>
     </div>
 </header>
 
 <main>
-    <!-- HERO Section -->
+    <!-- HERO SECTION with fresh image -->
     <section id="home" class="hero">
         <div class="container">
             <div class="hero-grid">
-                <div class="badge-blue">✦ Global creative studio</div>
-                <h1>Stories That Build Powerful Brands</h1>
-                <p>We craft high-impact visual stories, cinematic content, and brand identities that connect, engage, and convert — globally.</p>
-                <div class="hero-buttons">
-                    <a href="#contact" class="btn-primary">Get Started <i class="fas fa-arrow-right" style="margin-left: 8px;"></i></a>
-                    <a href="#about" class="btn-secondary">Discover our work</a>
+                <div class="hero-content">
+                    <div class="badge">✦ Full‑page creative studio</div>
+                    <h1>FGT STUDIOS</h1>
+                    <div class="hero-tagline">Stories That Build Brands</div>
+                    <p class="hero-desc">High‑quality content, branding visuals, and storytelling solutions that drive real business results.</p>
+                    <div class="hero-buttons" style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                        <a href="#services" class="btn-primary">Explore services <i class="fas fa-arrow-right"></i></a>
+                        <a href="#contact" class="btn-secondary">Let's talk</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=800&auto=format" alt="Creative production studio" loading="lazy">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ABOUT Section -->
+    <!-- ABOUT section (exact text from brief) -->
     <section id="about">
         <div class="container">
-            <span class="badge-blue">WHO WE ARE</span>
-            <h2 class="section-title">We turn ideas into compelling brand experiences</h2>
-            <p class="section-subhead">FGT Studios is a creative production and branding agency focused on delivering visually striking and strategically driven content. We combine storytelling, design, and data insights to create content that not only looks exceptional but also performs. From concept development to final execution, we help brands communicate their vision with clarity and impact.</p>
+            <div class="badge">Who we are</div>
+            <h2 class="section-title">About</h2>
+            <p class="section-subhead" style="font-size: 1.2rem;">FGT Studios delivers high-quality content, branding visuals, and storytelling solutions.</p>
             <div class="cards-grid">
                 <div class="card">
-                    <div class="card-icon"><i class="fas fa-video"></i></div>
-                    <h3>360° Content</h3>
-                    <p>End-to-end production — from concept to final delivery, ensuring cohesive and cinematic storytelling.</p>
+                    <img class="service-img" src="https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?w=600&auto=format" alt="Video production">
+                    <i class="fas fa-video card-icon" style="margin-top: 0.5rem;"></i>
+                    <h3>Video Production</h3>
+                    <p>Professional content creation.</p>
                 </div>
                 <div class="card">
-                    <div class="card-icon"><i class="fas fa-palette"></i></div>
-                    <h3>Visual Identity</h3>
-                    <p>Logos, brand systems, typography, and design guidelines that reflect your unique DNA.</p>
+                    <img class="service-img" src="https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?w=600&auto=format" alt="Branding design">
+                    <i class="fas fa-palette card-icon"></i>
+                    <h3>Branding Visuals</h3>
+                    <p>Design and identity.</p>
                 </div>
                 <div class="card">
-                    <div class="card-icon"><i class="fas fa-chart-line"></i></div>
-                    <h3>Data-Driven</h3>
-                    <p>Content optimized for engagement, retention, and measurable results — powered by analytics.</p>
+                    <img class="service-img" src="https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?w=600&auto=format" alt="Social media content">
+                    <i class="fab fa-instagram card-icon"></i>
+                    <h3>Social Media Content</h3>
+                    <p>Engaging digital content.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- SERVICES Section -->
+    <!-- SERVICES section (detailed, but exact short forms also present) -->
     <section id="services" class="section-alt">
         <div class="container">
-            <span class="badge-blue">OUR SERVICES</span>
-            <h2 class="section-title">What We Offer — Creative Services</h2>
-            <p class="section-subhead">Tailored solutions to elevate your brand narrative and digital presence.</p>
+            <div class="badge">What we deliver</div>
+            <h2 class="section-title">Our core services</h2>
             <div class="cards-grid">
                 <div class="card">
                     <div class="card-icon"><i class="fas fa-film"></i></div>
                     <h3>Video Production</h3>
-                    <p>We produce cinematic brand films, advertisements, and motion graphics designed to capture attention and communicate your message effectively.</p>
+                    <p>Professional content creation. Brand films, commercials, motion graphics that captivate and convert.</p>
                 </div>
                 <div class="card">
                     <div class="card-icon"><i class="fas fa-dice-d6"></i></div>
-                    <h3>Branding & Design</h3>
-                    <p>We build strong visual identities — logos, typography, color systems, and brand guidelines that ensure consistency across all platforms.</p>
+                    <h3>Branding Visuals</h3>
+                    <p>Design and identity. Complete visual systems, logos, typography and guidelines for consistent brand expression.</p>
                 </div>
                 <div class="card">
                     <div class="card-icon"><i class="fab fa-instagram"></i></div>
                     <h3>Social Media Content</h3>
-                    <p>We create engaging digital content tailored for modern platforms — reels, short-form videos, and creative assets that drive audience interaction.</p>
+                    <p>Engaging digital content. Scroll‑stopping reels, carousels, and assets built for modern platforms.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- STRENGTH / EDGE Section -->
-    <section id="strength">
-        <div class="container">
-            <span class="badge-blue">OUR EDGE</span>
-            <div class="strength-wrapper">
-                <div class="strength-left">
-                    <h2 class="section-title" style="margin-bottom: 0.5rem;">What Makes Us Different</h2>
-                    <p style="font-size: 1.2rem; color: #2c3e50;">Content that delivers measurable impact — not just aesthetics. Every frame, every pixel is crafted to perform.</p>
-                </div>
-                <div class="stats-row">
-                    <div class="stat-card">
-                        <div class="stat-number">+63%</div>
-                        <div class="stat-label">Engagement Growth</div>
-                        <small style="color: #4f6f8f;">Proven increase in audience interaction</small>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number">2.5x</div>
-                        <div class="stat-label">Conversion Rate</div>
-                        <small style="color: #4f6f8f;">Content designed to drive results</small>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number">🌍</div>
-                        <div class="stat-label">Global Reach</div>
-                        <small style="color: #4f6f8f;">Stories that resonate across cultures and markets</small>
-                    </div>
-                </div>
+    <!-- KEY STRENGTH + ROLE IN ECOSYSTEM (exact wording) -->
+    <div class="container" id="strength-ecosystem">
+        <div class="double-feature">
+            <div class="strength-card" id="strength">
+                <i class="fas fa-chart-line"></i>
+                <h3>Key Strength</h3>
+                <p>Content that drives engagement and conversion.</p>
+            </div>
+            <div class="strength-card" id="role">
+                <i class="fas fa-project-diagram"></i>
+                <h3>Role in Ecosystem</h3>
+                <p>Supports marketing and branding.</p>
             </div>
         </div>
-    </section>
+    </div>
 
-    <!-- ECOSYSTEM INTEGRATION / ROLE Section -->
+    <!-- ECOSYSTEM / deeper integration (optional but adds value) -->
     <section id="ecosystem" class="section-alt">
         <div class="container">
-            <span class="badge-blue">ECOSYSTEM INTEGRATION</span>
-            <h2 class="section-title">Our Role in Your Brand Growth</h2>
-            <p class="section-subhead">We act as a creative partner that strengthens your marketing ecosystem — from strategy to storytelling, we amplify every touchpoint.</p>
+            <div class="badge">Full ecosystem integration</div>
+            <h2 class="section-title">How we amplify your brand</h2>
+            <p class="section-subhead">From strategy to execution – we integrate deeply with your marketing and branding efforts.</p>
             <div class="eco-grid">
                 <div class="eco-item">
                     <i class="fas fa-bullhorn"></i>
-                    <h4>Marketing Amplification</h4>
-                    <p style="font-size: 0.9rem;">Supercharge campaigns with high-impact assets.</p>
+                    <h4>Marketing Support</h4>
+                    <p>Assets that drive campaigns</p>
                 </div>
                 <div class="eco-item">
                     <i class="fas fa-check-circle"></i>
                     <h4>Brand Consistency</h4>
-                    <p style="font-size: 0.9rem;">Cohesive identity across every channel.</p>
+                    <p>Unified visual language</p>
                 </div>
                 <div class="eco-item">
                     <i class="fas fa-book-open"></i>
-                    <h4>Story-Driven Strategy</h4>
-                    <p style="font-size: 0.9rem;">Narrative frameworks that build emotional connection.</p>
+                    <h4>Story-led Strategy</h4>
+                    <p>Emotional resonance</p>
                 </div>
                 <div class="eco-item">
                     <i class="fas fa-handshake"></i>
-                    <h4>Creative Collaboration</h4>
-                    <p style="font-size: 0.9rem;">Seamless integration with your internal teams.</p>
+                    <h4>Creative Partner</h4>
+                    <p>Seamless collaboration</p>
                 </div>
-            </div>
-            <div class="text-center" style="margin-top: 1rem;">
-                <a href="#contact" class="btn-secondary">Explore More <i class="fas fa-arrow-right"></i></a>
             </div>
         </div>
     </section>
 
-    <!-- CONTACT Section -->
+    <!-- CONTACT section -->
     <section id="contact">
         <div class="container">
-            <span class="badge-blue">CONNECT WITH US</span>
-            <h2 class="section-title">Let’s Create Something Meaningful</h2>
-            <p class="section-subhead">Have a project in mind? Let’s collaborate and bring your ideas to life with powerful storytelling and design.</p>
+            <div class="badge">Get in touch</div>
+            <h2 class="section-title">Let’s build your brand story</h2>
+            <p class="section-subhead">Ready to create content that drives engagement and conversion? Reach out to our team.</p>
             <div class="contact-grid">
                 <div class="contact-info">
-                    <i class="fas fa-envelope" style="font-size: 1.8rem; color: var(--primary); margin-bottom: 1rem; display: inline-block;"></i>
-                    <h3 style="margin: 0.5rem 0 1rem 0;">Let’s talk</h3>
+                    <i class="fas fa-envelope" style="font-size: 1.8rem; color: var(--primary); margin-bottom: 1rem;"></i>
+                    <h3 style="margin-bottom: 1rem;">Let’s talk</h3>
                     <div class="contact-detail">
                         <i class="fas fa-envelope"></i> <span>hello@fgtstudios.com</span>
                     </div>
                     <div class="contact-detail">
-                        <i class="fas fa-phone-alt"></i> <span>+91 1234567890</span>
+                        <i class="fas fa-phone-alt"></i> <span>+1 (555) 789‑0123</span>
                     </div>
                     <div class="contact-detail">
                         <i class="fas fa-map-marker-alt"></i> <span>Kozhikode, Kerala, India</span>
@@ -606,20 +608,20 @@
                     </div>
                 </div>
                 <div class="contact-form">
-                    <h3 style="margin-bottom: 1.5rem;">Send a Message</h3>
+                    <h3 style="margin-bottom: 1rem;">Send a message</h3>
                     <form id="contactForm">
                         <div class="form-group">
-                            <input type="text" id="fullname" placeholder="Full Name" required>
+                            <input type="text" id="fullname" placeholder="Full name" required>
                         </div>
                         <div class="form-group">
-                            <input type="email" id="email" placeholder="Email Address" required>
+                            <input type="email" id="email" placeholder="Email address" required>
                         </div>
                         <div class="form-group">
-                            <textarea rows="4" id="project" placeholder="Tell us about your project…" required></textarea>
+                            <textarea rows="4" id="message" placeholder="Tell us about your project…" required></textarea>
                         </div>
-                        <button type="submit" class="btn-primary" style="width: 100%;">Submit Inquiry <i class="fas fa-paper-plane"></i></button>
+                        <button type="submit" class="btn-primary" style="width: 100%;">Submit inquiry <i class="fas fa-paper-plane"></i></button>
                     </form>
-                    <p id="formFeedback" style="margin-top: 1rem; font-size: 0.9rem;"></p>
+                    <p id="formFeedback" style="margin-top: 0.8rem; font-size: 0.85rem;"></p>
                 </div>
             </div>
         </div>
@@ -628,29 +630,32 @@
 
 <footer>
     <div class="container">
-        <p>© 2026 FGT Studios — Crafting Stories That Inspire and Perform.</p>
-        <p style="margin-top: 0.5rem; font-size: 0.85rem;">Built with creativity. Driven by strategy.</p>
+        <p>© 2026 FGT STUDIOS — Stories That Build Brands</p>
+        <p style="margin-top: 0.5rem; font-size: 0.8rem;">High‑quality content · Branding visuals · Storytelling solutions</p>
+        <div style="margin-top: 1rem; display: flex; justify-content: center; gap: 1.2rem;">
+            <a href="#" style="color: #94a3b8;"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" style="color: #94a3b8;"><i class="fab fa-instagram"></i></a>
+            <a href="#" style="color: #94a3b8;"><i class="fab fa-behance"></i></a>
+        </div>
     </div>
 </footer>
 
+<!-- Smooth scroll & form handling -->
 <script>
-    // Smooth scroll for all anchor links
+    // Smooth anchor scroll
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             const targetId = this.getAttribute('href');
             if (targetId === "#" || targetId === "") return;
-            const targetElement = document.querySelector(targetId);
-            if (targetElement) {
+            const targetEl = document.querySelector(targetId);
+            if (targetEl) {
                 e.preventDefault();
-                targetElement.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
+                targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
             }
         });
     });
 
-    // Contact form handling (demo)
+    // Contact form demo
     const form = document.getElementById('contactForm');
     const feedback = document.getElementById('formFeedback');
     if (form) {
@@ -658,20 +663,18 @@
             e.preventDefault();
             const name = document.getElementById('fullname').value.trim();
             const email = document.getElementById('email').value.trim();
-            const project = document.getElementById('project').value.trim();
-            if (!name || !email || !project) {
-                feedback.innerHTML = '<span style="color:#c2410c;">❌ Please fill all fields.</span>';
+            const msg = document.getElementById('message').value.trim();
+            if (!name || !email || !msg) {
+                feedback.innerHTML = '<span style="color:#c2410c;">❌ Please fill in all fields.</span>';
                 return;
             }
             if (!email.includes('@') || !email.includes('.')) {
                 feedback.innerHTML = '<span style="color:#c2410c;">⚠️ Please enter a valid email.</span>';
                 return;
             }
-            feedback.innerHTML = '<span style="color:#1a4c8c;">✨ Thank you! Our team will get back to you soon.</span>';
+            feedback.innerHTML = '<span style="color:#1e5a9c;">✨ Thanks! Our team will reach out soon.</span>';
             form.reset();
-            setTimeout(() => {
-                feedback.innerHTML = '';
-            }, 4000);
+            setTimeout(() => { feedback.innerHTML = ''; }, 4000);
         });
     }
 </script>
