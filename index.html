@@ -1,14 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Tomercon Groups | Global Ecosystem Architects</title>
     <!-- Google Fonts -->
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
@@ -29,11 +26,9 @@
         ::-webkit-scrollbar {
             width: 6px;
         }
-
         ::-webkit-scrollbar-track {
             background: #0a0a0a;
         }
-
         ::-webkit-scrollbar-thumb {
             background: #3b9eff;
             border-radius: 10px;
@@ -42,18 +37,16 @@
         /* Sections with parallax backgrounds – unique images */
         section {
             position: relative;
-            min-height: 103vh;
+            min-height: 85vh;
             display: flex;
             align-items: center;
-            padding: 6rem 0;
-            /* Increased padding for more breathing room */
-
+            padding: 5rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
             background-attachment: fixed;
         }
-
         section::before {
             content: "";
             position: absolute;
@@ -64,7 +57,6 @@
             background: linear-gradient(135deg, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.75) 100%);
             z-index: 0;
         }
-
         section::after {
             content: "";
             position: absolute;
@@ -76,485 +68,191 @@
             z-index: 0;
             pointer-events: none;
         }
-
         .container {
             position: relative;
             z-index: 2;
             max-width: 1400px;
             margin: 0 auto;
-            padding: 0 6%;
-            /* Slightly wider side padding */
+            padding: 0 5%;
             width: 100%;
         }
 
         /* NEW UNIQUE BACKGROUNDS */
-        #hero {
-            background-image: url('https://images.pexels.com/photos/3182746/pexels-photo-3182746.jpeg?auto=compress&cs=tinysrgb&w=1600');
-            background-position: center 25%;
-        }
+        #hero { background-image: url('https://images.pexels.com/photos/3182746/pexels-photo-3182746.jpeg?auto=compress&cs=tinysrgb&w=1600'); background-position: center 25%; }
+        #intro { background-image: url('https://images.pexels.com/photos/3183172/pexels-photo-3183172.jpeg?auto=compress&cs=tinysrgb&w=1600'); background-position: center 35%; }
+        #model { background-image: url('https://images.pexels.com/photos/3184306/pexels-photo-3184306.jpeg?auto=compress&cs=tinysrgb&w=1600'); background-position: center 45%; }
+        #companies { background-image: url('https://images.pexels.com/photos/3184287/pexels-photo-3184287.jpeg?auto=compress&cs=tinysrgb&w=1600'); background-position: center 30%; }
+        #ventures { background-image: url('https://images.pexels.com/photos/3183153/pexels-photo-3183153.jpeg?auto=compress&cs=tinysrgb&w=1600'); background-position: center 50%; }
+        #why { background-image: url('https://images.pexels.com/photos/3184295/pexels-photo-3184295.jpeg?auto=compress&cs=tinysrgb&w=1600'); background-position: center 55%; }
+        #blog { background-image: url('https://images.pexels.com/photos/3184302/pexels-photo-3184302.jpeg?auto=compress&cs=tinysrgb&w=1600'); background-position: center 40%; }
+        #cta { background-image: url('https://images.pexels.com/photos/3182747/pexels-photo-3182747.jpeg?auto=compress&cs=tinysrgb&w=1600'); background-position: center 20%; min-height: 60vh; }
 
-        #intro {
-            background-image: url('https://images.pexels.com/photos/3183172/pexels-photo-3183172.jpeg?auto=compress&cs=tinysrgb&w=1600');
-            background-position: center 35%;
-        }
-
-        #model {
-            background-image: url('https://images.pexels.com/photos/3184306/pexels-photo-3184306.jpeg?auto=compress&cs=tinysrgb&w=1600');
-            background-position: center 45%;
-        }
-
-        #companies {
-            background-image: url('https://images.pexels.com/photos/3184287/pexels-photo-3184287.jpeg?auto=compress&cs=tinysrgb&w=1600');
-            background-position: center 30%;
-        }
-
-        #ventures {
-            background-image: url('https://images.pexels.com/photos/3184303/pexels-photo-3184303.jpeg?auto=compress&cs=tinysrgb&w=1600');
-            background-position: center 50%;
-        }
-
-        #why {
-            background-image: url('https://images.pexels.com/photos/3184295/pexels-photo-3184295.jpeg?auto=compress&cs=tinysrgb&w=1600');
-            background-position: center 55%;
-        }
-
-        #cta {
-            background-image: url('https://images.pexels.com/photos/3182747/pexels-photo-3182747.jpeg?auto=compress&cs=tinysrgb&w=1600');
-            background-position: center 20%;
-            min-height: 60vh;
-        }
-
-       
-
-        /* Typography - INCREASED SIZES */
-        h1,
-        h2,
-        h3 {
+        /* Typography */
+        h1, h2, h3 {
             font-family: 'Space Grotesk', sans-serif;
             font-weight: 600;
             letter-spacing: -0.02em;
         }
-
         .hero-title {
-            font-size: clamp(3.5rem, 9vw, 5rem);
-            /* Larger hero */
-            background: linear-gradient(125deg, #FFFFFF 20%, #4548c0d6 50%, #3143dec7 90%);
+            font-size: clamp(3rem, 8vw, 5.5rem);
+            background: linear-gradient(135deg, #FFFFFF 20%, #a8e6cf 50%, #3b9eff 90%);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
             line-height: 1.1;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
             text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
         }
-
         .hero-sub {
-            font-size: clamp(1.2rem, 2.8vw, 1.6rem);
-            /* Bigger subtext */
+            font-size: clamp(1rem, 2.5vw, 1.35rem);
             color: #f5f5f5;
-            max-width: 650px;
-            /* More width */
-            margin-bottom: 2.5rem;
+            max-width: 550px;
+            margin-bottom: 2rem;
             text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
-            line-height: 1.4;
         }
-
         .section-badge {
             display: inline-block;
-            font-size: 0.95rem;
-            /* Slightly larger */
+            font-size: 0.8rem;
             text-transform: uppercase;
-            letter-spacing: 5px;
-            font-weight: 700;
+            letter-spacing: 4px;
+            font-weight: 600;
             color: #3b9eff;
-            margin-bottom: 1rem;
+            margin-bottom: 0.8rem;
             border-left: 3px solid #3b9eff;
-            padding-left: 14px;
+            padding-left: 12px;
         }
-
         .section-title {
-            font-size: clamp(2.2rem, 5vw, 3.8rem);
-            /* Bigger titles */
-            margin-bottom: 1.2rem;
+            font-size: clamp(1.8rem, 4vw, 3rem);
+            margin-bottom: 1rem;
             color: #ffffff;
             text-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
-            line-height: 1.2;
+        }
+        .section-desc {
+            font-size: 1.05rem;
+            line-height: 1.55;
+            color: #ececec;
+            max-width: 550px;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
         }
 
-
-        /* Grid layouts - more gap for spaciousness */
-        .grid-ecosystem,
-        .grid-featured,
-        .grid-ventures,
-        .grid-why,
-        .blog-grid {
+        /* NO CARDS – clean border-based items */
+        .grid-ecosystem, .grid-featured, .grid-ventures, .grid-why, .blog-grid {
             display: grid;
-            gap: 2.5rem;
-            /* Increased gap */
-            margin-top: 3rem;
+            gap: 2rem;
+            margin-top: 2rem;
         }
+        .grid-ecosystem { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+        .grid-featured { grid-template-columns: repeat(5, minmax(220px, 1fr)); }
+        .grid-ventures { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+        .grid-why { grid-template-columns: repeat(5, minmax(220px, 1fr)); }
+        .blog-grid { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
 
-        .grid-ecosystem {
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        }
-
-        /* wider min */
-        .grid-featured {
-            grid-template-columns: repeat(5, minmax(240px, 1fr));
-        }
-
-        /* slightly wider */
-        .grid-ventures {
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        }
-
-        .grid-why {
-            grid-template-columns: repeat(3, minmax(220px, 1fr));
-        }
-
-        .blog-grid {
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-        }
-
-        .eco-item,
-        .featured-item,
-        .venture-item,
-        .why-item,
-        .blog-item {
-            padding: 1.5rem 0;
-            /* more vertical padding */
-            border-bottom: 1px solid rgba(59, 158, 255, 0.3);
-            transition: all 0.3s ease;
+        .eco-item, .featured-item, .venture-item, .why-item, .blog-item {
+            padding: 1.2rem 0;
+            border-bottom: 1px solid rgba(59, 158, 255, 0.25);
+            transition: all 0.25s ease;
             background: transparent;
             backdrop-filter: none;
             border-radius: 0;
             box-shadow: none;
         }
-
-        .eco-item:hover,
-        .featured-item:hover,
-        .venture-item:hover,
-        .why-item:hover,
-        .blog-item:hover {
+        .eco-item:hover, .featured-item:hover, .venture-item:hover, .why-item:hover, .blog-item:hover {
             border-bottom-color: #3b9eff;
-            transform: translateX(6px);
+            transform: translateX(4px);
         }
-
-        .eco-item i,
-        .featured-item i,
-        .venture-item i,
-        .why-item i {
-            font-size: 2.4rem;
-            /* bigger icons */
+        .eco-item i, .featured-item i, .venture-item i, .why-item i {
+            font-size: 2rem;
             background: linear-gradient(135deg, #a8e6cf, #3b9eff);
             background-clip: text;
             -webkit-background-clip: text;
             color: transparent;
-            margin-bottom: 1rem;
+            margin-bottom: 0.8rem;
             display: inline-block;
         }
-
-        .eco-item h3,
-        .featured-item h3,
-        .venture-item h3,
-        .why-item h3,
-        .why-item h4 {
-            font-size: 1.5rem;
-            /* larger headings */
-            margin-bottom: 0.75rem;
+        .eco-item h3, .featured-item h3, .venture-item h3, .why-item h3, .why-item h4 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
             color: #ffffff;
         }
-
-        .eco-item p,
-        .featured-item p,
-        .venture-item p,
-        .why-item p {
+        .eco-item p, .featured-item p, .venture-item p, .why-item p {
             color: #e0e0e0;
-            font-size: 1rem;
-            /* bigger text */
-            line-height: 1.5;
+            font-size: 0.92rem;
         }
-
-        /* Professional Blog Grid */
-        .pro-blog-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        /* Card Styles */
-        .pro-card {
-            background: rgba(12, 22, 38, 0.75);
-            backdrop-filter: blur(6px);
-            border-radius: 1.5rem;
-            overflow: hidden;
-            transition: all 0.35s cubic-bezier(0.2, 0.9, 0.4, 1.1);
-            border: 1px solid rgba(59, 158, 255, 0.25);
-            box-shadow: 0 18px 30px -12px rgba(0, 0, 0, 0.5);
-            display: flex;
-            flex-direction: column;
-        }
-
-        .pro-card:hover {
-            transform: translateY(-8px);
-            border-color: rgba(59, 158, 255, 0.7);
-            box-shadow: 0 28px 40px -14px rgba(59, 158, 255, 0.25);
-        }
-
-        /* Image Section (Top) */
-        .card-image {
-            position: relative;
-            height: 220px;
-            overflow: hidden;
-        }
-
-        .card-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-
-        .pro-card:hover .card-image img {
-            transform: scale(1.05);
-        }
-
-        .image-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5));
-            pointer-events: none;
-        }
-
-        .card-category {
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-            background: rgba(59, 158, 255, 0.9);
-            backdrop-filter: blur(4px);
-            padding: 0.3rem 0.9rem;
-            border-radius: 30px;
-            font-size: 0.7rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            color: #ffffff;
-            z-index: 2;
-            transition: all 0.2s;
-        }
-
-        .pro-card:hover .card-category {
-            background: #5a2dff;
-        }
-
-        /* Card Body (Middle) */
-        .card-body {
-            padding: 1.5rem 1.5rem 0.5rem 1.5rem;
-            flex: 1;
-        }
-
-        .card-meta {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 0.8rem;
-            font-size: 0.7rem;
-            color: #b8d0ff;
-        }
-
-        .card-meta i {
-            margin-right: 0.3rem;
-            color: #3b9eff;
-        }
-
-        .card-title {
-            font-size: 1.45rem;
-            font-weight: 700;
-            line-height: 1.3;
-            margin-bottom: 0.8rem;
-            color: #ffffff;
-            transition: color 0.2s;
-        }
-
-        .pro-card:hover .card-title {
-            color: #a8b3e6;
-        }
-
-        .card-text {
-            color: #ccddf8;
-            font-size: 0.9rem;
-            line-height: 1.55;
-            margin-bottom: 0;
-        }
-
-        /* Card Footer (Bottom) */
-        .card-footer {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 1.5rem 1.5rem 1.5rem;
-            border-top: 1px solid rgba(59, 158, 255, 0.15);
-            margin-top: 0.5rem;
-        }
-
-        .read-more-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: transparent;
-            color: #3b9eff;
-            font-weight: 600;
-            text-decoration: none;
-            font-size: 0.85rem;
-            padding: 0.4rem 0;
-            transition: all 0.25s;
-            border-bottom: 1px solid transparent;
-        }
-
-        .read-more-btn i {
-            font-size: 0.7rem;
-            transition: transform 0.2s;
-        }
-
-        .read-more-btn:hover {
-            color: #fbfbfc;
-            gap: 12px;
-            border-bottom-color: #2d3bff;
-        }
-
-        .read-more-btn:hover i {
-            transform: translateX(4px);
-        }
-
-        .author {
-            font-size: 0.7rem;
-            color: #8aa2c5;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-            background: rgba(59, 158, 255, 0.08);
-            padding: 0.2rem 0.7rem;
-            border-radius: 30px;
-        }
-
-        .author i {
+        .blog-item .blog-meta {
             font-size: 0.75rem;
             color: #3b9eff;
+            letter-spacing: 1px;
+            margin-bottom: 0.6rem;
         }
-
-        /* Entrance animation (compatible with global observer) */
-        .animate-on-scroll.fade-up {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.6s ease, transform 0.6s ease;
+        .blog-item h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
         }
-
-        .animate-on-scroll.fade-up.animated {
-            opacity: 1;
-            transform: translateY(0);
+        .read-more {
+            color: #3b9eff;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 0.8rem;
+            transition: 0.2s;
         }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .pro-blog-grid {
-                gap: 1.5rem;
-            }
-
-            .card-image {
-                height: 180px;
-            }
-
-            .card-body {
-                padding: 1.2rem 1.2rem 0.2rem 1.2rem;
-            }
-
-            .card-title {
-                font-size: 1.3rem;
-            }
-
-            .card-footer {
-                padding: 0.8rem 1.2rem 1.2rem 1.2rem;
-                flex-wrap: wrap;
-                gap: 0.8rem;
-            }
+        .read-more:hover {
+            color: #ff2d9e;
+            gap: 0.8rem;
         }
 
         /* Intro two‑column */
         .intro-wrapper {
             display: flex;
             flex-wrap: wrap;
-            gap: 4rem;
-            /* more gap */
+            gap: 3rem;
             align-items: center;
         }
-
-        .intro-text {
-            flex: 1.5;
-        }
-
+        .intro-text { flex: 1.2; }
         .intro-image {
-            flex: 1.5;
+            flex: 0.9;
             text-align: center;
         }
-
         .intro-image img {
             max-width: 100%;
-            border-radius: 32px;
-            box-shadow: 0 20px 40px -12px black;
-            border: 1px solid rgba(59, 158, 255, 0.5);
-        }
-
-        .intro-text .section-desc {
-            max-width: 100%;
-            font-size: 1.2rem;
+            border-radius: 28px;
+            box-shadow: 0 15px 35px -12px black;
+            border: 1px solid rgba(59,158,255,0.4);
         }
 
         /* CTA section */
         .cta-card {
-            background: rgba(10, 10, 18, 0.88);
-            backdrop-filter: blur(14px);
-            border-radius: 40px;
-            padding: 3.5rem 2.5rem;
+            background: rgba(10, 10, 18, 0.85);
+            backdrop-filter: blur(12px);
+            border-radius: 32px;
+            padding: 3rem 2rem;
             text-align: center;
-            border: 1px solid rgba(59, 158, 255, 0.6);
+            border: 1px solid rgba(59, 158, 255, 0.5);
         }
-
-        .cta-card h2 {
-            font-size: clamp(2rem, 5vw, 3rem);
-            margin-bottom: 1rem;
-        }
-
-        .cta-card p {
-            font-size: 1.2rem;
-            margin: 1rem 0 1.8rem;
-        }
-
         .btn-primary {
-            background: linear-gradient(135deg, #444eabcc, #3b9eff);
+            background: linear-gradient(135deg, #a8e6cf, #3b9eff);
             border: none;
             color: #0a0a0a;
-            padding: 1rem 2.5rem;
-            border-radius: 50px;
+            padding: 0.8rem 2rem;
+            border-radius: 40px;
             font-weight: 700;
             cursor: pointer;
             transition: 0.3s;
-            font-size: 1.05rem;
+            font-size: 0.95rem;
             display: inline-flex;
             align-items: center;
-            gap: 0.6rem;
+            gap: 0.5rem;
             text-decoration: none;
         }
-
         .btn-primary:hover {
             background: linear-gradient(135deg, #bcf0e0, #5aabff);
             transform: scale(1.02);
             box-shadow: 0 0 15px rgba(59, 158, 255, 0.6);
         }
 
-        /* Navbar - no size change but keep stable */
+        /* Navbar */
         .navbar {
             position: fixed;
             top: 0;
@@ -565,44 +263,38 @@
             background: rgba(10, 20, 36, 0.85);
             border-bottom: 1px solid #1f4562;
         }
-
         .nav-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1rem 2rem;
-            max-width: 1400px;
+            padding: 1rem 1.5rem;
+            max-width: 1280px;
             margin: 0 auto;
             width: 100%;
         }
-
         .logo {
-            font-size: 1.9rem;
+            font-size: 1.8rem;
             font-weight: 700;
             font-family: 'DM Serif Display', serif;
-            background: linear-gradient(244deg, #685cf8b8, #79b4ee);
+            background: linear-gradient(135deg, #a8e6cf, #3b9eff);
             background-clip: text;
             -webkit-background-clip: text;
             color: transparent;
             text-decoration: none;
         }
-
         .nav-links {
             display: flex;
-            gap: 2.2rem;
+            gap: 2rem;
             align-items: center;
             flex-wrap: wrap;
         }
-
         .nav-links a {
             text-decoration: none;
             color: #eef5ff;
             font-weight: 500;
-            font-size: 1rem;
             transition: 0.2s;
             position: relative;
         }
-
         .nav-links a::after {
             content: '';
             position: absolute;
@@ -613,12 +305,10 @@
             background: linear-gradient(135deg, #a8e6cf, #3b9eff);
             transition: width 0.3s;
         }
-
         .nav-links a:hover::after,
         .nav-links a.active::after {
             width: 100%;
         }
-
         .mobile-menu-btn {
             display: none;
             font-size: 1.5rem;
@@ -627,7 +317,6 @@
             color: #eef5ff;
             cursor: pointer;
         }
-
         .mobile-nav {
             display: none;
             flex-direction: column;
@@ -636,53 +325,31 @@
             background: rgba(10, 20, 36, 0.85);
             backdrop-filter: blur(12px);
         }
-
         .mobile-nav a {
             padding: 0.5rem 0;
             text-decoration: none;
             color: #eef5ff;
-            font-size: 1.1rem;
         }
-
         @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-
-            .mobile-menu-btn {
-                display: block;
-            }
-
-            .grid-featured {
-                grid-template-columns: 1fr;
-            }
-
-            .grid-why {
-                grid-template-columns: 1fr;
-            }
-
-            .container {
-                padding: 0 5%;
-            }
+            .nav-links { display: none; }
+            .mobile-menu-btn { display: block; }
         }
 
         /* Footer */
         footer {
             text-align: center;
-            padding: 2rem;
+            padding: 1.5rem;
             background: #050505;
-            font-size: 0.9rem;
+            font-size: 0.8rem;
             color: #bbb;
             border-top: 1px solid rgba(59, 158, 255, 0.2);
         }
-
         .social-links a {
             color: #bbb;
-            margin: 0 0.6rem;
-            font-size: 1.3rem;
+            margin: 0 0.5rem;
+            font-size: 1.2rem;
             transition: 0.2s;
         }
-
         .social-links a:hover {
             color: #3b9eff;
         }
@@ -692,1278 +359,295 @@
             opacity: 0;
             transition: opacity 0.7s ease, transform 0.7s ease;
         }
-
         .animate-on-scroll.fade-up {
             transform: translateY(40px);
         }
-
         .animate-on-scroll.fade-up.animated {
             opacity: 1;
             transform: translateY(0);
         }
-
         .animate-on-scroll.zoom-in {
             transform: scale(0.96);
         }
-
         .animate-on-scroll.zoom-in.animated {
             opacity: 1;
             transform: scale(1);
         }
-
         .animate-on-scroll.fade-right {
             transform: translateX(-40px);
         }
-
         .animate-on-scroll.fade-right.animated {
             opacity: 1;
             transform: translateX(0);
         }
-
         .animate-on-scroll.fade-left {
             transform: translateX(40px);
         }
-
         .animate-on-scroll.fade-left.animated {
             opacity: 1;
             transform: translateX(0);
         }
-
         .animate-on-scroll.flip-up {
             transform: perspective(600px) rotateX(20deg);
         }
-
         .animate-on-scroll.flip-up.animated {
             opacity: 1;
             transform: perspective(600px) rotateX(0deg);
         }
-
-        /* Additional Responsive touch */
-        @media (max-width: 1100px) {
-
-            .grid-featured,
-            .grid-why {
-                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            }
-
-            .section-desc {
-                font-size: 1.1rem;
-            }
-        }
     </style>
 </head>
-
 <body>
 
-    <!-- Navbar -->
-    <div class="navbar">
-        <div class="nav-container">
-            <a href="index.html" class="logo">Tomercon Groups</a>
-            <div class="nav-links">
-                <a href="index.html" class="nav-link active">Home</a>
-                <a href="about.html">About</a>
-                <a href="#model">Model</a>
-                <a href="#companies">Companies</a>
-                <a href="#ventures">Ventures</a>
-                <a href="blog.html">Blog</a>
-                <a href="contact.html">Contact</a>
-            </div>
-            <button class="mobile-menu-btn" id="mobileMenuBtn"><i class="fas fa-bars"></i></button>
-        </div>
-        <div class="mobile-nav" id="mobileNav">
-            <a href="index.html">Home</a>
+<!-- Navbar -->
+<div class="navbar">
+    <div class="nav-container">
+        <a href="index.html" class="logo">Tomercon Groups</a>
+        <div class="nav-links">
+            <a href="index.html" class="nav-link active">Home</a>
             <a href="about.html">About</a>
             <a href="#model">Model</a>
             <a href="#companies">Companies</a>
             <a href="#ventures">Ventures</a>
-            <a href="blog.html">Blog</a>
-            <a href="contact.html">Contact</a>
+            <a href="#blog">Blog</a>
+            <a href="about.html#contact">Contact</a>
+        </div>
+        <button class="mobile-menu-btn" id="mobileMenuBtn"><i class="fas fa-bars"></i></button>
+    </div>
+    <div class="mobile-nav" id="mobileNav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="#model">Model</a>
+        <a href="#companies">Companies</a>
+        <a href="#ventures">Ventures</a>
+        <a href="#blog">Blog</a>
+        <a href="about.html#contact">Contact</a>
+    </div>
+</div>
+
+<main>
+    <!-- Hero Section (no animation needed on hero, it's visible immediately) -->
+    <section id="hero">
+        <div class="container">
+            <div class="animate-on-scroll fade-up" data-animate>
+                <span class="section-badge">GLOBAL ECOSYSTEM ARCHITECTS</span>
+                <h1 class="hero-title">We Don’t Just Build Businesses.<br>We Build Ecosystems.</h1>
+                <p class="hero-sub">A multi-industry group driving innovation across technology, marketing, education, and sports. Build. Scale. Lead.</p>
+                <a href="about.html#contact" class="btn-primary">Explore Ecosystem <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Introduction Section -->
+    <section id="intro">
+        <div class="container intro-wrapper">
+            <div class="intro-text animate-on-scroll fade-right" data-animate>
+                <span class="section-badge">INTEGRATED ECOSYSTEM</span>
+                <h2 class="section-title">Introduction</h2>
+                <p class="section-desc" style="max-width: 100%;">Tomercon Groups is a diversified business ecosystem focused on building scalable ventures and delivering real-world solutions. We combine technology, strategy, and creativity to create businesses that are not only profitable but impactful. Our strength lies in integration — every company within the group contributes to a larger ecosystem designed for growth and sustainability.</p>
+            </div>
+            <div class="intro-image animate-on-scroll fade-left" data-animate data-delay="150">
+                <img src="img1.cms" alt="Ecosystem Illustration" onerror="this.src='https://placehold.co/600x400/0a1424/3b9eff?text=Ecosystem'">
+            </div>
+        </div>
+    </section>
+
+    <!-- Ecosystem Model Section -->
+    <section id="model">
+        <div class="container">
+            <div class="animate-on-scroll fade-up" data-animate>
+                <span class="section-badge">OUR FRAMEWORK</span>
+                <h2 class="section-title">Our Ecosystem Model</h2>
+                <p class="section-desc">We operate through a structured ecosystem where each vertical supports and strengthens the others.</p>
+            </div>
+            <div class="grid-ecosystem">
+                <div class="eco-item animate-on-scroll zoom-in" data-animate data-delay="100"><i class="fas fa-microchip"></i><h3>Technology Development</h3><p>Building scalable digital infrastructure and software solutions.</p></div>
+                <div class="eco-item animate-on-scroll zoom-in" data-animate data-delay="150"><i class="fas fa-chart-line"></i><h3>Marketing & Growth</h3><p>Data-driven user acquisition and brand scaling.</p></div>
+                <div class="eco-item animate-on-scroll zoom-in" data-animate data-delay="200"><i class="fas fa-bullhorn"></i><h3>Business Strategy</h3><p>High-level consulting for market expansion.</p></div>
+                <div class="eco-item animate-on-scroll zoom-in" data-animate data-delay="250"><i class="fas fa-brain"></i><h3>Innovation & AI</h3><p>Cutting-edge AI integration and future-tech labs.</p></div>
+                <div class="eco-item animate-on-scroll zoom-in" data-animate data-delay="300"><i class="fas fa-film"></i><h3>Media & Content</h3><p>Storytelling and creative production power.</p></div>
+                <div class="eco-item animate-on-scroll zoom-in" data-animate data-delay="350"><i class="fas fa-graduation-cap"></i><h3>Education & Career Platforms</h3><p>Empowering learners and professionals worldwide.</p></div>
+                <div class="eco-item animate-on-scroll zoom-in" data-animate data-delay="400"><i class="fas fa-futbol"></i><h3>Sports & Social Development</h3><p>Community-driven sports initiatives and impact.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Companies -->
+    <section id="companies">
+        <div class="container">
+            <div class="animate-on-scroll fade-up" data-animate>
+                <span class="section-badge">FLAGSHIP VENTURES</span>
+                <h2 class="section-title">Featured Companies</h2>
+                <p class="section-desc">Flagship ventures driving the Tomercon ecosystem.</p>
+            </div>
+            <div class="grid-featured">
+                <div class="featured-item animate-on-scroll zoom-in" data-animate data-delay="100"><i class="fas fa-laptop-code"></i><h3>Tomercon Developers LLP</h3><p>The technology backbone building apps and digital systems.</p></div>
+                <div class="featured-item animate-on-scroll zoom-in" data-animate data-delay="150"><i class="fas fa-chart-line"></i><h3>Tomercon Ads</h3><p>Growth engine driving marketing and user acquisition.</p></div>
+                <div class="featured-item animate-on-scroll zoom-in" data-animate data-delay="200"><i class="fas fa-handshake"></i><h3>Tomercon Consultancy</h3><p>Strategy unit focused on business scaling.</p></div>
+                <div class="featured-item animate-on-scroll zoom-in" data-animate data-delay="250"><i class="fas fa-flask"></i><h3>Tomercon Fusion Labs</h3><p>Innovation hub for AI and future technologies.</p></div>
+                <a href="fgt.html" style="text-decoration: none; color: inherit;">
+                <div class="featured-item animate-on-scroll zoom-in" data-animate data-delay="300"><i class="fas fa-video"></i><h3>FGT Studios</h3><p>Creative production and storytelling unit.</p></div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ventures Section -->
+    <section id="ventures">
+        <div class="container">
+            <div class="animate-on-scroll fade-up" data-animate>
+                <span class="section-badge">NEXT‑GEN PLATFORMS</span>
+                <h2 class="section-title">Ventures</h2>
+                <p class="section-desc">Next-generation platforms reshaping education and career discovery.</p>
+            </div>
+            <div class="grid-ventures">
+                <div class="venture-item animate-on-scroll fade-right" data-animate data-delay="100"><i class="fas fa-robot"></i><h3>Learnyor</h3><p>AI-powered learning platform simplifying education for global learners.</p></div>
+                <div class="venture-item animate-on-scroll fade-left" data-animate data-delay="150"><i class="fas fa-briefcase"></i><h3>QITE</h3><p>Career experience platform helping individuals choose the right path.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Tomercon -->
+    <section id="why">
+        <div class="container">
+            <div class="animate-on-scroll fade-up" data-animate>
+                <span class="section-badge">WHY US</span>
+                <h2 class="section-title">Why Tomercon Groups</h2>
+            </div>
+            <div class="grid-why">
+                <div class="why-item animate-on-scroll flip-up" data-animate data-delay="100"><i class="fas fa-industry"></i><h4>Multi-industry expertise</h4><p>Deep knowledge across tech, marketing, education & sports</p></div>
+                <div class="why-item animate-on-scroll flip-up" data-animate data-delay="150"><i class="fas fa-rocket"></i><h4>Strong execution mindset</h4><p>Ideas transformed into scalable realities</p></div>
+                <div class="why-item animate-on-scroll flip-up" data-animate data-delay="200"><i class="fas fa-lightbulb"></i><h4>Innovation-driven approach</h4><p>AI-first, future-ready methodologies</p></div>
+                <div class="why-item animate-on-scroll flip-up" data-animate data-delay="250"><i class="fas fa-link"></i><h4>Integrated ecosystem advantage</h4><p>Synergies that multiply growth potential</p></div>
+                <div class="why-item animate-on-scroll flip-up" data-animate data-delay="300"><i class="fas fa-chart-line"></i><h4>Focus on long-term impact</h4><p>Sustainable value creation for all stakeholders</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog">
+        <div class="container">
+            <div class="animate-on-scroll fade-up" data-animate>
+                <span class="section-badge">INSIGHTS</span>
+                <h2 class="section-title">Insights & Stories</h2>
+                <p class="section-desc">Latest thoughts from our ecosystem leaders.</p>
+            </div>
+            <div class="blog-grid">
+                <div class="blog-item animate-on-scroll zoom-in" data-animate data-delay="100">
+                    <div class="blog-meta"><i class="far fa-calendar-alt"></i> March 15, 2025</div>
+                    <h3>Why Ecosystems Beat Standalone Businesses</h3>
+                    <p>Exploring how interconnected ventures create exponential value.</p>
+                    <a href="#" class="read-more">Read more <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="blog-item animate-on-scroll zoom-in" data-animate data-delay="150">
+                    <div class="blog-meta"><i class="far fa-calendar-alt"></i> March 5, 2025</div>
+                    <h3>AI in Education: The Learnyor Approach</h3>
+                    <p>How adaptive learning platforms are closing skill gaps.</p>
+                    <a href="#" class="read-more">Read more <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="blog-item animate-on-scroll zoom-in" data-animate data-delay="200">
+                    <div class="blog-meta"><i class="far fa-calendar-alt"></i> February 20, 2025</div>
+                    <h3>Sports & Social Development: Our Commitment</h3>
+                    <p>Building community through grassroots sports.</p>
+                    <a href="#" class="read-more">Read more <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="cta">
+        <div class="container">
+            <div class="cta-card animate-on-scroll zoom-in" data-animate>
+                <h2 style="font-size: clamp(1.8rem,4vw,2.5rem);">Let’s Build Something Impactful Together</h2>
+                <p style="margin:1rem 0 1.5rem;">Partner with Tomercon Groups to scale your vision.</p>
+                <a href="about.html#contact" class="btn-primary">Get in touch <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="container">
+        <p>© 2025 Tomercon Groups — tomerconbusiness.com | Global Ecosystem Architects</p>
+        <div class="social-links">
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
         </div>
     </div>
-
-    <main>
-        <!-- Hero Section -->
-        <section id="hero">
-            <div class="container">
-                <div class="animate-on-scroll fade-up" data-animate>
-                    <span class="section-badge">GLOBAL ECOSYSTEM ARCHITECTS</span>
-                    <h1 class="hero-title">We Don't Just Build Businesses.<br>We Build Ecosystems.</h1>
-                    <p class="hero-sub">A multi-industry group driving innovation across technology, marketing,
-                        education, and sports.<br> Build. Scale. Lead.</p>
-                    <a href="contact.html" class="btn-primary">Explore Ecosystem <i class="fas fa-arrow-right"></i></a>
-                </div>
-            </div>
-        </section>
-
-        <!-- Introduction Section -->
-        <section id="intro">
-            <div class="container intro-wrapper">
-                <div class="intro-text animate-on-scroll fade-right" data-animate>
-                    <span class="section-badge">INTEGRATED ECOSYSTEM</span>
-                    <h2 class="section-title">Introduction</h2>
-                    <p class="section-desc" style="max-width: 100%;">Tomercon Groups is a diversified business ecosystem
-                        focused on building scalable ventures and delivering real-world solutions. We combine
-                        technology, strategy, and creativity to create businesses that are not only profitable but
-                        impactful. Our strength lies in integration — every company within the group contributes to a
-                        larger ecosystem designed for growth and sustainability.</p>
-                </div>
-                <div class="intro-image animate-on-scroll fade-left" data-animate data-delay="150">
-                    <img src="img1.cms" alt="Ecosystem Illustration"
-                        onerror="this.src='https://placehold.co/700x450/0a1424/3b9eff?text=Ecosystem+Hub'">
-                </div>
-            </div>
-        </section>
-
-        <!-- Ecosystem Model Section -->
-        <section id="model">
-            <div class="container">
-                <div class="animate-on-scroll fade-up" data-animate>
-                    <span class="section-badge">OUR FRAMEWORK</span>
-                    <h2 class="section-title">Our Ecosystem Model</h2>
-                    <p class="section-desc">We operate through a structured ecosystem where each vertical supports and
-                        strengthens the others.</p>
-                </div>
-                <div class="grid-ecosystem">
-                    <div class="eco-item animate-on-scroll zoom-in" data-animate data-delay="100"><i
-                            class="fas fa-microchip"></i>
-                        <h3>Technology Development</h3>
-                        <p>Building scalable digital infrastructure and software solutions.</p>
-                    </div>
-                    <div class="eco-item animate-on-scroll zoom-in" data-animate data-delay="150"><i
-                            class="fas fa-chart-line"></i>
-                        <h3>Marketing & Growth</h3>
-                        <p>Data-driven user acquisition and brand scaling.</p>
-                    </div>
-                    <div class="eco-item animate-on-scroll zoom-in" data-animate data-delay="200"><i
-                            class="fas fa-bullhorn"></i>
-                        <h3>Business Strategy</h3>
-                        <p>High-level consulting for market expansion.</p>
-                    </div>
-                    <div class="eco-item animate-on-scroll zoom-in" data-animate data-delay="250"><i
-                            class="fas fa-brain"></i>
-                        <h3>Innovation & AI</h3>
-                        <p>Cutting-edge AI integration and future-tech labs.</p>
-                    </div>
-                    <div class="eco-item animate-on-scroll zoom-in" data-animate data-delay="300"><i
-                            class="fas fa-film"></i>
-                        <h3>Media & Content</h3>
-                        <p>Storytelling and creative production power.</p>
-                    </div>
-                    <div class="eco-item animate-on-scroll zoom-in" data-animate data-delay="350"><i
-                            class="fas fa-graduation-cap"></i>
-                        <h3>Education & Career Platforms</h3>
-                        <p>Empowering learners and professionals worldwide.</p>
-                    </div>
-                    <div class="eco-item animate-on-scroll zoom-in" data-animate data-delay="400"><i
-                            class="fas fa-futbol"></i>
-                        <h3>Sports & Social Development</h3>
-                        <p>Community-driven sports initiatives and impact.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Featured Companies - FULL WIDTH CONTINUOUS SCROLL -->
-        <section id="companies">
-            <div class="container">
-                <div class="animate-on-scroll fade-up" data-animate>
-                    <span class="section-badge">FLAGSHIP VENTURES</span>
-                    <h2 class="section-title">Featured Companies</h2>
-                    <p class="section-desc">Flagship ventures driving the Tomercon ecosystem.</p>
-                </div>
-
-                <!-- Full width scroll container - no container padding issues -->
-                <div class="fullwidth-scroll-container">
-                    <div class="continuous-scroll-wrapper">
-                        <div class="featured-horizontal-grid" id="featuredGrid">
-                            <!-- First set of boxes -->
-                            <a href="https://abhiramimurali363-code.github.io/TOMERCON-DEVELOPERS/" class="featured-box"
-                                data-bg="https://images.pexels.com/photos/1181244/pexels-photo-1181244.jpeg?auto=compress&cs=tinysrgb&w=600">
-                                <div class="box-icon"><i class="fas fa-laptop-code"></i></div>
-                                <h3>TOMERCON DEVELOPERS LLP</h3>
-                                <p>The technology backbone building apps and digital systems.</p>
-                            </a>
-
-                            <div class="featured-box"
-                                data-bg="https://images.pexels.com/photos/669615/pexels-photo-669615.jpeg?auto=compress&cs=tinysrgb&w=600">
-                                <div class="box-icon"><i class="fas fa-chart-line"></i></div>
-                                <h3>Tomercon Ads</h3>
-                                <p>Growth engine driving marketing and user acquisition.</p>
-                            </div>
-
-                            <div class="featured-box"
-                                data-bg="https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=600">
-                                <div class="box-icon"><i class="fas fa-handshake"></i></div>
-                                <h3>Tomercon Consultancy</h3>
-                                <p>Strategy unit focused on business scaling.</p>
-                            </div>
-
-                            <div class="featured-box"
-                                data-bg="https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=600">
-                                <div class="box-icon"><i class="fas fa-flask"></i></div>
-                                <h3>Tomercon Fusion Labs</h3>
-                                <p>Innovation hub for AI and future technologies.</p>
-                            </div>
-
-                            <a href="fgt.html" class="featured-box"
-                                data-bg="https://images.pexels.com/photos/66134/pexels-photo-66134.jpeg?auto=compress&cs=tinysrgb&w=600">
-                                <div class="box-icon"><i class="fas fa-video"></i></div>
-                                <h3>FGT Studios</h3>
-                                <p>Creative production and storytelling unit.</p>
-                            </a>
-
-                            <!-- Duplicate set for seamless infinite scroll -->
-                            <a href="https://abhiramimurali363-code.github.io/TOMERCON-DEVELOPERS/" class="featured-box"
-                                data-bg="https://images.pexels.com/photos/1181244/pexels-photo-1181244.jpeg?auto=compress&cs=tinysrgb&w=600">
-                                <div class="box-icon"><i class="fas fa-laptop-code"></i></div>
-                                <h3>TOMERCON DEVELOPERS LLP</h3>
-                                <p>The technology backbone building apps and digital systems.</p>
-                            </a>
-
-                            <div class="featured-box"
-                                data-bg="https://images.pexels.com/photos/669615/pexels-photo-669615.jpeg?auto=compress&cs=tinysrgb&w=600">
-                                <div class="box-icon"><i class="fas fa-chart-line"></i></div>
-                                <h3>Tomercon Ads</h3>
-                                <p>Growth engine driving marketing and user acquisition.</p>
-                            </div>
-
-                            <div class="featured-box"
-                                data-bg="https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=600">
-                                <div class="box-icon"><i class="fas fa-handshake"></i></div>
-                                <h3>Tomercon Consultancy</h3>
-                                <p>Strategy unit focused on business scaling.</p>
-                            </div>
-
-                            <div class="featured-box"
-                                data-bg="https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=600">
-                                <div class="box-icon"><i class="fas fa-flask"></i></div>
-                                <h3>Tomercon Fusion Labs</h3>
-                                <p>Innovation hub for AI and future technologies.</p>
-                            </div>
-
-                            <a href="fgt.html" class="featured-box"
-                                data-bg="https://images.pexels.com/photos/66134/pexels-photo-66134.jpeg?auto=compress&cs=tinysrgb&w=600">
-                                <div class="box-icon"><i class="fas fa-video"></i></div>
-                                <h3>FGT Studios</h3>
-                                <p>Creative production and storytelling unit.</p>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-
-        </section>
-
-        <style>
-            /* FULL WIDTH SCROLL - No hidden boxes, no margins */
-            .fullwidth-scroll-container {
-                width: 100vw;
-                position: relative;
-                left: 50%;
-                right: 50%;
-                margin-left: -50vw;
-                margin-right: -50vw;
-                overflow-x: hidden;
-                overflow-y: hidden;
-            }
-
-            .continuous-scroll-wrapper {
-                width: 100%;
-                overflow-x: hidden;
-                overflow-y: hidden;
-                position: relative;
-            }
-
-            /* HIDE SCROLLBAR completely */
-            .continuous-scroll-wrapper::-webkit-scrollbar,
-            .fullwidth-scroll-container::-webkit-scrollbar {
-                display: none;
-            }
-
-            .continuous-scroll-wrapper,
-            .fullwidth-scroll-container {
-                -ms-overflow-style: none;
-                scrollbar-width: none;
-            }
-
-            .featured-horizontal-grid {
-                display: flex;
-                flex-direction: row;
-                gap: 2rem;
-                margin: 3rem 0 1rem 0;
-                padding: 0.5rem 2rem;
-                width: max-content;
-                animation: scrollRightToLeft 25s linear infinite;
-            }
-
-            /* Pause animation on hover */
-            .continuous-scroll-wrapper:hover .featured-horizontal-grid {
-                animation-play-state: paused;
-            }
-
-            /* Keyframes for continuous right to left scrolling */
-            @keyframes scrollRightToLeft {
-                0% {
-                    transform: translateX(0);
-                }
-
-                100% {
-                    transform: translateX(-50%);
-                }
-            }
-
-            /* ENLARGED BOXES */
-            .featured-box {
-                flex: 0 0 auto;
-                width: 320px;
-                background: rgb(15 25 45 / 12%);
-                backdrop-filter: blur(8px);
-                border-radius: 24px;
-                padding: 2.5rem 1.5rem;
-                text-align: center;
-                cursor: pointer;
-                text-decoration: none;
-                color: inherit;
-                transition: all 0.4s ease;
-                border: 1px solid rgba(59, 158, 255, 0.3);
-                display: flex;
-                flex-direction: column;
-                min-height: 320px;
-                position: relative;
-                overflow: hidden;
-            }
-
-            /* Hover background image effect */
-            .featured-box::before {
-                content: "";
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background-size: cover;
-                background-position: center;
-                background-repeat: no-repeat;
-                opacity: 0;
-                transition: opacity 0.4s ease;
-                z-index: 0;
-                border-radius: 24px;
-            }
-
-            .featured-box::after {
-                content: "";
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.9));
-                border-radius: 24px;
-                opacity: 0;
-                transition: opacity 0.4s ease;
-                z-index: 1;
-            }
-
-            .featured-box:hover::after {
-                opacity: 0.7;
-            }
-
-            .featured-box:hover::before {
-                opacity: 0.85;
-            }
-
-            .featured-box:hover {
-                transform: translateY(-8px);
-                border-color: #3b9eff;
-                box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.7);
-            }
-
-            /* Content stays above background */
-            .featured-box .box-icon,
-            .featured-box h3,
-            .featured-box p {
-                position: relative;
-                z-index: 2;
-                transition: all 0.3s ease;
-            }
-
-            .featured-box:hover .box-icon i {
-                color: #ffffff;
-                text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-            }
-
-            .featured-box:hover h3 {
-                color: #ffffff;
-                text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
-            }
-
-            .featured-box:hover p {
-                color: #f0f0f0;
-                text-shadow: 0 1px 3px rgba(0, 0, 0, .5);
-            }
-
-            .box-icon {
-                width: 80px;
-                height: 80px;
-                margin: 0 auto 1.2rem auto;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                background: rgba(59, 158, 255, 0.15);
-                border-radius: 20px;
-                transition: all 0.3s ease;
-            }
-
-            .featured-box:hover .box-icon {
-                background: rgba(0, 0, 0, 0.5);
-                transform: scale(1.05);
-            }
-
-            .box-icon i {
-                font-size: 2.5rem;
-                color: #3b9eff;
-                transition: all 0.3s ease;
-            }
-
-            .featured-box h3 {
-                font-size: 1.3rem;
-                font-weight: 700;
-                margin-bottom: 0.8rem;
-                color: #ffffff;
-                letter-spacing: -0.3px;
-            }
-
-            .featured-box p {
-                font-size: 0.95rem;
-                color: #c0c0c0;
-                line-height: 1.5;
-            }
-
-            /* Scroll controls */
-            .scroll-controls {
-                display: flex;
-                justify-content: center;
-                gap: 1rem;
-                margin-top: 2rem;
-                position: relative;
-                z-index: 5;
-            }
-
-            .scroll-btn {
-                background: rgba(59, 158, 255, 0.2);
-                border: 1px solid rgba(59, 158, 255, 0.5);
-                border-radius: 50px;
-                padding: 0.6rem 1.5rem;
-                font-size: 0.9rem;
-                font-weight: 600;
-                color: #3b9eff;
-                cursor: pointer;
-                transition: 0.25s;
-                display: inline-flex;
-                align-items: center;
-                gap: 0.5rem;
-                backdrop-filter: blur(4px);
-            }
-
-            .scroll-btn:hover {
-                background: #3b9eff;
-                color: #0a0a0a;
-                border-color: transparent;
-            }
-
-            /* Responsive */
-            @media (max-width: 768px) {
-                .featured-box {
-                    width: 280px;
-                    min-height: 280px;
-                    padding: 2rem 1.2rem;
-                }
-
-                .box-icon {
-                    width: 65px;
-                    height: 65px;
-                }
-
-                .box-icon i {
-                    font-size: 2rem;
-                }
-
-                .featured-box h3 {
-                    font-size: 1.1rem;
-                }
-
-                .featured-box p {
-                    font-size: 0.85rem;
-                }
-
-                .featured-horizontal-grid {
-                    gap: 1.5rem;
-                    padding: 0.5rem 1rem;
-                }
-            }
-
-            @media (max-width: 480px) {
-                .featured-box {
-                    width: 260px;
-                    min-height: 260px;
-                    padding: 1.8rem 1rem;
-                }
-            }
-        </style>
-
-        <script>
-            // CONTINUOUS AUTO-SCROLL with hover image effects
-            (function () {
-                const wrapper = document.querySelector('.continuous-scroll-wrapper');
-                const leftBtn = document.getElementById('scrollLeftBtn');
-                const rightBtn = document.getElementById('scrollRightBtn');
-                const grid = document.getElementById('featuredGrid');
-
-                // Apply background images on hover
-                const boxes = document.querySelectorAll('.featured-box');
-
-                // Add style for background images
-                const style = document.createElement('style');
-                style.textContent = `
-        .featured-box::before {
-            background-image: var(--hover-bg, none);
-            opacity: var(--bg-opacity, 0);
-        }
-    `;
-                document.head.appendChild(style);
-
-                // Initialize all boxes with their background
-                boxes.forEach(box => {
-                    const bg = box.getAttribute('data-bg');
-                    if (bg) {
-                        box.style.setProperty('--hover-bg', `url('${bg}')`);
-                    }
-
-                    // Handle hover opacity
-                    box.addEventListener('mouseenter', function () {
-                        this.style.setProperty('--bg-opacity', '0.85');
-                    });
-                    box.addEventListener('mouseleave', function () {
-                        this.style.setProperty('--bg-opacity', '0');
-                    });
-                });
-
-                // Store animation state
-                let currentTranslate = 0;
-
-                // Manual scroll buttons
-                if (leftBtn && grid) {
-                    leftBtn.addEventListener('click', () => {
-                        // Get current transform
-                        const transform = window.getComputedStyle(grid).transform;
-                        if (transform !== 'none') {
-                            const matrix = transform.match(/matrix.*\((.+)\)/);
-                            if (matrix) {
-                                currentTranslate = parseFloat(matrix[1].split(', ')[4]) || 0;
-                            }
-                        }
-
-                        // Calculate new position (shift right)
-                        let newTranslate = currentTranslate - 300;
-                        const totalWidth = grid.scrollWidth / 2;
-                        if (Math.abs(newTranslate) >= totalWidth) {
-                            newTranslate = 0;
-                        }
-
-                        // Pause animation and apply new position
-                        grid.style.animation = 'none';
-                        grid.offsetHeight;
-                        grid.style.transform = `translateX(${newTranslate}px)`;
-                        currentTranslate = newTranslate;
-
-                        // Restart animation
-                        setTimeout(() => {
-                            grid.style.transform = '';
-                            grid.style.animation = 'scrollRightToLeft 25s linear infinite';
-                        }, 50);
-                    });
-                }
-
-                if (rightBtn && grid) {
-                    rightBtn.addEventListener('click', () => {
-                        // Get current transform
-                        const transform = window.getComputedStyle(grid).transform;
-                        if (transform !== 'none') {
-                            const matrix = transform.match(/matrix.*\((.+)\)/);
-                            if (matrix) {
-                                currentTranslate = parseFloat(matrix[1].split(', ')[4]) || 0;
-                            }
-                        }
-
-                        // Calculate new position (shift left)
-                        let newTranslate = currentTranslate + 300;
-                        const totalWidth = grid.scrollWidth / 2;
-                        if (Math.abs(newTranslate) >= totalWidth) {
-                            newTranslate = 0;
-                        }
-
-                        // Pause animation and apply new position
-                        grid.style.animation = 'none';
-                        grid.offsetHeight;
-                        grid.style.transform = `translateX(${newTranslate}px)`;
-                        currentTranslate = newTranslate;
-
-                        // Restart animation
-                        setTimeout(() => {
-                            grid.style.transform = '';
-                            grid.style.animation = 'scrollRightToLeft 25s linear infinite';
-                        }, 50);
-                    });
-                }
-            })();
-        </script>
-                <!-- Ventures & Association Section – Fixed (No scroll, grid layout for associations) -->
-        <section id="ventures">
-            <div class="container">
-                <div class="section-header-wrapper animate-on-scroll fade-up" data-animate>
-                    <span class="section-badge" id="sectionBadge">NEXT‑GEN PLATFORMS</span>
-                    <h2 class="section-title" id="sectionTitle">Ventures & Associations</h2>
-                    <p class="section-desc" id="sectionDesc">Next-generation platforms reshaping education and career discovery.</p>
-                </div>
-
-                <!-- Tab Buttons -->
-                <div class="tab-buttons">
-                    <button class="tab-btn active" data-tab="ventures-tab">
-                        <i class="fas fa-rocket"></i> Ventures
-                    </button>
-                    <button class="tab-btn" data-tab="associations-tab">
-                        <i class="fas fa-handshake"></i> Associations
-                    </button>
-                </div>
-
-                <!-- Ventures Tab Content (unchanged) -->
-                <div class="tab-content active" id="ventures-tab">
-                    <div class="ventures-grid">
-                        <div class="venture-card animate-on-scroll fade-right" data-animate data-delay="100">
-                            <div class="venture-icon"><i class="fas fa-robot"></i></div>
-                            <div class="venture-content">
-                                <h3>Learnyor</h3>
-                                <p>AI-powered learning platform simplifying education for global learners.</p>
-                                <div class="venture-details">
-                                    <span><i class="fas fa-users"></i> 50K+ Learners</span>
-                                    <span><i class="fas fa-globe"></i> 25+ Countries</span>
-                                    <span><i class="fas fa-certificate"></i> 100+ Courses</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="venture-card animate-on-scroll fade-left" data-animate data-delay="150">
-                            <div class="venture-icon"><i class="fas fa-briefcase"></i></div>
-                            <div class="venture-content">
-                                <h3>QITE</h3>
-                                <p>Career experience platform helping individuals choose the right path.</p>
-                                <div class="venture-details">
-                                    <span><i class="fas fa-user-graduate"></i> 10K+ Mentors</span>
-                                    <span><i class="fas fa-building"></i> 500+ Partners</span>
-                                    <span><i class="fas fa-chart-line"></i> 85% Success Rate</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Associations Tab Content – NEW: Simple grid (no scroll) -->
-                <div class="tab-content" id="associations-tab">
-                    <div class="associations-grid">
-                        <!-- Association Card 1 -->
-                        <div class="association-card" data-bg="https://images.pexels.com/photos/3184298/pexels-photo-3184298.jpeg?auto=compress&cs=tinysrgb&w=600">
-                            <div class="association-icon"><i class="fas fa-graduation-cap"></i></div>
-                            <h3>EDUREVO</h3>
-                            <p>Focused on transforming education through innovative learning solutions.</p>
-                            <div class="association-stats">
-                                <span><i class="fas fa-school"></i> 200+ Schools</span>
-                                <span><i class="fas fa-chalkboard-user"></i> 500+ Educators</span>
-                            </div>
-                        </div>
-
-                        <!-- Association Card 2 -->
-                        <div class="association-card" data-bg="https://images.pexels.com/photos/260024/pexels-photo-260024.jpeg?auto=compress&cs=tinysrgb&w=600">
-                            <div class="association-icon"><i class="fas fa-chart-line"></i></div>
-                            <h3>CSRD</h3>
-                            <p>Sports research and development organization for athlete excellence.</p>
-                            <div class="association-stats">
-                                <span><i class="fas fa-medal"></i> 50+ Athletes Trained</span>
-                                <span><i class="fas fa-microscope"></i> 15+ Research Projects</span>
-                            </div>
-                        </div>
-
-                        <!-- Association Card 3 -->
-                        <div class="association-card" data-bg="https://images.pexels.com/photos/260447/pexels-photo-260447.jpeg?auto=compress&cs=tinysrgb&w=600">
-                            <div class="association-icon"><i class="fas fa-fist-raised"></i></div>
-                            <h3>TAEKWONDO ASSOCIATION OF KERALA</h3>
-                            <p>Promoting Taekwondo and athlete development across the region.</p>
-                            <div class="association-stats">
-                                <span><i class="fas fa-users"></i> 1000+ Members</span>
-                                <span><i class="fas fa-trophy"></i> 25+ Championships</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <style>
-            /* ========== GLOBAL STYLES (keep existing) ========== */
-            .section-header-wrapper {
-                text-align: center;
-                margin-bottom: 1rem;
-            }
-            .section-badge {
-                display: inline-block;
-                font-size: 0.95rem;
-                text-transform: uppercase;
-                letter-spacing: 5px;
-                font-weight: 700;
-                color: #3b9eff;
-                margin-bottom: 1rem;
-                border-left: 3px solid #3b9eff;
-                padding-left: 14px;
-                transition: all 0.3s ease;
-            }
-            .section-title {
-                font-size: clamp(2.2rem, 5vw, 3.8rem);
-                margin-bottom: 1rem;
-                color: #ffffff;
-                text-shadow: 0 2px 5px rgba(0,0,0,0.4);
-                line-height: 1.2;
-            }
-            .section-desc {
-                font-size: 1.1rem;
-                line-height: 1.6;
-                color: #c4dafb;
-                max-width: 700px;
-                margin: 0 auto;
-            }
-
-            /* Tab Buttons */
-            .tab-buttons {
-                display: flex;
-                justify-content: center;
-                gap: 1.5rem;
-                margin: 2rem 0 1rem 0;
-            }
-            .tab-btn {
-                background: rgba(59,158,255,0.1);
-                border: 1px solid rgba(59,158,255,0.3);
-                border-radius: 50px;
-                padding: 0.8rem 2rem;
-                font-size: 1rem;
-                font-weight: 600;
-                color: #ffffff;
-                cursor: pointer;
-                transition: all 0.3s ease;
-                display: inline-flex;
-                align-items: center;
-                gap: 0.6rem;
-                backdrop-filter: blur(4px);
-            }
-            .tab-btn i {
-                font-size: 1.1rem;
-                color: #3b9eff;
-                transition: all 0.3s ease;
-            }
-            .tab-btn:hover {
-                background: rgba(59,158,255,0.2);
-                border-color: #3b9eff;
-                transform: translateY(-2px);
-            }
-            .tab-btn.active {
-                background: linear-gradient(135deg, #3b9eff, #2563eb);
-                border-color: transparent;
-                color: #ffffff;
-            }
-            .tab-btn.active i {
-                color: #ffffff;
-            }
-
-            /* Tab Content */
-            .tab-content {
-                display: none;
-                animation: fadeIn 0.5s ease;
-            }
-            .tab-content.active {
-                display: block;
-            }
-            @keyframes fadeIn {
-                from { opacity: 0; transform: translateY(10px); }
-                to { opacity: 1; transform: translateY(0); }
-            }
-
-            /* Ventures Grid (existing) */
-            .ventures-grid {
-                display: flex;
-                flex-wrap: wrap;
-                gap: 2rem;
-                margin-top: 2rem;
-                justify-content: center;
-            }
-            .venture-card {
-                flex: 1;
-                min-width: 300px;
-                max-width: 500px;
-                background: rgb(15 25 45/12%);
-                backdrop-filter: blur(8px);
-                border-radius: 24px;
-                padding: 2rem;
-                display: flex;
-                gap: 1.5rem;
-                transition: all 0.3s ease;
-                border: 1px solid rgba(59,158,255,0.25);
-            }
-            .venture-card:hover {
-                transform: translateY(-5px);
-                border-color: #3b9eff;
-                background: rgba(59,158,255,0.12);
-                box-shadow: 0 15px 30px -12px rgba(0,0,0,0.5);
-            }
-            .venture-icon {
-                flex-shrink: 0;
-                width: 70px;
-                height: 70px;
-                background: rgba(59,158,255,0.2);
-                border-radius: 20px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-            }
-            .venture-icon i {
-                font-size: 2.2rem;
-                color: #5aabff;
-            }
-            .venture-content {
-                flex: 1;
-            }
-            .venture-content h3 {
-                font-size: 1.5rem;
-                margin-bottom: 0.5rem;
-                color: #ffffff;
-            }
-            .venture-content p {
-                font-size: 0.95rem;
-                color: #d0d0d0;
-                line-height: 1.5;
-                margin-bottom: 1rem;
-            }
-            .venture-details {
-                display: flex;
-                flex-wrap: wrap;
-                gap: 1rem;
-                margin-top: 0.5rem;
-            }
-            .venture-details span {
-                font-size: 0.75rem;
-                color: #5aabff;
-                display: inline-flex;
-                align-items: center;
-                gap: 0.4rem;
-                background: rgba(59,158,255,0.15);
-                padding: 0.3rem 0.8rem;
-                border-radius: 50px;
-            }
-
-            /* NEW Associations Grid (no scroll, same style as ventures) */
-            .associations-grid {
-                display: flex;
-                flex-wrap: wrap;
-                gap: 2rem;
-                margin-top: 2rem;
-                justify-content: center;
-            }
-            .association-card {
-                flex: 1;
-                min-width: 300px;
-                max-width: 350px;
-                background: rgb(15 25 45/12%);
-                backdrop-filter: blur(8px);
-                border-radius: 24px;
-                padding: 2rem 1.5rem;
-                text-align: center;
-                transition: all 0.3s ease;
-                border: 1px solid rgba(59,158,255,0.25);
-                position: relative;
-                overflow: hidden;
-            }
-            /* Hover background image effect (same as before) */
-            .association-card::before {
-                content: "";
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background-size: cover;
-                background-position: center;
-                background-repeat: no-repeat;
-                opacity: 0;
-                transition: opacity 0.4s ease;
-                z-index: 0;
-                border-radius: 24px;
-            }
-            .association-card::after {
-                content: "";
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background: linear-gradient(135deg, rgba(0,0,0,0.75), rgba(0,0,0,0.85));
-                border-radius: 24px;
-                opacity: 0;
-                transition: opacity 0.4s ease;
-                z-index: 0;
-            }
-            .association-card:hover::before {
-                opacity: 0.7;
-            }
-            .association-card:hover::after {
-                opacity: 0.65;
-            }
-            .association-card:hover {
-                transform: translateY(-8px);
-                border-color: #3b9eff;
-                box-shadow: 0 20px 35px -12px rgba(0,0,0,0.6);
-            }
-            .association-card .association-icon,
-            .association-card h3,
-            .association-card p,
-            .association-card .association-stats {
-                position: relative;
-                z-index: 2;
-                transition: all 0.3s ease;
-            }
-            .association-icon {
-                width: 70px;
-                height: 70px;
-                margin: 0 auto 1rem auto;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                background: rgba(59,158,255,0.2);
-                border-radius: 20px;
-                transition: all 0.3s ease;
-            }
-            .association-card:hover .association-icon {
-                background: rgba(0,0,0,0.6);
-                transform: scale(1.05);
-            }
-            .association-icon i {
-                font-size: 2rem;
-                color: #5aabff;
-                transition: all 0.3s ease;
-            }
-            .association-card:hover .association-icon i {
-                color: #ffffff;
-            }
-            .association-card h3 {
-                font-size: 1.2rem;
-                font-weight: 700;
-                margin-bottom: 0.6rem;
-                color: #ffffff;
-            }
-            .association-card:hover h3 {
-                text-shadow: 0 2px 4px rgba(0,0,0,0.5);
-            }
-            .association-card p {
-                font-size: 0.85rem;
-                color: #c0c0c0;
-                line-height: 1.5;
-                margin-bottom: 1rem;
-            }
-            .association-card:hover p {
-                color: #f0f0f0;
-                text-shadow: 0 1px 2px rgba(0,0,0,0.5);
-            }
-            .association-stats {
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 0.8rem;
-                margin-top: 0.5rem;
-            }
-            .association-stats span {
-                font-size: 0.7rem;
-                color: #5aabff;
-                display: inline-flex;
-                align-items: center;
-                gap: 0.3rem;
-                background: rgba(59,158,255,0.15);
-                padding: 0.25rem 0.6rem;
-                border-radius: 50px;
-                transition: all 0.3s ease;
-            }
-            .association-card:hover .association-stats span {
-                background: rgba(0,0,0,0.6);
-                color: #8bcbff;
-            }
-
-            /* Responsive */
-            @media (max-width: 768px) {
-                .tab-buttons { gap: 1rem; }
-                .tab-btn { padding: 0.6rem 1.2rem; font-size: 0.85rem; }
-                .venture-card, .association-card { flex-direction: column; text-align: center; align-items: center; }
-                .venture-details, .association-stats { justify-content: center; }
-                .section-desc { font-size: 0.95rem; padding: 0 1rem; }
-            }
-        </style>
-
-        <script>
-            // Auto-switch between Ventures and Associations every 5 seconds with dynamic headings
-            (function () {
-                const tabBtns = document.querySelectorAll('.tab-btn');
-                const tabContents = document.querySelectorAll('.tab-content');
-                const sectionBadge = document.getElementById('sectionBadge');
-                const sectionTitle = document.getElementById('sectionTitle');
-                const sectionDesc = document.getElementById('sectionDesc');
-
-                let autoSwitchInterval;
-                let isAutoSwitching = true;
-                let isTransitioning = false;
-
-                const venturesContent = {
-                    badge: "NEXT‑GEN PLATFORMS",
-                    title: "Ventures & Associations",
-                    desc: "Next-generation platforms reshaping education and career discovery."
-                };
-                const associationsContent = {
-                    badge: "OUR NETWORK",
-                    title: "Associations & Partners",
-                    desc: "Our extended network of partners and branches driving global impact across multiple sectors."
-                };
-
-                function updateHeadings(badge, title, desc) {
-                    if (isTransitioning) return;
-                    isTransitioning = true;
-                    sectionBadge.style.opacity = '0';
-                    sectionTitle.style.opacity = '0';
-                    sectionDesc.style.opacity = '0';
-                    setTimeout(() => {
-                        sectionBadge.textContent = badge;
-                        sectionTitle.textContent = title;
-                        sectionDesc.textContent = desc;
-                        sectionBadge.style.opacity = '1';
-                        sectionTitle.style.opacity = '1';
-                        sectionDesc.style.opacity = '1';
-                        setTimeout(() => { isTransitioning = false; }, 300);
-                    }, 300);
-                }
-
-                function switchToTab(tabId) {
-                    tabBtns.forEach(btn => btn.classList.remove('active'));
-                    tabContents.forEach(content => content.classList.remove('active'));
-                    const targetBtn = document.querySelector(`.tab-btn[data-tab="${tabId}"]`);
-                    const targetContent = document.getElementById(tabId);
-                    if (targetBtn && targetContent) {
-                        targetBtn.classList.add('active');
-                        targetContent.classList.add('active');
-                        if (tabId === 'ventures-tab') {
-                            updateHeadings(venturesContent.badge, venturesContent.title, venturesContent.desc);
-                        } else if (tabId === 'associations-tab') {
-                            updateHeadings(associationsContent.badge, associationsContent.title, associationsContent.desc);
-                        }
-                    }
-                }
-
-                function getNextTab(currentTabId) {
-                    return currentTabId === 'ventures-tab' ? 'associations-tab' : 'ventures-tab';
-                }
-
-                function startAutoSwitch() {
-                    if (autoSwitchInterval) clearInterval(autoSwitchInterval);
-                    autoSwitchInterval = setInterval(() => {
-                        if (isAutoSwitching && !isTransitioning) {
-                            let activeTabId = null;
-                            tabContents.forEach(content => {
-                                if (content.classList.contains('active')) activeTabId = content.id;
-                            });
-                            if (activeTabId) switchToTab(getNextTab(activeTabId));
-                        }
-                    }, 5000);
-                }
-
-                function stopAutoSwitchTemporarily() {
-                    isAutoSwitching = false;
-                    if (autoSwitchInterval) clearInterval(autoSwitchInterval);
-                    setTimeout(() => {
-                        isAutoSwitching = true;
-                        startAutoSwitch();
-                    }, 10000);
-                }
-
-                tabBtns.forEach(btn => {
-                    btn.addEventListener('click', () => {
-                        const tabId = btn.getAttribute('data-tab');
-                        switchToTab(tabId);
-                        stopAutoSwitchTemporarily();
-                    });
-                });
-
-                sectionBadge.style.transition = 'opacity 0.3s ease';
-                sectionTitle.style.transition = 'opacity 0.3s ease';
-                sectionDesc.style.transition = 'opacity 0.3s ease';
-                startAutoSwitch();
-            })();
-
-            // Association background images on hover
-            (function () {
-                const cards = document.querySelectorAll('.association-card');
-                const style = document.createElement('style');
-                style.textContent = `.association-card::before { background-image: var(--hover-bg-association, none); }`;
-                document.head.appendChild(style);
-                cards.forEach(card => {
-                    const bg = card.getAttribute('data-bg');
-                    if (bg) card.style.setProperty('--hover-bg-association', `url('${bg}')`);
-                });
-            })();
-        </script>
-        <!-- Why Tomercon -->
-        <section id="why">
-            <div class="container">
-                <div class="animate-on-scroll fade-up" data-animate>
-                    <span class="section-badge">WHY US</span>
-                    <h2 class="section-title">Why Tomercon Groups</h2>
-                </div>
-                <div class="grid-why">
-                    <div class="why-item animate-on-scroll flip-up" data-animate data-delay="100"><i
-                            class="fas fa-industry"></i>
-                        <h4>Multi-industry expertise</h4>
-                        <p>Deep knowledge across tech, marketing, education & sports</p>
-                    </div>
-                    <div class="why-item animate-on-scroll flip-up" data-animate data-delay="150"><i
-                            class="fas fa-rocket"></i>
-                        <h4>Strong execution mindset</h4>
-                        <p>Ideas transformed into scalable realities</p>
-                    </div>
-                    <div class="why-item animate-on-scroll flip-up" data-animate data-delay="200"><i
-                            class="fas fa-lightbulb"></i>
-                        <h4>Innovation-driven approach</h4>
-                        <p>AI-first, future-ready methodologies</p>
-                    </div>
-                    <div class="why-item animate-on-scroll flip-up" data-animate data-delay="250"><i
-                            class="fas fa-link"></i>
-                        <h4>Integrated ecosystem advantage</h4>
-                        <p>Synergies that multiply growth potential</p>
-                    </div>
-                    <div class="why-item animate-on-scroll flip-up" data-animate data-delay="300"><i
-                            class="fas fa-chart-line"></i>
-                        <h4>Focus on long-term impact</h4>
-                        <p>Sustainable value creation for all stakeholders</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-
-
-        <!-- CTA Section -->
-        <section id="cta">
-            <div class="container">
-                <div class="cta-card animate-on-scroll zoom-in" data-animate>
-                    <h2>Let's Build Something Impactful Together</h2>
-                    <p>Partner with Tomercon Groups to scale your vision.</p>
-                    <a href="contact.html" class="btn-primary">Get in touch <i class="fas fa-arrow-right"></i></a>
-                </div>
-            </div>
-        </section>
-
-    </main>
-
-    <footer>
-        <div class="container">
-            <p>© 2025 Tomercon Groups — tomerconbusiness.com | Global Ecosystem Architects</p>
-            <div class="social-links">
-                <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        // Mobile menu toggle
-        const mobileBtn = document.getElementById('mobileMenuBtn');
-        const mobileNav = document.getElementById('mobileNav');
-        if (mobileBtn && mobileNav) {
-            mobileBtn.addEventListener('click', () => {
-                mobileNav.style.display = mobileNav.style.display === 'flex' ? 'none' : 'flex';
-            });
-            document.querySelectorAll('.mobile-nav a').forEach(link => {
-                link.addEventListener('click', () => mobileNav.style.display = 'none');
-            });
-        }
-
-        // Smooth scroll for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    e.preventDefault();
-                    target.scrollIntoView({ behavior: 'smooth' });
-                }
-            });
+</footer>
+
+<script>
+    // Mobile menu toggle
+    const mobileBtn = document.getElementById('mobileMenuBtn');
+    const mobileNav = document.getElementById('mobileNav');
+    if (mobileBtn && mobileNav) {
+        mobileBtn.addEventListener('click', () => {
+            mobileNav.style.display = mobileNav.style.display === 'flex' ? 'none' : 'flex';
         });
+        document.querySelectorAll('.mobile-nav a').forEach(link => {
+            link.addEventListener('click', () => mobileNav.style.display = 'none');
+        });
+    }
 
-        // Active nav highlight on scroll
-        const sections = document.querySelectorAll('section[id]');
-        const navLinks = document.querySelectorAll('.nav-link');
-        function updateActiveLink() {
-            let current = '';
-            const scrollPos = window.scrollY + 150;
-            sections.forEach(section => {
-                const top = section.offsetTop;
-                const bottom = top + section.offsetHeight;
-                if (scrollPos >= top && scrollPos < bottom) {
-                    current = section.getAttribute('id');
-                }
-            });
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                const href = link.getAttribute('href');
-                if (href === `#${current}` || (current === 'hero' && href === 'index.html') || (current === '' && href === 'index.html')) {
-                    link.classList.add('active');
-                }
-            });
-        }
-        window.addEventListener('scroll', updateActiveLink);
-        window.addEventListener('load', updateActiveLink);
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                e.preventDefault();
+                target.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    });
 
-        // Intersection Observer for replayable animations
-        const animatedElements = document.querySelectorAll('.animate-on-scroll');
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const delay = entry.target.getAttribute('data-delay');
-                    if (delay) {
-                        setTimeout(() => {
-                            entry.target.classList.add('animated');
-                        }, parseInt(delay));
-                    } else {
+    // Active nav highlight on scroll
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-link');
+    function updateActiveLink() {
+        let current = '';
+        const scrollPos = window.scrollY + 150;
+        sections.forEach(section => {
+            const top = section.offsetTop;
+            const bottom = top + section.offsetHeight;
+            if (scrollPos >= top && scrollPos < bottom) {
+                current = section.getAttribute('id');
+            }
+        });
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            const href = link.getAttribute('href');
+            if (href === `#${current}` || (current === 'hero' && href === 'index.html') || (current === '' && href === 'index.html')) {
+                link.classList.add('active');
+            }
+        });
+    }
+    window.addEventListener('scroll', updateActiveLink);
+    window.addEventListener('load', updateActiveLink);
+
+    // ========== CUSTOM INTERSECTION OBSERVER FOR REPLAYABLE ANIMATIONS (BOTH DIRECTIONS) ==========
+    const animatedElements = document.querySelectorAll('.animate-on-scroll');
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Add animation class with optional delay
+                const delay = entry.target.getAttribute('data-delay');
+                if (delay) {
+                    setTimeout(() => {
                         entry.target.classList.add('animated');
-                    }
+                    }, parseInt(delay));
                 } else {
-                    entry.target.classList.remove('animated');
+                    entry.target.classList.add('animated');
                 }
-            });
-        }, { threshold: 0.15, rootMargin: '0px 0px -30px 0px' });
-        animatedElements.forEach(el => observer.observe(el));
-
-        // Apply background images to hover overlays
-        (function () {
-            const cards = document.querySelectorAll('.hover-card');
-            cards.forEach(card => {
-                const imageUrl = card.getAttribute('data-image');
-                if (imageUrl) {
-                    const overlay = card.querySelector('.hover-overlay');
-                    if (overlay) {
-                        overlay.style.backgroundImage = `url('${imageUrl}')`;
-                    }
-                }
-            });
-        })();
-    </script>
+            } else {
+                // Remove animation class when element leaves viewport (so it can replay when scrolled back)
+                entry.target.classList.remove('animated');
+            }
+        });
+    }, { threshold: 0.15, rootMargin: '0px 0px -30px 0px' });
+    
+    animatedElements.forEach(el => observer.observe(el));
+</script>
 </body>
-
 </html>
