@@ -1,12 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>FGT Studios | Stories That Build Brands — Modern Creative Agency</title>
-    <!-- Google Fonts + Font Awesome -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <title>FGT STUDIOS | Stories That Build Brands</title>
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <!-- Font Awesome 6 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- AOS Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -15,668 +21,703 @@
         }
 
         body {
+            background-color: #010101;
             font-family: 'Inter', sans-serif;
-            background: #ffffff;
-            color: #111827;
-            line-height: 1.5;
+            color: #f0f0f0;
+            overflow-x: hidden;
             scroll-behavior: smooth;
         }
 
-        :root {
-            --primary-dark: #0e2b4f;
-            --primary: #1e5a9c;
-            --primary-light: #3b82f6;
-            --primary-soft: #eef4ff;
-            --gray-light: #f9fafb;
-            --gray-border: #e5e7eb;
-            --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.02);
-            --shadow-md: 0 10px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.02);
-            --transition: all 0.25s ease;
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #0a0a0a;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #3b9eff;
+            border-radius: 10px;
+        }
+
+        section {
+            position: relative;
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+            padding: 4rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.75) 100%);
+            z-index: 0;
+        }
+
+        section::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 20% 40%, rgba(59, 158, 255, 0.08) 0%, transparent 70%);
+            z-index: 0;
+            pointer-events: none;
         }
 
         .container {
-            max-width: 1280px;
+            position: relative;
+            z-index: 2;
+            max-width: 1400px;
             margin: 0 auto;
-            padding: 0 2rem;
+            padding: 0 5%;
+            width: 100%;
         }
 
-        /* Modern Navbar */
-        header {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            border-bottom: 1px solid var(--gray-border);
-        }
+        /* Background images (unchanged) */
+        #hero { background-image: url('https://images.pexels.com/photos/3165335/pexels-photo-3165335.jpeg?auto=compress&cs=tinysrgb&w=1600'); background-position: center 30%; }
+        #about { background-image: url('https://images.pexels.com/photos/669996/pexels-photo-669996.jpeg?auto=compress&cs=tinysrgb&w=1600'); background-position: center 40%; }
+        #services { background-image: url('https://images.pexels.com/photos/66134/pexels-photo-66134.jpeg?auto=compress&cs=tinysrgb&w=1600'); background-position: center 50%; }
+        #strength { background-image: url('https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&w=1600'); background-position: center 35%; }
+        #role { background-image: url('https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=1600'); background-position: center 45%; }
+        #contact { background-image: url('https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=1600'); background-position: center 60%; }
 
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 0;
-            flex-wrap: wrap;
-            gap: 1.5rem;
-        }
-
-        .logo {
-            font-size: 1.7rem;
-            font-weight: 800;
+        /* Typography */
+        h1, h2, h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 600;
             letter-spacing: -0.02em;
-            background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+            padding-bottom: 15px;
+        }
+
+        .hero-title {
+            font-size: clamp(3rem, 8vw, 5.5rem);
+            background: linear-gradient(135deg, #FFFFFF 20%, #a8e6cf 50%, #3b9eff 90%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            line-height: 1.1;
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero-sub {
+            font-size: clamp(1rem, 2.5vw, 1.35rem);
+            color: #f5f5f5;
+            max-width: 550px;
+            margin-bottom: 2rem;
+            text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+            font-weight: 400;
+        }
+
+        .section-badge {
+            display: inline-block;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            font-weight: 600;
+            color: #3b9eff;
+            margin-bottom: 0.8rem;
+            border-left: 3px solid #3b9eff;
+            padding-left: 12px;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+        }
+
+        .section-title {
+            font-size: clamp(1.8rem, 4vw, 3rem);
+            margin-bottom: 1rem;
+            color: #ffffff;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+            letter-spacing: -0.01em;
+        }
+
+        .section-desc {
+            font-size: 1.05rem;
+            line-height: 1.55;
+            color: #ececec;
+            max-width: 550px;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+            font-weight: 400;
+        }
+
+        /* ========== ORIGINAL CARD STYLE (from Tomercon Groups) – only used elsewhere ========== */
+        @keyframes borderPulse {
+            0% { border-color: rgba(59,158,255,0.3); box-shadow: 0 0 0 0 rgba(59,158,255,0.1); }
+            50% { border-color: rgba(59,158,255,0.8); box-shadow: 0 0 15px 2px rgba(59,158,255,0.2); }
+            100% { border-color: rgba(59,158,255,0.3); box-shadow: 0 0 0 0 rgba(59,158,255,0); }
+        }
+        .glass-card {
+            background: rgba(18, 28, 40, 0.92);
+            backdrop-filter: blur(8px);
+            border-radius: 2rem;
+            padding: 2rem;
+            border: 1px solid rgba(59,158,255,0.3);
+            animation: borderPulse 4s infinite ease-in-out;
+            transition: all 0.35s;
+        }
+        .glass-card:hover {
+            animation: none;
+            transform: translateY(-8px) scale(1.02);
+            border-color: #6bb3ff;
+            box-shadow: 0 20px 30px -12px rgba(0,0,0,0.4);
+        }
+
+        /* ========== NEW ABOUT SECTION STAT CARDS (from snippet) ========== */
+        .stat-card {
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(8px);
+            border-radius: 24px;
+            padding: 1.2rem;
+            text-align: center;
+            min-width: 130px;
+            transition: transform 0.3s ease;
+        }
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+        .stat-card i {
+            font-size: 2rem;
+            color: #3b9eff;
+        }
+        .stat-card h3 {
+            font-size: 1.2rem;
+            margin-top: 0.5rem;
+            color: #fff;
+        }
+        .stat-card p {
+            font-size: 0.8rem;
+            color: #ddd;
+        }
+
+        /* ========== OTHER SECTIONS – NO CARDS (clean, border-based) ========== */
+        /* Services section – horizontal scroll with dividers */
+        .services-scroll {
+            overflow-x: auto;
+            display: flex;
+            gap: 2rem;
+            padding: 1rem 0 2rem;
+            scrollbar-width: thin;
+            cursor: grab;
+        }
+        .services-scroll::-webkit-scrollbar {
+            height: 4px;
+        }
+        .services-scroll::-webkit-scrollbar-track {
+            background: #1a1a2e;
+        }
+        .services-scroll::-webkit-scrollbar-thumb {
+            background: #3b9eff;
+        }
+        .service-item {
+            min-width: 280px;
+            padding: 1.5rem;
+            border-left: 3px solid #3b9eff;
+            transition: 0.2s;
+            background: transparent;
+        }
+        .service-item:hover {
+            transform: translateX(6px);
+            background: rgba(59, 158, 255, 0.05);
+        }
+        .service-icon {
+            font-size: 2.2rem;
+            color: #3b9eff;
+            margin-bottom: 0.8rem;
+        }
+        .service-item h3 {
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+        }
+        .service-item p {
+            color: #e0e0e0;
+            font-size: 0.9rem;
+        }
+
+        /* Strength section – stats grid with simple numbers */
+        .strength-stats {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 3rem;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+        .stat-block {
+            text-align: center;
+            padding: 1rem;
+            border-bottom: 2px solid #3b9eff;
+            min-width: 180px;
+        }
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #a8e6cf, #3b9eff);
             background-clip: text;
             -webkit-background-clip: text;
             color: transparent;
         }
+        .stat-label {
+            font-size: 1rem;
+            margin-top: 0.5rem;
+            color: #fff;
+        }
+        .stat-desc {
+            font-size: 0.85rem;
+            color: #c0c0c0;
+            margin-top: 0.3rem;
+        }
 
+        /* Role section – border based */
+        .eco-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .eco-text {
+            flex: 1.2;
+        }
+        .eco-visual {
+            flex: 0.9;
+            background: transparent;
+            border: 1px solid rgba(59, 158, 255, 0.4);
+            border-radius: 20px;
+            padding: 1.8rem;
+            text-align: center;
+        }
+        .pillar-list {
+            display: flex;
+            gap: 0.8rem;
+            flex-wrap: wrap;
+            margin: 1rem 0;
+        }
+        .pillar {
+            background: rgba(59, 158, 255, 0.22);
+            padding: 0.5rem 1.2rem;
+            border-radius: 40px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #b3e0ff;
+        }
+
+        /* Contact section – clean form */
+        .contact-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 3rem;
+            margin-top: 1.8rem;
+        }
+        .contact-info, .contact-form {
+            flex: 1;
+            background: transparent;
+            padding: 20px;
+            border: #5aabff solid 0.5px;
+            border-radius: 20px;
+        }
+        .input-group {
+            margin-bottom: 1rem;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 0.9rem 1.2rem;
+            background: rgba(25, 25, 35, 0.9);
+            border: 1px solid rgba(59, 158, 255, 0.5);
+            border-radius: 0;
+            color: white;
+            font-family: 'Inter', sans-serif;
+            outline: none;
+            font-size: 0.95rem;
+        }
+        input:focus, textarea:focus {
+            border-color: #3b9eff;
+            background: rgba(30, 30, 45, 0.95);
+        }
+        textarea {
+            resize: vertical;
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, #a8e6cf, #3b9eff);
+            border: none;
+            color: #0a0a0a;
+            padding: 0.8rem 2rem;
+            border-radius: 40px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: 0.3s;
+            font-size: 0.95rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .btn-primary:hover {
+            background: linear-gradient(135deg, #bcf0e0, #5aabff);
+            transform: scale(1.02);
+            box-shadow: 0 0 15px rgba(59, 158, 255, 0.6);
+        }
+        .contact-detail-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.2rem;
+            color: #f0f0f0;
+            border-bottom: 1px solid rgba(59, 158, 255, 0.3);
+            padding-bottom: 0.8rem;
+        }
+        .contact-detail-item i {
+            width: 32px;
+            color: #3b9eff;
+            font-size: 1.3rem;
+        }
+
+        /* Navbar */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 100;
+            backdrop-filter: blur(12px);
+            background: rgba(10, 20, 36, 0.85);
+            border-bottom: 1px solid #1f4562;
+        }
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 1.5rem;
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            font-family: 'DM Serif Display', serif;
+            background: linear-gradient(135deg, #a8e6cf, #3b9eff);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            text-decoration: none;
+        }
         .nav-links {
             display: flex;
             gap: 2rem;
             align-items: center;
             flex-wrap: wrap;
         }
-
         .nav-links a {
             text-decoration: none;
+            color: #eef5ff;
             font-weight: 500;
-            color: #1e293b;
-            transition: var(--transition);
-            font-size: 0.95rem;
-        }
-
-        .nav-links a:hover {
-            color: var(--primary);
-        }
-
-        .btn-outline-nav {
-            border: 1.5px solid var(--primary);
-            padding: 0.5rem 1.2rem;
-            border-radius: 2rem;
-            color: var(--primary);
-            font-weight: 600;
-            transition: var(--transition);
-        }
-
-        .btn-outline-nav:hover {
-            background: var(--primary);
-            color: white;
-        }
-
-        /* Buttons */
-        .btn-primary {
-            background: var(--primary);
-            color: white;
-            border: none;
-            padding: 0.75rem 1.8rem;
-            border-radius: 2.5rem;
-            font-weight: 600;
-            transition: var(--transition);
-            display: inline-block;
-            text-decoration: none;
-            box-shadow: 0 2px 6px rgba(30, 90, 156, 0.2);
-        }
-
-        .btn-primary:hover {
-            background: var(--primary-dark);
-            transform: translateY(-2px);
-            box-shadow: 0 12px 20px -12px rgba(14, 43, 79, 0.3);
-        }
-
-        .btn-secondary {
-            background: transparent;
-            border: 1.5px solid var(--primary);
-            color: var(--primary);
-            padding: 0.7rem 1.6rem;
-            border-radius: 2.5rem;
-            font-weight: 600;
-            transition: var(--transition);
-            display: inline-block;
-        }
-
-        .btn-secondary:hover {
-            background: var(--primary);
-            color: white;
-        }
-
-        /* Hero Section */
-        .hero {
-            padding: 5rem 0 6rem;
-            background: linear-gradient(145deg, #ffffff, var(--primary-soft));
+            transition: 0.2s;
             position: relative;
-            overflow: hidden;
         }
-
-        .hero-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            align-items: center;
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(135deg, #a8e6cf, #3b9eff);
+            transition: width 0.3s;
         }
-
-        .hero-content h1 {
-            font-size: 3.5rem;
-            font-weight: 800;
-            letter-spacing: -0.02em;
-            background: linear-gradient(120deg, var(--primary-dark), var(--primary-light));
-            background-clip: text;
-            -webkit-background-clip: text;
-            color: transparent;
-            margin-bottom: 1rem;
-        }
-
-        .hero-tagline {
-            font-size: 1.6rem;
-            font-weight: 600;
-            color: var(--primary);
-            margin-bottom: 1rem;
-        }
-
-        .hero-desc {
-            font-size: 1.1rem;
-            color: #374151;
-            margin-bottom: 2rem;
-        }
-
-        .hero-image img {
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
             width: 100%;
-            border-radius: 1.5rem;
-            box-shadow: var(--shadow-md);
-            transition: transform 0.3s;
+        }
+        .mobile-menu-btn {
+            display: none;
+            font-size: 1.5rem;
+            background: none;
+            border: none;
+            color: #eef5ff;
+            cursor: pointer;
+        }
+        .mobile-nav {
+            display: none;
+            flex-direction: column;
+            padding: 1rem;
+            border-top: 1px solid #1f4562;
+            background: rgba(10, 20, 36, 0.85);
+            backdrop-filter: blur(12px);
+        }
+        .mobile-nav a {
+            padding: 0.5rem 0;
+            text-decoration: none;
+            color: #eef5ff;
+        }
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .mobile-menu-btn { display: block; }
         }
 
-        .hero-image img:hover {
-            transform: scale(1.02);
-        }
-
-        /* Badge style */
-        .badge {
-            display: inline-block;
-            background: rgba(30, 90, 156, 0.1);
-            color: var(--primary);
-            border-radius: 2rem;
-            padding: 0.2rem 0.8rem;
-            font-size: 0.75rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-        }
-
-        /* Section common */
-        section {
-            padding: 5rem 0;
-        }
-
-        .section-alt {
-            background-color: var(--gray-light);
-        }
-
-        .section-title {
-            font-size: 2rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            color: var(--primary-dark);
-            letter-spacing: -0.01em;
-        }
-
-        .section-subhead {
-            font-size: 1.1rem;
-            color: #4b5563;
-            max-width: 680px;
-            margin-bottom: 2.5rem;
-        }
-
-        /* Cards grid */
-        .cards-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .card {
-            background: white;
-            border-radius: 1.5rem;
-            padding: 2rem;
-            transition: var(--transition);
-            border: 1px solid var(--gray-border);
-            box-shadow: var(--shadow-sm);
-        }
-
-        .card:hover {
-            transform: translateY(-6px);
-            box-shadow: var(--shadow-md);
-            border-color: var(--primary-light);
-        }
-
-        .card-icon {
-            font-size: 2.5rem;
-            color: var(--primary);
-            margin-bottom: 1.2rem;
-        }
-
-        .service-img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 1rem;
-            margin-bottom: 1.2rem;
-        }
-
-        .card h3 {
-            font-size: 1.4rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-        }
-
-        .card p {
-            color: #4b5563;
-        }
-
-        /* Double feature (Key Strength + Role) */
-        .double-feature {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-            margin: 2rem 0;
-        }
-
-        .strength-card {
-            background: white;
-            border-radius: 1.5rem;
-            padding: 2rem;
-            text-align: center;
-            border: 1px solid var(--gray-border);
-            transition: var(--transition);
-            box-shadow: var(--shadow-sm);
-        }
-
-        .strength-card:hover {
-            transform: translateY(-4px);
-            border-color: var(--primary);
-        }
-
-        .strength-card i {
-            font-size: 2.5rem;
-            color: var(--primary);
-            margin-bottom: 1rem;
-        }
-
-        .strength-card h3 {
-            font-size: 1.6rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-        }
-
-        .strength-card p {
-            font-size: 1rem;
-            color: #374151;
-        }
-
-        /* Ecosystem grid */
-        .eco-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-
-        .eco-item {
-            background: white;
-            border-radius: 1.2rem;
-            padding: 1.5rem;
-            text-align: center;
-            transition: var(--transition);
-            border: 1px solid var(--gray-border);
-        }
-
-        .eco-item i {
-            font-size: 2rem;
-            color: var(--primary);
-            margin-bottom: 0.8rem;
-        }
-
-        .eco-item h4 {
-            font-weight: 700;
-            margin-bottom: 0.3rem;
-        }
-
-        /* Contact section */
-        .contact-grid {
-            display: grid;
-            grid-template-columns: 1fr 1.2fr;
-            gap: 2rem;
-        }
-
-        .contact-info {
-            background: var(--primary-soft);
-            border-radius: 1.5rem;
-            padding: 2rem;
-        }
-
-        .contact-detail {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin: 1.5rem 0;
-        }
-
-        .contact-detail i {
-            font-size: 1.3rem;
-            width: 2rem;
-            color: var(--primary);
-        }
-
-        .contact-form {
-            background: white;
-            border-radius: 1.5rem;
-            padding: 2rem;
-            border: 1px solid var(--gray-border);
-            box-shadow: var(--shadow-sm);
-        }
-
-        .form-group {
-            margin-bottom: 1.2rem;
-        }
-
-        .form-group input, .form-group textarea {
-            width: 100%;
-            padding: 0.8rem 1rem;
-            border-radius: 1rem;
-            border: 1px solid var(--gray-border);
-            font-family: inherit;
-            transition: var(--transition);
-        }
-
-        .form-group input:focus, .form-group textarea:focus {
-            outline: none;
-            border-color: var(--primary);
-            box-shadow: 0 0 0 3px rgba(30, 90, 156, 0.1);
-        }
-
-        /* Footer */
         footer {
-            background: #0f172a;
-            color: #94a3b8;
-            padding: 2.5rem 0;
             text-align: center;
-        }
-
-        /* Responsive */
-        @media (max-width: 900px) {
-            .hero-grid {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-            .hero-content h1 {
-                font-size: 2.5rem;
-            }
-            .contact-grid {
-                grid-template-columns: 1fr;
-            }
-            .double-feature {
-                grid-template-columns: 1fr;
-            }
-            .navbar {
-                flex-direction: column;
-                text-align: center;
-            }
-            .container {
-                padding: 0 1.5rem;
-            }
-            section {
-                padding: 3rem 0;
-            }
-        }
-
-        @media (max-width: 550px) {
-            .hero-tagline {
-                font-size: 1.2rem;
-            }
-            .nav-links {
-                gap: 1rem;
-                justify-content: center;
-            }
-        }
-
-        /* Additional modern touches */
-        .glow-text {
-            text-shadow: 0 0 8px rgba(59,130,246,0.2);
+            padding: 1.5rem;
+            background: #050505;
+            font-size: 0.8rem;
+            color: #bbb;
+            border-top: 1px solid rgba(59, 158, 255, 0.2);
         }
     </style>
 </head>
+
 <body>
 
-<header>
-    <div class="container">
-        <div class="navbar">
-            <div class="logo">FGT STUDIOS</div>
+    <div class="navbar">
+        <div class="nav-container">
+            <a href="fgt.html" class="logo">FGT Studios</a>
             <div class="nav-links">
-                <a href="#home">Home</a>
+                <a href="index.html">Home</a>
                 <a href="#about">About</a>
                 <a href="#services">Services</a>
                 <a href="#strength">Strength</a>
-                <a href="#ecosystem">Ecosystem</a>
+                <a href="#role">Ecosystem</a>
                 <a href="#contact">Contact</a>
-                <a href="#contact" class="btn-outline-nav">Start Project</a>
             </div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn"><i class="fas fa-bars"></i></button>
         </div>
-    </div>
-</header>
-
-<main>
-    <!-- HERO SECTION with fresh image -->
-    <section id="home" class="hero">
-        <div class="container">
-            <div class="hero-grid">
-                <div class="hero-content">
-                    <div class="badge">✦ Full‑page creative studio</div>
-                    <h1>FGT STUDIOS</h1>
-                    <div class="hero-tagline">Stories That Build Brands</div>
-                    <p class="hero-desc">High‑quality content, branding visuals, and storytelling solutions that drive real business results.</p>
-                    <div class="hero-buttons" style="display: flex; gap: 1rem; flex-wrap: wrap;">
-                        <a href="#services" class="btn-primary">Explore services <i class="fas fa-arrow-right"></i></a>
-                        <a href="#contact" class="btn-secondary">Let's talk</a>
-                    </div>
-                </div>
-                <div class="hero-image">
-                    <img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=800&auto=format" alt="Creative production studio" loading="lazy">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ABOUT section (exact text from brief) -->
-    <section id="about">
-        <div class="container">
-            <div class="badge">Who we are</div>
-            <h2 class="section-title">About</h2>
-            <p class="section-subhead" style="font-size: 1.2rem;">FGT Studios delivers high-quality content, branding visuals, and storytelling solutions.</p>
-            <div class="cards-grid">
-                <div class="card">
-                    <img class="service-img" src="https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?w=600&auto=format" alt="Video production">
-                    <i class="fas fa-video card-icon" style="margin-top: 0.5rem;"></i>
-                    <h3>Video Production</h3>
-                    <p>Professional content creation.</p>
-                </div>
-                <div class="card">
-                    <img class="service-img" src="https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?w=600&auto=format" alt="Branding design">
-                    <i class="fas fa-palette card-icon"></i>
-                    <h3>Branding Visuals</h3>
-                    <p>Design and identity.</p>
-                </div>
-                <div class="card">
-                    <img class="service-img" src="https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?w=600&auto=format" alt="Social media content">
-                    <i class="fab fa-instagram card-icon"></i>
-                    <h3>Social Media Content</h3>
-                    <p>Engaging digital content.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SERVICES section (detailed, but exact short forms also present) -->
-    <section id="services" class="section-alt">
-        <div class="container">
-            <div class="badge">What we deliver</div>
-            <h2 class="section-title">Our core services</h2>
-            <div class="cards-grid">
-                <div class="card">
-                    <div class="card-icon"><i class="fas fa-film"></i></div>
-                    <h3>Video Production</h3>
-                    <p>Professional content creation. Brand films, commercials, motion graphics that captivate and convert.</p>
-                </div>
-                <div class="card">
-                    <div class="card-icon"><i class="fas fa-dice-d6"></i></div>
-                    <h3>Branding Visuals</h3>
-                    <p>Design and identity. Complete visual systems, logos, typography and guidelines for consistent brand expression.</p>
-                </div>
-                <div class="card">
-                    <div class="card-icon"><i class="fab fa-instagram"></i></div>
-                    <h3>Social Media Content</h3>
-                    <p>Engaging digital content. Scroll‑stopping reels, carousels, and assets built for modern platforms.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- KEY STRENGTH + ROLE IN ECOSYSTEM (exact wording) -->
-    <div class="container" id="strength-ecosystem">
-        <div class="double-feature">
-            <div class="strength-card" id="strength">
-                <i class="fas fa-chart-line"></i>
-                <h3>Key Strength</h3>
-                <p>Content that drives engagement and conversion.</p>
-            </div>
-            <div class="strength-card" id="role">
-                <i class="fas fa-project-diagram"></i>
-                <h3>Role in Ecosystem</h3>
-                <p>Supports marketing and branding.</p>
-            </div>
+        <div class="mobile-nav" id="mobileNav">
+            <a href="index.html">Home</a>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#strength">Strength</a>
+            <a href="#role">Ecosystem</a>
+            <a href="#contact">Contact</a>
         </div>
     </div>
 
-    <!-- ECOSYSTEM / deeper integration (optional but adds value) -->
-    <section id="ecosystem" class="section-alt">
-        <div class="container">
-            <div class="badge">Full ecosystem integration</div>
-            <h2 class="section-title">How we amplify your brand</h2>
-            <p class="section-subhead">From strategy to execution – we integrate deeply with your marketing and branding efforts.</p>
-            <div class="eco-grid">
-                <div class="eco-item">
-                    <i class="fas fa-bullhorn"></i>
-                    <h4>Marketing Support</h4>
-                    <p>Assets that drive campaigns</p>
-                </div>
-                <div class="eco-item">
-                    <i class="fas fa-check-circle"></i>
-                    <h4>Brand Consistency</h4>
-                    <p>Unified visual language</p>
-                </div>
-                <div class="eco-item">
-                    <i class="fas fa-book-open"></i>
-                    <h4>Story-led Strategy</h4>
-                    <p>Emotional resonance</p>
-                </div>
-                <div class="eco-item">
-                    <i class="fas fa-handshake"></i>
-                    <h4>Creative Partner</h4>
-                    <p>Seamless collaboration</p>
+    <main>
+        <!-- HERO SECTION -->
+        <section id="hero">
+            <div class="container">
+                <div data-aos="fade-up" data-aos-duration="900">
+                    <span class="section-badge">CREATIVE POWERHOUSE</span>
+                    <h1 class="hero-title">Stories That <br>Build Brands</h1>
+                    <p class="hero-sub">High-impact narratives, cinematic visuals, and branding that resonates globally.</p>
+                    <button class="btn-primary" id="heroContactBtn">Get in touch <i class="fas fa-arrow-right"></i></button>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- CONTACT section -->
-    <section id="contact">
-        <div class="container">
-            <div class="badge">Get in touch</div>
-            <h2 class="section-title">Let’s build your brand story</h2>
-            <p class="section-subhead">Ready to create content that drives engagement and conversion? Reach out to our team.</p>
-            <div class="contact-grid">
-                <div class="contact-info">
-                    <i class="fas fa-envelope" style="font-size: 1.8rem; color: var(--primary); margin-bottom: 1rem;"></i>
-                    <h3 style="margin-bottom: 1rem;">Let’s talk</h3>
-                    <div class="contact-detail">
-                        <i class="fas fa-envelope"></i> <span>hello@fgtstudios.com</span>
+        <!-- ABOUT SECTION – REPLACED WITH SNIPPET STYLE -->
+        <section id="about">
+            <div class="container">
+                <div class="about-wrapper" style="display: flex; flex-wrap: wrap; gap: 2rem; align-items: center;">
+                    <!-- Left text block – no glass-card wrapper, clean as in snippet -->
+                    <div data-aos="fade-right" style="flex: 1.2;">
+                        <span class="section-badge">WHO WE ARE</span>
+                        <h2 class="section-title">FGT Studios delivers high-quality content, branding visuals, and storytelling solutions.</h2>
+                        <p class="section-desc" style="max-width: 100%;">We blend strategic thinking with artistic excellence — transforming ideas into compelling brand experiences that captivate audiences and drive real results.</p>
                     </div>
-                    <div class="contact-detail">
-                        <i class="fas fa-phone-alt"></i> <span>+1 (555) 789‑0123</span>
-                    </div>
-                    <div class="contact-detail">
-                        <i class="fas fa-map-marker-alt"></i> <span>Kozhikode, Kerala, India</span>
-                    </div>
-                    <div style="margin-top: 2rem;">
-                        <p style="font-weight: 500;">We respond within 24 hours.</p>
-                    </div>
-                </div>
-                <div class="contact-form">
-                    <h3 style="margin-bottom: 1rem;">Send a message</h3>
-                    <form id="contactForm">
-                        <div class="form-group">
-                            <input type="text" id="fullname" placeholder="Full name" required>
+                    <!-- Right stat cards – using new .stat-card class (from snippet) -->
+                    <div data-aos="fade-left" data-aos-delay="150" style="flex: 0.9; display: flex; gap: 1rem; flex-wrap: wrap; justify-content: flex-end;">
+                        <div class="stat-card">
+                            <i class="fas fa-play-circle"></i>
+                            <h3>360° Content</h3>
+                            <p>Concept to final cut</p>
                         </div>
-                        <div class="form-group">
-                            <input type="email" id="email" placeholder="Email address" required>
+                        <div class="stat-card">
+                            <i class="fas fa-palette"></i>
+                            <h3>Visual Identity</h3>
+                            <p>Logos & guidelines</p>
                         </div>
-                        <div class="form-group">
-                            <textarea rows="4" id="message" placeholder="Tell us about your project…" required></textarea>
+                        <div class="stat-card">
+                            <i class="fas fa-chart-line"></i>
+                            <h3>Data-Driven</h3>
+                            <p>Optimized stories</p>
                         </div>
-                        <button type="submit" class="btn-primary" style="width: 100%;">Submit inquiry <i class="fas fa-paper-plane"></i></button>
-                    </form>
-                    <p id="formFeedback" style="margin-top: 0.8rem; font-size: 0.85rem;"></p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
-</main>
+        </section>
 
-<footer>
-    <div class="container">
-        <p>© 2026 FGT STUDIOS — Stories That Build Brands</p>
-        <p style="margin-top: 0.5rem; font-size: 0.8rem;">High‑quality content · Branding visuals · Storytelling solutions</p>
-        <div style="margin-top: 1rem; display: flex; justify-content: center; gap: 1.2rem;">
-            <a href="#" style="color: #94a3b8;"><i class="fab fa-linkedin-in"></i></a>
-            <a href="#" style="color: #94a3b8;"><i class="fab fa-instagram"></i></a>
-            <a href="#" style="color: #94a3b8;"><i class="fab fa-behance"></i></a>
-        </div>
-    </div>
-</footer>
+        <!-- SERVICES SECTION – No cards (horizontal scroll) -->
+        <section id="services">
+            <div class="container">
+                <div data-aos="fade-up">
+                    <span class="section-badge">WHAT WE OFFER</span>
+                    <h2 class="section-title">Premium Creative Services</h2>
+                </div>
+                <div class="services-scroll" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-item">
+                        <div class="service-icon"><i class="fas fa-video"></i></div>
+                        <h3>Video Production</h3>
+                        <p>Professional content creation — commercials, brand films, motion graphics that elevate your message.</p>
+                    </div>
+                    <div class="service-item">
+                        <div class="service-icon"><i class="fas fa-brush"></i></div>
+                        <h3>Branding Visuals</h3>
+                        <p>Design and identity — from logo systems to complete visual language for global consistency.</p>
+                    </div>
+                    <div class="service-item">
+                        <div class="service-icon"><i class="fab fa-instagram"></i></div>
+                        <h3>Social Media Content</h3>
+                        <p>Engaging digital content — short-form videos, carousels, reels, strategic assets optimized for every platform.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-<!-- Smooth scroll & form handling -->
-<script>
-    // Smooth anchor scroll
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            const targetId = this.getAttribute('href');
-            if (targetId === "#" || targetId === "") return;
-            const targetEl = document.querySelector(targetId);
-            if (targetEl) {
+        <!-- KEY STRENGTH SECTION – No cards (simple stats) -->
+        <section id="strength">
+            <div class="container">
+                <div data-aos="fade-up">
+                    <span class="section-badge">OUR EDGE</span>
+                    <h2 class="section-title">Key Strength</h2>
+                    <p class="section-desc" style="max-width: 700px;">We deliver measurable impact through data‑driven creativity.</p>
+                </div>
+                <div class="strength-stats">
+                    <div class="stat-block" data-aos="zoom-in" data-aos-delay="100">
+                        <div class="stat-number">+63%</div>
+                        <div class="stat-label">Engagement Boost</div>
+                        <div class="stat-desc">Average increase in audience interaction</div>
+                    </div>
+                    <div class="stat-block" data-aos="zoom-in" data-aos-delay="200">
+                        <div class="stat-number">2.5x</div>
+                        <div class="stat-label">Conversion Lift</div>
+                        <div class="stat-desc">Higher conversion rates from storytelling</div>
+                    </div>
+                    <div class="stat-block" data-aos="zoom-in" data-aos-delay="300">
+                        <div class="stat-number">Global</div>
+                        <div class="stat-label">Worldwide Resonance</div>
+                        <div class="stat-desc">Content that transcends borders</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ROLE IN ECOSYSTEM – No cards -->
+        <section id="role">
+            <div class="container">
+                <div class="eco-wrapper">
+                    <div class="eco-text" data-aos="fade-right">
+                        <span class="section-badge">ECOSYSTEM INTEGRATION</span>
+                        <h2 class="section-title">Role in Ecosystem</h2>
+                        <p class="section-desc" style="margin-bottom: 0.8rem;">FGT Studios is the creative engine that supports marketing and branding ecosystems — fueling awareness, retention, and loyalty.</p>
+                        <div class="pillar-list">
+                            <span class="pillar">📈 Marketing Amplification</span>
+                            <span class="pillar">🎨 Brand Consistency</span>
+                            <span class="pillar">💡 Story-Led Strategy</span>
+                            <span class="pillar">🤝 Creative Partnerships</span>
+                        </div>
+                        <button class="btn-primary" style="margin-top: 1rem;" id="learnMoreBtn">Learn more <i class="fas fa-arrow-right"></i></button>
+                    </div>
+                    <div class="eco-visual" data-aos="fade-left" data-aos-delay="150">
+                        <i class="fas fa-project-diagram" style="font-size: 2.8rem; color: #3b9eff; margin-bottom: 0.8rem;"></i>
+                        <h3 style="font-size: 1.5rem; color:#fff;">Integrated Creative Hub</h3>
+                        <p style="margin-top: 0.6rem;">Seamlessly connecting content production, brand design, and digital strategy — powering global narratives.</p>
+                        <div style="margin-top: 1rem;"><i class="fas fa-check-circle"></i> Marketing synergy · <i class="fas fa-check-circle"></i> Brand guardianship</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT SECTION – No cards -->
+        <section id="contact">
+            <div class="container">
+                <div data-aos="fade-up">
+                    <span class="section-badge">CONNECT WITH US</span>
+                    <h2 class="section-title">Let's bring your story to life</h2>
+                    <p class="section-desc">Reach out for collaborations, creative inquiries, or just to say hello.</p>
+                </div>
+                <div class="contact-grid">
+                    <div class="contact-info" data-aos="fade-right">
+                        <h3><i class="fas fa-map-pin" style="color:#3b9eff;"></i> FGT STUDIOS</h3>
+                        <div class="contact-detail-item"><i class="fas fa-envelope"></i> <span>hello@fgtstudios.com</span></div>
+                        <div class="contact-detail-item"><i class="fas fa-phone-alt"></i> <span>+91 1234567890</span></div>
+                        <div class="contact-detail-item"><i class="fas fa-location-dot"></i> <span>Tomercon Developers, Thalancheri Paramba,<br>Kozhikode, Kerala - 673003, India</span></div>
+                        <div class="contact-detail-item"><i class="fab fa-instagram"></i> <span>@fgtstudios</span></div>
+                        <div class="contact-detail-item"><i class="fab fa-linkedin"></i> <span>FGT Studios</span></div>
+                    </div>
+                    <div class="contact-form" data-aos="fade-left">
+                        <h3>Send a message</h3>
+                        <form id="contactForm" onsubmit="event.preventDefault(); alert('✓ Thank you! FGT Studios will get back to you shortly.'); this.reset();">
+                            <div class="input-group"><input type="text" placeholder="Full name" required></div>
+                            <div class="input-group"><input type="email" placeholder="Email address" required></div>
+                            <div class="input-group"><textarea rows="3" placeholder="Tell us about your project..."></textarea></div>
+                            <button type="submit" class="btn-primary">Submit inquiry <i class="fas fa-paper-plane"></i></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 FGT STUDIOS — Stories That Build Brands. All visions realized.</p>
+        <p style="margin-top: 0.4rem;"><i class="fab fa-instagram"></i> <i class="fab fa-linkedin"></i> <i class="fab fa-x-twitter"></i> &nbsp; | &nbsp; hello@fgtstudios.com</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 700,
+            once: true,
+            offset: 60,
+            easing: 'ease-out-quad'
+        });
+
+        // Mobile menu toggle
+        const mobileBtn = document.getElementById('mobileMenuBtn');
+        const mobileNav = document.getElementById('mobileNav');
+        if (mobileBtn && mobileNav) {
+            mobileBtn.addEventListener('click', () => {
+                mobileNav.style.display = mobileNav.style.display === 'flex' ? 'none' : 'flex';
+            });
+            document.querySelectorAll('.mobile-nav a').forEach(link => {
+                link.addEventListener('click', () => mobileNav.style.display = 'none');
+            });
+        }
+
+        // Hero button contact scroll
+        const heroBtn = document.getElementById('heroContactBtn');
+        if (heroBtn) {
+            heroBtn.addEventListener('click', () => {
+                document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+            });
+        }
+        // Learn more button
+        const learnBtn = document.getElementById('learnMoreBtn');
+        if (learnBtn) {
+            learnBtn.addEventListener('click', () => {
+                alert("FGT STUDIOS: Your partner in creative ecosystems — from strategy to execution.");
+            });
+        }
+
+        // Horizontal scroll drag for services
+        const scrollContainer = document.querySelector('.services-scroll');
+        if (scrollContainer) {
+            let isDown = false;
+            let startX, scrollLeft;
+            scrollContainer.addEventListener('mousedown', (e) => {
+                isDown = true;
+                startX = e.pageX - scrollContainer.offsetLeft;
+                scrollLeft = scrollContainer.scrollLeft;
+            });
+            scrollContainer.addEventListener('mouseleave', () => isDown = false);
+            scrollContainer.addEventListener('mouseup', () => isDown = false);
+            scrollContainer.addEventListener('mousemove', (e) => {
+                if (!isDown) return;
                 e.preventDefault();
-                targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }
-        });
-    });
-
-    // Contact form demo
-    const form = document.getElementById('contactForm');
-    const feedback = document.getElementById('formFeedback');
-    if (form) {
-        form.addEventListener('submit', function(e) {
-            e.preventDefault();
-            const name = document.getElementById('fullname').value.trim();
-            const email = document.getElementById('email').value.trim();
-            const msg = document.getElementById('message').value.trim();
-            if (!name || !email || !msg) {
-                feedback.innerHTML = '<span style="color:#c2410c;">❌ Please fill in all fields.</span>';
-                return;
-            }
-            if (!email.includes('@') || !email.includes('.')) {
-                feedback.innerHTML = '<span style="color:#c2410c;">⚠️ Please enter a valid email.</span>';
-                return;
-            }
-            feedback.innerHTML = '<span style="color:#1e5a9c;">✨ Thanks! Our team will reach out soon.</span>';
-            form.reset();
-            setTimeout(() => { feedback.innerHTML = ''; }, 4000);
-        });
-    }
-</script>
+                const x = e.pageX - scrollContainer.offsetLeft;
+                const walk = (x - startX) * 1.5;
+                scrollContainer.scrollLeft = scrollLeft - walk;
+            });
+        }
+    </script>
 </body>
+
 </html>
