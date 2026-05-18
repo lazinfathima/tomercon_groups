@@ -815,8 +815,15 @@
             .tab-buttons { gap: 0.8rem; flex-wrap: wrap; }
             .tab-btn { padding: 0.6rem 1rem; font-size: 0.85rem; }
             
+            /* Force venture and association cards to stack vertically one below another */
+            .ventures-grid, .associations-grid {
+                flex-direction: column;
+                align-items: center;
+                gap: 1.5rem;
+            }
             .venture-card, .association-card {
                 max-width: 100%;
+                width: 100%;
                 min-width: auto;
             }
             
@@ -1005,7 +1012,6 @@
                 </div>
                 <div class="tab-content active" id="ventures-tab">
                     <div class="ventures-grid">
-                        <!-- Venture card 1 - now same style as association cards -->
                         <div class="venture-card" data-bg="https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=600">
                             <div class="venture-icon"><i class="fas fa-robot"></i></div>
                             <h3>Learnyor</h3>
@@ -1016,7 +1022,6 @@
                                 <span><i class="fas fa-certificate"></i> 100+ Courses</span>
                             </div>
                         </div>
-                        <!-- Venture card 2 -->
                         <div class="venture-card" data-bg="https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=600">
                             <div class="venture-icon"><i class="fas fa-briefcase"></i></div>
                             <h3>QITE</h3>
