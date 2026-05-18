@@ -953,12 +953,14 @@
                                 <h3>Tomercon Ads</h3>
                                 <p>Growth engine driving marketing and user acquisition.</p>
                             </div>
-                            <a href="https://asapriyavb02.github.io/TOMERCON-CONSULTANCY/" class="featured-box" data-bg="https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=600">
+                            <!-- FIXED: Added target="_blank" and rel for Consultancy -->
+                            <a href="https://asapriyavb02.github.io/TOMERCON-CONSULTANCY/" target="_blank" rel="noopener noreferrer" class="featured-box" data-bg="https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=600">
                                 <div class="box-icon"><i class="fas fa-handshake"></i></div>
                                 <h3>Tomercon Consultancy</h3>
                                 <p>Strategy unit focused on business scaling.</p>
                             </a>
-                            <a href="https://asapriyavb02.github.io/TOMERCON-FUSIONLABS/" class="featured-box" data-bg="https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=600">
+                            <!-- FIXED: Added target="_blank" and rel for Fusion Labs -->
+                            <a href="https://asapriyavb02.github.io/TOMERCON-FUSIONLABS/" target="_blank" rel="noopener noreferrer" class="featured-box" data-bg="https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=600">
                                 <div class="box-icon"><i class="fas fa-flask"></i></div>
                                 <h3>Tomercon Fusion Labs</h3>
                                 <p>Innovation hub for AI and future technologies.</p>
@@ -978,12 +980,12 @@
                                 <h3>Tomercon Ads</h3>
                                 <p>Growth engine driving marketing and user acquisition.</p>
                             </div>
-                            <a href="https://asapriyavb02.github.io/TOMERCON-CONSULTANCY/" class="featured-box" data-bg="https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=600">
+                            <a href="https://asapriyavb02.github.io/TOMERCON-CONSULTANCY/" target="_blank" rel="noopener noreferrer" class="featured-box" data-bg="https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=600">
                                 <div class="box-icon"><i class="fas fa-handshake"></i></div>
                                 <h3>Tomercon Consultancy</h3>
                                 <p>Strategy unit focused on business scaling.</p>
                             </a>
-                            <a href="https://asapriyavb02.github.io/TOMERCON-FUSIONLABS/" class="featured-box" data-bg="https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=600">
+                            <a href="https://asapriyavb02.github.io/TOMERCON-FUSIONLABS/" target="_blank" rel="noopener noreferrer" class="featured-box" data-bg="https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=600">
                                 <div class="box-icon"><i class="fas fa-flask"></i></div>
                                 <h3>Tomercon Fusion Labs</h3>
                                 <p>Innovation hub for AI and future technologies.</p>
@@ -1134,7 +1136,7 @@
                 });
             }
 
-            // Smooth scroll
+            // Smooth scroll only for hash links (ignore external links)
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function(e) {
                     const target = document.querySelector(this.getAttribute('href'));
