@@ -39,10 +39,10 @@
             border-radius: 10px;
         }
 
-        /* ===== ALL SECTIONS HAVE SAME SPACING AS HERO (85vh, 5rem padding) ===== */
+        /* ===== DESKTOP: ALL SECTIONS SAME SPACING (60vh, 5rem padding) ===== */
         section {
             position: relative;
-            min-height: 85vh;
+            min-height: 60vh;
             display: flex;
             align-items: center;
             padding: 5rem 0;
@@ -55,6 +55,12 @@
         #hero {
             background-image: url('https://images.pexels.com/photos/3182746/pexels-photo-3182746.jpeg?auto=compress&cs=tinysrgb&w=1600');
             background-position: center 25%;
+            padding-top: 7rem;
+        }
+
+        /* Extra space above the badge on desktop */
+        #hero .section-badge {
+            margin-top: 2rem;
         }
 
         #intro {
@@ -779,27 +785,41 @@
             color: #8bcbff;
         }
 
-        /* === MOBILE RESPONSIVE - ORIGINAL CODE + HERO TITLE FONT SIZE REDUCTION === */
+        /* === MOBILE RESPONSIVE === */
         @media (max-width: 768px) {
-            /* Restore original section spacing and padding */
+            /* Base mobile section spacing: compact but consistent */
             section {
-                min-height: 103vh !important;
-                padding: 6rem 0 !important;
+                min-height: auto !important;
+                padding: 3rem 0 !important;
                 background-attachment: scroll !important;
             }
+            /* Hero: extra top space for navbar clearance, bottom matches others */
             #hero {
-                min-height: 103vh !important;
-                padding: 6rem 0 !important;
+                padding-top: 7rem !important;
+                padding-bottom: 3rem !important;
             }
+            /* Remove the extra badge margin on mobile (keep original) */
+            #hero .section-badge {
+                margin-top: 0 !important;
+            }
+            /* Intro: reduced spacing (moderate - not too small, not too big) */
             #intro {
-                min-height: 103vh !important;
-                padding: 6rem 0 !important;
+                padding-top: 2rem !important;
+                padding-bottom: 2rem !important;
             }
-            #cta {
-                min-height: 60vh !important;
-                padding: 6rem 0 !important;
+            /* All other sections keep 3rem padding */
+            
+            /* Hero title font size reduced on mobile */
+            .hero-title {
+                font-size: 2.2rem !important;
+                line-height: 1.2;
+                margin-bottom: 1rem;
             }
-            /* Original nav and layout */
+            .hero-sub {
+                font-size: 1rem !important;
+                margin-bottom: 1.5rem;
+            }
+            /* Original mobile layout styles */
             .nav-links { display: none; }
             .mobile-menu-btn { display: block; }
             .grid-why { grid-template-columns: 1fr; }
@@ -845,17 +865,6 @@
             
             .cta-card { padding: 2rem 1.2rem; }
             .btn-primary { padding: 0.8rem 1.8rem; font-size: 0.9rem; }
-            
-            /* ----- HERO TITLE FONT SIZE REDUCED ON MOBILE (ONLY CHANGE) ----- */
-            .hero-title {
-                font-size: 2.2rem !important;
-                line-height: 1.2;
-                margin-bottom: 1rem;
-            }
-            .hero-sub {
-                font-size: 1rem !important;
-                margin-bottom: 1.5rem;
-            }
         }
     </style>
 </head>
