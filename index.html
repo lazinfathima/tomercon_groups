@@ -39,33 +39,27 @@
             border-radius: 10px;
         }
 
-        /* ===== SPACING REDUCTION (global) ===== */
+        /* ===== ALL SECTIONS HAVE SAME SPACING AS HERO (85vh, 5rem padding) ===== */
         section {
             position: relative;
-            min-height: 75vh;          /* reduced from 103vh */
+            min-height: 85vh;
             display: flex;
             align-items: center;
-            padding: 3rem 0;           /* reduced from 6rem 0 */
+            padding: 5rem 0;
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
             background-attachment: fixed;
         }
 
-        /* Hero section - EXTRA spacing up and down (unchanged) */
         #hero {
             background-image: url('https://images.pexels.com/photos/3182746/pexels-photo-3182746.jpeg?auto=compress&cs=tinysrgb&w=1600');
             background-position: center 25%;
-            padding: 5rem 0;
-            min-height: 85vh;
         }
 
-        /* Intro section - MODERATE SPACING (neither too big nor too small) */
         #intro {
             background-image: url('https://images.pexels.com/photos/3183172/pexels-photo-3183172.jpeg?auto=compress&cs=tinysrgb&w=1600');
             background-position: center 35%;
-            min-height: 75vh;           /* moderate reduction (original was 103vh) */
-            padding: 3rem 0;            /* matches global padding, moderate */
         }
 
         #model {
@@ -91,9 +85,8 @@
         #cta {
             background-image: url('https://images.pexels.com/photos/3182747/pexels-photo-3182747.jpeg?auto=compress&cs=tinysrgb&w=1600');
             background-position: center 20%;
-            min-height: 50vh;
         }
-        /* ================================================ */
+        /* ============================================================= */
 
         section::before {
             content: "";
@@ -649,7 +642,6 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Unified card grid for both ventures and associations */
         .ventures-grid, .associations-grid {
             display: flex;
             flex-wrap: wrap;
@@ -658,7 +650,6 @@
             justify-content: center;
         }
 
-        /* Single card style (used for both venture and association cards) */
         .venture-card, .association-card {
             flex: 1;
             min-width: 300px;
@@ -674,7 +665,6 @@
             overflow: hidden;
         }
 
-        /* Hover background image effect (shared) */
         .venture-card::before, .association-card::before {
             content: "";
             position: absolute;
@@ -789,8 +779,27 @@
             color: #8bcbff;
         }
 
-        /* === MOBILE RESPONSIVE === */
+        /* === MOBILE RESPONSIVE - ORIGINAL CODE + HERO TITLE FONT SIZE REDUCTION === */
         @media (max-width: 768px) {
+            /* Restore original section spacing and padding */
+            section {
+                min-height: 103vh !important;
+                padding: 6rem 0 !important;
+                background-attachment: scroll !important;
+            }
+            #hero {
+                min-height: 103vh !important;
+                padding: 6rem 0 !important;
+            }
+            #intro {
+                min-height: 103vh !important;
+                padding: 6rem 0 !important;
+            }
+            #cta {
+                min-height: 60vh !important;
+                padding: 6rem 0 !important;
+            }
+            /* Original nav and layout */
             .nav-links { display: none; }
             .mobile-menu-btn { display: block; }
             .grid-why { grid-template-columns: 1fr; }
@@ -823,7 +832,6 @@
             .tab-buttons { gap: 0.8rem; flex-wrap: wrap; }
             .tab-btn { padding: 0.6rem 1rem; font-size: 0.85rem; }
             
-            /* Force venture and association cards to stack vertically one below another */
             .ventures-grid, .associations-grid {
                 flex-direction: column;
                 align-items: center;
@@ -837,15 +845,16 @@
             
             .cta-card { padding: 2rem 1.2rem; }
             .btn-primary { padding: 0.8rem 1.8rem; font-size: 0.9rem; }
-            section { background-attachment: scroll; }
-            /* Intro spacing on mobile also moderate */
-            #intro {
-                padding: 2rem 0;
-                min-height: auto;
+            
+            /* ----- HERO TITLE FONT SIZE REDUCED ON MOBILE (ONLY CHANGE) ----- */
+            .hero-title {
+                font-size: 2.2rem !important;
+                line-height: 1.2;
+                margin-bottom: 1rem;
             }
-            #hero {
-                padding: 3rem 0;
-                min-height: 70vh;
+            .hero-sub {
+                font-size: 1rem !important;
+                margin-bottom: 1.5rem;
             }
         }
     </style>
@@ -970,13 +979,11 @@
                                 <h3>Tomercon Ads</h3>
                                 <p>Growth engine driving marketing and user acquisition.</p>
                             </div>
-                            <!-- FIXED: Added target="_blank" and rel for Consultancy -->
                             <a href="https://asapriyavb02.github.io/TOMERCON-CONSULTANCY/" target="_blank" rel="noopener noreferrer" class="featured-box" data-bg="https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=600">
                                 <div class="box-icon"><i class="fas fa-handshake"></i></div>
                                 <h3>Tomercon Consultancy</h3>
                                 <p>Strategy unit focused on business scaling.</p>
                             </a>
-                            <!-- FIXED: Added target="_blank" and rel for Fusion Labs -->
                             <a href="https://asapriyavb02.github.io/TOMERCON-FUSIONLABS/" target="_blank" rel="noopener noreferrer" class="featured-box" data-bg="https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=600">
                                 <div class="box-icon"><i class="fas fa-flask"></i></div>
                                 <h3>Tomercon Fusion Labs</h3>
@@ -1017,6 +1024,7 @@
                 </div>
             </div>
         </section>
+
         <section id="ventures">
             <div class="container">
                 <div class="section-header-wrapper animate-on-scroll fade-up" data-animate>
@@ -1141,7 +1149,6 @@
 
     <script>
         (function() {
-            // Mobile menu
             const mobileBtn = document.getElementById('mobileMenuBtn');
             const mobileNav = document.getElementById('mobileNav');
             if (mobileBtn && mobileNav) {
@@ -1152,8 +1159,6 @@
                     link.addEventListener('click', () => mobileNav.style.display = 'none');
                 });
             }
-
-            // Smooth scroll only for hash links (ignore external links)
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function(e) {
                     const target = document.querySelector(this.getAttribute('href'));
@@ -1163,8 +1168,6 @@
                     }
                 });
             });
-
-            // Active nav highlight
             const sections = document.querySelectorAll('section[id]');
             const navLinks = document.querySelectorAll('.nav-link');
             function updateActiveLink() {
@@ -1185,8 +1188,6 @@
             }
             window.addEventListener('scroll', updateActiveLink);
             window.addEventListener('load', updateActiveLink);
-
-            // Intersection Observer for animations
             const animatedElements = document.querySelectorAll('.animate-on-scroll');
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
@@ -1200,8 +1201,6 @@
                 });
             }, { threshold: 0.15 });
             animatedElements.forEach(el => observer.observe(el));
-
-            // Featured boxes background images
             const boxes = document.querySelectorAll('.featured-box');
             boxes.forEach(box => {
                 const bg = box.getAttribute('data-bg');
@@ -1212,8 +1211,6 @@
             const style = document.createElement('style');
             style.textContent = `.featured-box::before { background-image: var(--hover-bg, none); opacity: var(--bg-opacity, 0); }`;
             document.head.appendChild(style);
-
-            // Unified hover background for venture & association cards
             const allCards = document.querySelectorAll('.venture-card, .association-card');
             const cardStyle = document.createElement('style');
             cardStyle.textContent = `.venture-card::before, .association-card::before { background-image: var(--hover-bg-card, none); }`;
@@ -1222,18 +1219,14 @@
                 const bg = card.getAttribute('data-bg');
                 if (bg) card.style.setProperty('--hover-bg-card', `url('${bg}')`);
             });
-
-            // Tabs functionality with auto-switch and dynamic headings
             const tabBtns = document.querySelectorAll('.tab-btn');
             const tabContents = document.querySelectorAll('.tab-content');
             const sectionBadge = document.getElementById('sectionBadge');
             const sectionTitle = document.getElementById('sectionTitle');
             const sectionDesc = document.getElementById('sectionDesc');
-
             let autoSwitchInterval;
             let isAutoSwitching = true;
             let isTransitioning = false;
-
             const venturesContent = {
                 badge: "NEXT‑GEN PLATFORMS",
                 title: "Ventures & Associations",
@@ -1244,7 +1237,6 @@
                 title: "Associations & Partners",
                 desc: "Our extended network of partners and branches driving global impact across multiple sectors."
             };
-
             function updateHeadings(badge, title, desc) {
                 if (isTransitioning) return;
                 isTransitioning = true;
@@ -1261,7 +1253,6 @@
                     setTimeout(() => { isTransitioning = false; }, 300);
                 }, 300);
             }
-
             function switchToTab(tabId) {
                 tabBtns.forEach(btn => btn.classList.remove('active'));
                 tabContents.forEach(content => content.classList.remove('active'));
@@ -1274,11 +1265,9 @@
                     else if (tabId === 'associations-tab') updateHeadings(associationsContent.badge, associationsContent.title, associationsContent.desc);
                 }
             }
-
             function getNextTab(currentTabId) {
                 return currentTabId === 'ventures-tab' ? 'associations-tab' : 'ventures-tab';
             }
-
             function startAutoSwitch() {
                 if (autoSwitchInterval) clearInterval(autoSwitchInterval);
                 autoSwitchInterval = setInterval(() => {
@@ -1291,7 +1280,6 @@
                     }
                 }, 5000);
             }
-
             function stopAutoSwitchTemporarily() {
                 isAutoSwitching = false;
                 if (autoSwitchInterval) clearInterval(autoSwitchInterval);
@@ -1300,7 +1288,6 @@
                     startAutoSwitch();
                 }, 10000);
             }
-
             tabBtns.forEach(btn => {
                 btn.addEventListener('click', () => {
                     const tabId = btn.getAttribute('data-tab');
@@ -1308,7 +1295,6 @@
                     stopAutoSwitchTemporarily();
                 });
             });
-
             sectionBadge.style.transition = 'opacity 0.3s ease';
             sectionTitle.style.transition = 'opacity 0.3s ease';
             sectionDesc.style.transition = 'opacity 0.3s ease';
