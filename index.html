@@ -58,7 +58,7 @@
             padding-top: 7rem;
         }
 
-        /* Extra space above the badge on desktop */
+        /* Extra space above the badge on desktop - increased to 4rem */
         #hero .section-badge {
             margin-top: 2rem;
         }
@@ -785,13 +785,18 @@
             color: #8bcbff;
         }
 
-        /* === MOBILE RESPONSIVE === */
+        /* === MOBILE RESPONSIVE - REMOVED TINY GAPS BETWEEN SECTIONS === */
         @media (max-width: 768px) {
             /* Base mobile section spacing: compact but consistent */
             section {
                 min-height: auto !important;
                 padding: 3rem 0 !important;
                 background-attachment: scroll !important;
+                margin: 0 !important;
+                border: none !important;
+                outline: none !important;
+                -webkit-transform: translateZ(0);
+                transform: translateZ(0);
             }
             /* Hero: extra top space for navbar clearance, bottom matches others */
             #hero {
