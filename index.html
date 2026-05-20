@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Tomercon Groups | Global Ecosystem Architects</title>
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
@@ -36,56 +39,61 @@
             border-radius: 10px;
         }
 
-        /* ========== REDUCED VERTICAL SPACING (GLOBAL) ========== */
+        /* ===== SPACING REDUCTION (global) ===== */
         section {
             position: relative;
-            min-height: 75vh;          /* base reduced from 103vh */
+            min-height: 75vh;          /* reduced from 103vh */
             display: flex;
             align-items: center;
-            padding: 3rem 0;
+            padding: 3rem 0;           /* reduced from 6rem 0 */
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
             background-attachment: fixed;
         }
 
-        /* Hero section - extra reduction */
+        /* Hero section - EXTRA spacing up and down (unchanged) */
         #hero {
-            min-height: 65vh;           /* further reduced from 85vh */
-            padding: 1.5rem 0;
+            background-image: url('https://images.pexels.com/photos/3182746/pexels-photo-3182746.jpeg?auto=compress&cs=tinysrgb&w=1600');
+            background-position: center 25%;
+            padding: 5rem 0;
+            min-height: 85vh;
         }
 
-        /* Intro section - compact */
+        /* Intro section - MODERATE SPACING (neither too big nor too small) */
         #intro {
-            min-height: 60vh;           /* reduced */
-            padding: 1.5rem 0;
+            background-image: url('https://images.pexels.com/photos/3183172/pexels-photo-3183172.jpeg?auto=compress&cs=tinysrgb&w=1600');
+            background-position: center 35%;
+            min-height: 75vh;           /* moderate reduction (original was 103vh) */
+            padding: 3rem 0;            /* matches global padding, moderate */
         }
 
-        /* CTA tailored */
+        #model {
+            background-image: url('https://images.pexels.com/photos/3184306/pexels-photo-3184306.jpeg?auto=compress&cs=tinysrgb&w=1600');
+            background-position: center 45%;
+        }
+
+        #companies {
+            background-image: url('https://images.pexels.com/photos/3184287/pexels-photo-3184287.jpeg?auto=compress&cs=tinysrgb&w=1600');
+            background-position: center 30%;
+        }
+
+        #ventures {
+            background-image: url('https://images.pexels.com/photos/3184303/pexels-photo-3184303.jpeg?auto=compress&cs=tinysrgb&w=1600');
+            background-position: center 50%;
+        }
+
+        #why {
+            background-image: url('https://images.pexels.com/photos/3184295/pexels-photo-3184295.jpeg?auto=compress&cs=tinysrgb&w=1600');
+            background-position: center 55%;
+        }
+
         #cta {
-            min-height: 48vh;
-            padding: 2rem 0;
+            background-image: url('https://images.pexels.com/photos/3182747/pexels-photo-3182747.jpeg?auto=compress&cs=tinysrgb&w=1600');
+            background-position: center 20%;
+            min-height: 50vh;
         }
-
-        /* Responsive: even tighter on mobile */
-        @media (max-width: 768px) {
-            section {
-                min-height: auto;
-                padding: 2rem 0;
-            }
-            #hero {
-                min-height: 55vh;
-                padding: 1rem 0;
-            }
-            #intro {
-                min-height: auto;
-                padding: 1.5rem 0;
-            }
-            #cta {
-                padding: 1.5rem 0;
-            }
-        }
-        /* ========== END SPACING REDUCTION ========== */
+        /* ================================================ */
 
         section::before {
             content: "";
@@ -119,83 +127,47 @@
             width: 100%;
         }
 
-        #hero {
-            background-image: url('https://images.pexels.com/photos/3182746/pexels-photo-3182746.jpeg?auto=compress&cs=tinysrgb&w=1600');
-            background-position: center 25%;
-        }
-
-        #intro {
-            background-image: url('https://images.pexels.com/photos/3183172/pexels-photo-3183172.jpeg?auto=compress&cs=tinysrgb&w=1600');
-            background-position: center 35%;
-        }
-
-        #model {
-            background-image: url('https://images.pexels.com/photos/3184306/pexels-photo-3184306.jpeg?auto=compress&cs=tinysrgb&w=1600');
-            background-position: center 45%;
-        }
-
-        #companies {
-            background-image: url('https://images.pexels.com/photos/3184287/pexels-photo-3184287.jpeg?auto=compress&cs=tinysrgb&w=1600');
-            background-position: center 30%;
-        }
-
-        #ventures {
-            background-image: url('https://images.pexels.com/photos/3184303/pexels-photo-3184303.jpeg?auto=compress&cs=tinysrgb&w=1600');
-            background-position: center 50%;
-        }
-
-        #why {
-            background-image: url('https://images.pexels.com/photos/3184295/pexels-photo-3184295.jpeg?auto=compress&cs=tinysrgb&w=1600');
-            background-position: center 55%;
-        }
-
-        #cta {
-            background-image: url('https://images.pexels.com/photos/3182747/pexels-photo-3182747.jpeg?auto=compress&cs=tinysrgb&w=1600');
-            background-position: center 20%;
-        }
-
         h1, h2, h3 {
             font-family: 'Space Grotesk', sans-serif;
             font-weight: 600;
             letter-spacing: -0.02em;
         }
 
-        /* Hero typography adjustments - reduced bottom margins */
         .hero-title {
-            font-size: clamp(3rem, 8vw, 4.5rem);
+            font-size: clamp(3.5rem, 9vw, 5rem);
             background: linear-gradient(125deg, #FFFFFF 20%, #4548c0d6 50%, #3143dec7 90%);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
             line-height: 1.1;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
             text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
         }
 
         .hero-sub {
-            font-size: clamp(1rem, 2.5vw, 1.4rem);
+            font-size: clamp(1.2rem, 2.8vw, 1.6rem);
             color: #f5f5f5;
             max-width: 650px;
-            margin-bottom: 1.8rem;
+            margin-bottom: 2.5rem;
             text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
             line-height: 1.4;
         }
 
         .section-badge {
             display: inline-block;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             text-transform: uppercase;
-            letter-spacing: 4px;
+            letter-spacing: 5px;
             font-weight: 700;
             color: #3b9eff;
-            margin-bottom: 0.8rem;
+            margin-bottom: 1rem;
             border-left: 3px solid #3b9eff;
-            padding-left: 12px;
+            padding-left: 14px;
         }
 
         .section-title {
-            font-size: clamp(2rem, 4.5vw, 3.5rem);
-            margin-bottom: 1rem;
+            font-size: clamp(2.2rem, 5vw, 3.8rem);
+            margin-bottom: 1.2rem;
             color: #ffffff;
             text-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
             line-height: 1.2;
@@ -204,8 +176,8 @@
         .grid-ecosystem,
         .grid-why {
             display: grid;
-            gap: 2rem;
-            margin-top: 1.5rem;   /* reduced from 2rem */
+            gap: 2.5rem;
+            margin-top: 3rem;
         }
 
         .grid-ecosystem {
@@ -217,54 +189,107 @@
         }
 
         .eco-item, .why-item {
-            padding: 1.2rem 0;
+            padding: 1.5rem 0;
             border-bottom: 1px solid rgba(59, 158, 255, 0.3);
             transition: all 0.3s ease;
         }
 
+        .eco-item:hover, .why-item:hover {
+            border-bottom-color: #3b9eff;
+            transform: translateX(6px);
+        }
+
         .eco-item i, .why-item i {
-            font-size: 2.2rem;
-            margin-bottom: 0.8rem;
+            font-size: 2.4rem;
+            background: linear-gradient(135deg, #a8e6cf, #3b9eff);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            margin-bottom: 1rem;
+            display: inline-block;
+        }
+
+        .eco-item h3, .why-item h4 {
+            font-size: 1.5rem;
+            margin-bottom: 0.75rem;
+            color: #ffffff;
+        }
+
+        .eco-item p, .why-item p {
+            color: #e0e0e0;
+            font-size: 1rem;
+            line-height: 1.5;
         }
 
         .intro-wrapper {
             display: flex;
             flex-wrap: wrap;
-            gap: 3rem;
+            gap: 4rem;
             align-items: center;
         }
 
+        .intro-text {
+            flex: 1.5;
+        }
+
+        .intro-image {
+            flex: 1.5;
+            text-align: center;
+        }
+
+        .intro-image img {
+            max-width: 100%;
+            border-radius: 32px;
+            box-shadow: 0 20px 40px -12px black;
+            border: 1px solid rgba(59, 158, 255, 0.5);
+        }
+
         .intro-text .section-desc {
-            font-size: 1.1rem;
-            line-height: 1.5;
+            max-width: 100%;
+            font-size: 1.2rem;
         }
 
         .cta-card {
             background: rgba(10, 10, 18, 0.88);
             backdrop-filter: blur(14px);
             border-radius: 40px;
-            padding: 2.5rem 2rem;
+            padding: 3.5rem 2.5rem;
             text-align: center;
             border: 1px solid rgba(59, 158, 255, 0.6);
+        }
+
+        .cta-card h2 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            margin-bottom: 1rem;
+        }
+
+        .cta-card p {
+            font-size: 1.2rem;
+            margin: 1rem 0 1.8rem;
         }
 
         .btn-primary {
             background: linear-gradient(135deg, #444eabcc, #3b9eff);
             border: none;
             color: #0a0a0a;
-            padding: 0.9rem 2.2rem;
+            padding: 1rem 2.5rem;
             border-radius: 50px;
             font-weight: 700;
             cursor: pointer;
             transition: 0.3s;
-            font-size: 1rem;
+            font-size: 1.05rem;
             display: inline-flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 0.6rem;
             text-decoration: none;
         }
 
-        /* navbar unchanged */
+        .btn-primary:hover {
+            background: linear-gradient(135deg, #bcf0e0, #5aabff);
+            transform: scale(1.02);
+            box-shadow: 0 0 15px rgba(59, 158, 255, 0.6);
+        }
+
         .navbar {
             position: fixed;
             top: 0;
@@ -287,7 +312,7 @@
         }
 
         .logo {
-            font-size: 1.8rem;
+            font-size: 1.9rem;
             font-weight: 700;
             background: linear-gradient(244deg, #685cf8b8, #79b4ee);
             background-clip: text;
@@ -298,7 +323,7 @@
 
         .nav-links {
             display: flex;
-            gap: 2rem;
+            gap: 2.2rem;
             align-items: center;
             flex-wrap: wrap;
         }
@@ -307,7 +332,7 @@
             text-decoration: none;
             color: #eef5ff;
             font-weight: 500;
-            font-size: 0.95rem;
+            font-size: 1rem;
             transition: 0.2s;
             position: relative;
         }
@@ -350,22 +375,22 @@
             padding: 0.5rem 0;
             text-decoration: none;
             color: #eef5ff;
-            font-size: 1rem;
+            font-size: 1.1rem;
         }
 
         footer {
             text-align: center;
-            padding: 1.5rem;
+            padding: 2rem;
             background: #050505;
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             color: #bbb;
             border-top: 1px solid rgba(59, 158, 255, 0.2);
         }
 
         .social-links a {
             color: #bbb;
-            margin: 0 0.5rem;
-            font-size: 1.2rem;
+            margin: 0 0.6rem;
+            font-size: 1.3rem;
             transition: 0.2s;
         }
 
@@ -373,49 +398,57 @@
             color: #3b9eff;
         }
 
-        /* animations unchanged */
         .animate-on-scroll {
             opacity: 0;
-            transition: opacity 0.6s ease, transform 0.6s ease;
+            transition: opacity 0.7s ease, transform 0.7s ease;
         }
 
         .animate-on-scroll.fade-up {
-            transform: translateY(30px);
+            transform: translateY(40px);
         }
+
         .animate-on-scroll.fade-up.animated {
             opacity: 1;
             transform: translateY(0);
         }
+
         .animate-on-scroll.zoom-in {
             transform: scale(0.96);
         }
+
         .animate-on-scroll.zoom-in.animated {
             opacity: 1;
             transform: scale(1);
         }
+
         .animate-on-scroll.fade-right {
-            transform: translateX(-30px);
+            transform: translateX(-40px);
         }
+
         .animate-on-scroll.fade-right.animated {
             opacity: 1;
             transform: translateX(0);
         }
+
         .animate-on-scroll.fade-left {
-            transform: translateX(30px);
+            transform: translateX(40px);
         }
+
         .animate-on-scroll.fade-left.animated {
             opacity: 1;
             transform: translateX(0);
         }
+
         .animate-on-scroll.flip-up {
-            transform: perspective(600px) rotateX(15deg);
+            transform: perspective(600px) rotateX(20deg);
         }
+
         .animate-on-scroll.flip-up.animated {
             opacity: 1;
             transform: perspective(600px) rotateX(0deg);
         }
 
-        /* horizontal scroll for companies (unchanged) */
+        /* === FULL WIDTH SCROLL (featured companies) === */
         .fullwidth-scroll-container {
             width: 100vw;
             position: relative;
@@ -426,44 +459,51 @@
             overflow-x: hidden;
             overflow-y: hidden;
         }
+
         .continuous-scroll-wrapper {
             width: 100%;
             overflow-x: hidden;
             overflow-y: hidden;
             position: relative;
         }
+
         .continuous-scroll-wrapper::-webkit-scrollbar,
         .fullwidth-scroll-container::-webkit-scrollbar {
             display: none;
         }
+
         .continuous-scroll-wrapper,
         .fullwidth-scroll-container {
             -ms-overflow-style: none;
             scrollbar-width: none;
         }
+
         .featured-horizontal-grid {
             display: flex;
             flex-direction: row;
             gap: 2rem;
-            margin: 1.5rem 0 0.5rem 0;
+            margin: 3rem 0 1rem 0;
             padding: 0.5rem 2rem;
             width: max-content;
             animation: scrollRightToLeft 25s linear infinite;
         }
+
         .continuous-scroll-wrapper:hover .featured-horizontal-grid {
             animation-play-state: paused;
         }
+
         @keyframes scrollRightToLeft {
             0% { transform: translateX(0); }
             100% { transform: translateX(-50%); }
         }
+
         .featured-box {
             flex: 0 0 auto;
-            width: 300px;
+            width: 320px;
             background: rgb(15 25 45 / 12%);
             backdrop-filter: blur(8px);
             border-radius: 24px;
-            padding: 2rem 1.2rem;
+            padding: 2.5rem 1.5rem;
             text-align: center;
             cursor: pointer;
             text-decoration: none;
@@ -472,10 +512,11 @@
             border: 1px solid rgba(59, 158, 255, 0.3);
             display: flex;
             flex-direction: column;
-            min-height: 280px;
+            min-height: 320px;
             position: relative;
             overflow: hidden;
         }
+
         .featured-box::before {
             content: "";
             position: absolute;
@@ -491,6 +532,7 @@
             z-index: 0;
             border-radius: 24px;
         }
+
         .featured-box::after {
             content: "";
             position: absolute;
@@ -504,66 +546,311 @@
             transition: opacity 0.4s ease;
             z-index: 1;
         }
+
         .featured-box:hover::after { opacity: 0.7; }
         .featured-box:hover::before { opacity: 0.85; }
         .featured-box:hover {
-            transform: translateY(-6px);
+            transform: translateY(-8px);
             border-color: #3b9eff;
+            box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.7);
         }
+
         .featured-box .box-icon,
         .featured-box h3,
         .featured-box p {
             position: relative;
             z-index: 2;
         }
+
         .box-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1.2rem auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(59, 158, 255, 0.15);
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .featured-box:hover .box-icon {
+            background: rgba(0, 0, 0, 0.5);
+            transform: scale(1.05);
+        }
+
+        .box-icon i {
+            font-size: 2.5rem;
+            color: #3b9eff;
+        }
+
+        .featured-box h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 0.8rem;
+            color: #ffffff;
+        }
+
+        .featured-box p {
+            font-size: 0.95rem;
+            color: #c0c0c0;
+            line-height: 1.5;
+        }
+
+        /* === VENTURES & ASSOCIATIONS TABS - UNIFIED CARD STYLE === */
+        .section-header-wrapper {
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .tab-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin: 2rem 0 1rem 0;
+        }
+
+        .tab-btn {
+            background: rgba(59,158,255,0.1);
+            border: 1px solid rgba(59,158,255,0.3);
+            border-radius: 50px;
+            padding: 0.8rem 2rem;
+            font-size: 1rem;
+            font-weight: 600;
+            color: #ffffff;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            backdrop-filter: blur(4px);
+        }
+
+        .tab-btn i { font-size: 1.1rem; color: #3b9eff; }
+        .tab-btn:hover {
+            background: rgba(59,158,255,0.2);
+            border-color: #3b9eff;
+            transform: translateY(-2px);
+        }
+        .tab-btn.active {
+            background: linear-gradient(135deg, #3b9eff, #2563eb);
+            border-color: transparent;
+            color: #ffffff;
+        }
+        .tab-btn.active i { color: #ffffff; }
+
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+        .tab-content.active { display: block; }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Unified card grid for both ventures and associations */
+        .ventures-grid, .associations-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-top: 2rem;
+            justify-content: center;
+        }
+
+        /* Single card style (used for both venture and association cards) */
+        .venture-card, .association-card {
+            flex: 1;
+            min-width: 300px;
+            max-width: 350px;
+            background: rgb(15 25 45/12%);
+            backdrop-filter: blur(8px);
+            border-radius: 24px;
+            padding: 2rem 1.5rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(59,158,255,0.25);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Hover background image effect (shared) */
+        .venture-card::before, .association-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            z-index: 0;
+            border-radius: 24px;
+        }
+        .venture-card::after, .association-card::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(0,0,0,0.75), rgba(0,0,0,0.85));
+            border-radius: 24px;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            z-index: 0;
+        }
+        .venture-card:hover::before, .association-card:hover::before { opacity: 0.7; }
+        .venture-card:hover::after, .association-card:hover::after { opacity: 0.65; }
+        .venture-card:hover, .association-card:hover {
+            transform: translateY(-8px);
+            border-color: #3b9eff;
+            box-shadow: 0 20px 35px -12px rgba(0,0,0,0.6);
+        }
+
+        .venture-card .venture-icon,
+        .venture-card h3,
+        .venture-card p,
+        .venture-card .venture-details,
+        .association-card .association-icon,
+        .association-card h3,
+        .association-card p,
+        .association-card .association-stats {
+            position: relative;
+            z-index: 2;
+        }
+
+        .venture-icon, .association-icon {
             width: 70px;
             height: 70px;
             margin: 0 auto 1rem auto;
             display: flex;
             align-items: center;
             justify-content: center;
-            background: rgba(59, 158, 255, 0.15);
+            background: rgba(59,158,255,0.2);
             border-radius: 20px;
+            transition: all 0.3s ease;
         }
-        .box-icon i { font-size: 2rem; color: #3b9eff; }
-        .featured-box h3 { font-size: 1.2rem; margin-bottom: 0.6rem; }
-        .featured-box p { font-size: 0.85rem; }
+        .venture-card:hover .venture-icon,
+        .association-card:hover .association-icon {
+            background: rgba(0,0,0,0.6);
+            transform: scale(1.05);
+        }
+        .venture-icon i, .association-icon i {
+            font-size: 2rem;
+            color: #5aabff;
+            transition: all 0.3s ease;
+        }
+        .venture-card:hover .venture-icon i,
+        .association-card:hover .association-icon i {
+            color: #ffffff;
+        }
 
-        /* Tabs & cards - reduced internal spacing */
-        .tab-buttons {
-            gap: 1.2rem;
-            margin: 1.2rem 0 0.8rem;
+        .venture-card h3, .association-card h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 0.6rem;
+            color: #ffffff;
         }
-        .tab-btn {
-            padding: 0.6rem 1.6rem;
-            font-size: 0.95rem;
+        .venture-card p, .association-card p {
+            font-size: 0.85rem;
+            color: #c0c0c0;
+            line-height: 1.5;
+            margin-bottom: 1rem;
         }
-        .venture-card, .association-card {
-            padding: 1.5rem 1.2rem;
-            min-width: 280px;
+        .venture-card:hover p, .association-card:hover p {
+            color: #f0f0f0;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.5);
         }
-        .venture-icon, .association-icon {
-            width: 60px;
-            height: 60px;
-            margin-bottom: 0.8rem;
-        }
-        .venture-icon i, .association-icon i { font-size: 1.8rem; }
 
+        .venture-details, .association-stats {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.8rem;
+        }
+        .venture-details span, .association-stats span {
+            font-size: 0.7rem;
+            color: #5aabff;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+            background: rgba(59,158,255,0.15);
+            padding: 0.25rem 0.6rem;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+        }
+        .venture-card:hover .venture-details span,
+        .association-card:hover .association-stats span {
+            background: rgba(0,0,0,0.6);
+            color: #8bcbff;
+        }
+
+        /* === MOBILE RESPONSIVE === */
         @media (max-width: 768px) {
             .nav-links { display: none; }
             .mobile-menu-btn { display: block; }
             .grid-why { grid-template-columns: 1fr; }
             .container { padding: 0 5%; }
-            .intro-wrapper { gap: 1.5rem; }
-            .featured-box { width: 260px; min-height: 260px; padding: 1.5rem; }
-            .cta-card { padding: 1.8rem; }
-            .hero-title { font-size: clamp(2.5rem, 7vw, 3.5rem); }
-            .hero-sub { font-size: 1rem; margin-bottom: 1.2rem; }
-            .section-title { font-size: 1.8rem; }
+            
+            .intro-wrapper { flex-direction: column; gap: 2rem; }
+            .intro-image { order: 1; }
+            .intro-text { order: 2; }
+            
+            .fullwidth-scroll-container {
+                width: 100%;
+                left: 0;
+                margin-left: 0;
+                margin-right: 0;
+            }
+            .featured-horizontal-grid {
+                padding: 0.5rem 1rem;
+                gap: 1.2rem;
+                animation: scrollRightToLeft 22s linear infinite;
+            }
+            .featured-box {
+                width: 270px;
+                min-height: 280px;
+                padding: 1.8rem 1rem;
+            }
+            .box-icon { width: 60px; height: 60px; }
+            .box-icon i { font-size: 1.8rem; }
+            .featured-box h3 { font-size: 1.1rem; }
+            
+            .tab-buttons { gap: 0.8rem; flex-wrap: wrap; }
+            .tab-btn { padding: 0.6rem 1rem; font-size: 0.85rem; }
+            
+            /* Force venture and association cards to stack vertically one below another */
+            .ventures-grid, .associations-grid {
+                flex-direction: column;
+                align-items: center;
+                gap: 1.5rem;
+            }
+            .venture-card, .association-card {
+                max-width: 100%;
+                width: 100%;
+                min-width: auto;
+            }
+            
+            .cta-card { padding: 2rem 1.2rem; }
+            .btn-primary { padding: 0.8rem 1.8rem; font-size: 0.9rem; }
+            section { background-attachment: scroll; }
+            /* Intro spacing on mobile also moderate */
+            #intro {
+                padding: 2rem 0;
+                min-height: auto;
+            }
+            #hero {
+                padding: 3rem 0;
+                min-height: 70vh;
+            }
         }
     </style>
 </head>
+
 <body>
 
     <div class="navbar">
@@ -597,7 +884,8 @@
                 <div class="animate-on-scroll fade-up" data-animate>
                     <span class="section-badge">GLOBAL ECOSYSTEM ARCHITECTS</span>
                     <h1 class="hero-title">We Don't Just Build Businesses.<br>We Build Ecosystems.</h1>
-                    <p class="hero-sub">A multi-industry group driving innovation across technology, marketing, education, and sports.<br> Build. Scale. Lead.</p>
+                    <p class="hero-sub">A multi-industry group driving innovation across technology, marketing,
+                        education, and sports.<br> Build. Scale. Lead.</p>
                     <a href="contact.html" class="btn-primary">Explore Ecosystem <i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
@@ -608,10 +896,15 @@
                 <div class="intro-text animate-on-scroll fade-right" data-animate>
                     <span class="section-badge">INTEGRATED ECOSYSTEM</span>
                     <h2 class="section-title">Introduction</h2>
-                    <p class="section-desc">Tomercon Groups is a diversified business ecosystem focused on building scalable ventures and delivering real-world solutions. We combine technology, strategy, and creativity to create businesses that are not only profitable but impactful. Our strength lies in integration — every company within the group contributes to a larger ecosystem designed for growth and sustainability.</p>
+                    <p class="section-desc">Tomercon Groups is a diversified business ecosystem
+                        focused on building scalable ventures and delivering real-world solutions. We combine
+                        technology, strategy, and creativity to create businesses that are not only profitable but
+                        impactful. Our strength lies in integration — every company within the group contributes to a
+                        larger ecosystem designed for growth and sustainability.</p>
                 </div>
                 <div class="intro-image animate-on-scroll fade-left" data-animate data-delay="150">
-                    <img src="img1.cms" alt="Ecosystem Illustration" onerror="this.src='https://placehold.co/700x450/0a1424/3b9eff?text=Ecosystem+Hub'">
+                    <img src="img1.cms" alt="Ecosystem Illustration"
+                        onerror="this.src='https://placehold.co/700x450/0a1424/3b9eff?text=Ecosystem+Hub'">
                 </div>
             </div>
         </section>
@@ -621,16 +914,38 @@
                 <div class="animate-on-scroll fade-up" data-animate>
                     <span class="section-badge">OUR FRAMEWORK</span>
                     <h2 class="section-title">Our Ecosystem Model</h2>
-                    <p class="section-desc">We operate through a structured ecosystem where each vertical supports and strengthens the others.</p>
+                    <p class="section-desc">We operate through a structured ecosystem where each vertical supports and
+                        strengthens the others.</p>
                 </div>
                 <div class="grid-ecosystem">
-                    <div class="eco-item animate-on-scroll zoom-in" data-animate data-delay="100"><i class="fas fa-microchip"></i><h3>Technology Development</h3><p>Building scalable digital infrastructure and software solutions.</p></div>
-                    <div class="eco-item animate-on-scroll zoom-in" data-animate data-delay="150"><i class="fas fa-chart-line"></i><h3>Marketing & Growth</h3><p>Data-driven user acquisition and brand scaling.</p></div>
-                    <div class="eco-item animate-on-scroll zoom-in" data-animate data-delay="200"><i class="fas fa-bullhorn"></i><h3>Business Strategy</h3><p>High-level consulting for market expansion.</p></div>
-                    <div class="eco-item animate-on-scroll zoom-in" data-animate data-delay="250"><i class="fas fa-brain"></i><h3>Innovation & AI</h3><p>Cutting-edge AI integration and future-tech labs.</p></div>
-                    <div class="eco-item animate-on-scroll zoom-in" data-animate data-delay="300"><i class="fas fa-film"></i><h3>Media & Content</h3><p>Storytelling and creative production power.</p></div>
-                    <div class="eco-item animate-on-scroll zoom-in" data-animate data-delay="350"><i class="fas fa-graduation-cap"></i><h3>Education & Career Platforms</h3><p>Empowering learners and professionals worldwide.</p></div>
-                    <div class="eco-item animate-on-scroll zoom-in" data-animate data-delay="400"><i class="fas fa-futbol"></i><h3>Sports & Social Development</h3><p>Community-driven sports initiatives and impact.</p></div>
+                    <div class="eco-item animate-on-scroll zoom-in" data-animate data-delay="100"><i class="fas fa-microchip"></i>
+                        <h3>Technology Development</h3>
+                        <p>Building scalable digital infrastructure and software solutions.</p>
+                    </div>
+                    <div class="eco-item animate-on-scroll zoom-in" data-animate data-delay="150"><i class="fas fa-chart-line"></i>
+                        <h3>Marketing & Growth</h3>
+                        <p>Data-driven user acquisition and brand scaling.</p>
+                    </div>
+                    <div class="eco-item animate-on-scroll zoom-in" data-animate data-delay="200"><i class="fas fa-bullhorn"></i>
+                        <h3>Business Strategy</h3>
+                        <p>High-level consulting for market expansion.</p>
+                    </div>
+                    <div class="eco-item animate-on-scroll zoom-in" data-animate data-delay="250"><i class="fas fa-brain"></i>
+                        <h3>Innovation & AI</h3>
+                        <p>Cutting-edge AI integration and future-tech labs.</p>
+                    </div>
+                    <div class="eco-item animate-on-scroll zoom-in" data-animate data-delay="300"><i class="fas fa-film"></i>
+                        <h3>Media & Content</h3>
+                        <p>Storytelling and creative production power.</p>
+                    </div>
+                    <div class="eco-item animate-on-scroll zoom-in" data-animate data-delay="350"><i class="fas fa-graduation-cap"></i>
+                        <h3>Education & Career Platforms</h3>
+                        <p>Empowering learners and professionals worldwide.</p>
+                    </div>
+                    <div class="eco-item animate-on-scroll zoom-in" data-animate data-delay="400"><i class="fas fa-futbol"></i>
+                        <h3>Sports & Social Development</h3>
+                        <p>Community-driven sports initiatives and impact.</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -645,23 +960,63 @@
                 <div class="fullwidth-scroll-container">
                     <div class="continuous-scroll-wrapper">
                         <div class="featured-horizontal-grid" id="featuredGrid">
-                            <a href="https://abhiramimurali363-code.github.io/TOMERCON-DEVELOPERS/" class="featured-box" data-bg="https://images.pexels.com/photos/1181244/pexels-photo-1181244.jpeg?auto=compress&cs=tinysrgb&w=600"><div class="box-icon"><i class="fas fa-laptop-code"></i></div><h3>TOMERCON DEVELOPERS LLP</h3><p>The technology backbone building apps and digital systems.</p></a>
-                            <div class="featured-box" data-bg="https://images.pexels.com/photos/669615/pexels-photo-669615.jpeg?auto=compress&cs=tinysrgb&w=600"><div class="box-icon"><i class="fas fa-chart-line"></i></div><h3>Tomercon Ads</h3><p>Growth engine driving marketing and user acquisition.</p></div>
-                            <a href="https://asapriyavb02.github.io/TOMERCON-CONSULTANCY/" target="_blank" rel="noopener noreferrer" class="featured-box" data-bg="https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=600"><div class="box-icon"><i class="fas fa-handshake"></i></div><h3>Tomercon Consultancy</h3><p>Strategy unit focused on business scaling.</p></a>
-                            <a href="https://asapriyavb02.github.io/TOMERCON-FUSIONLABS/" target="_blank" rel="noopener noreferrer" class="featured-box" data-bg="https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=600"><div class="box-icon"><i class="fas fa-flask"></i></div><h3>Tomercon Fusion Labs</h3><p>Innovation hub for AI and future technologies.</p></a>
-                            <a href="fgt.html" class="featured-box" data-bg="https://images.pexels.com/photos/66134/pexels-photo-66134.jpeg?auto=compress&cs=tinysrgb&w=600"><div class="box-icon"><i class="fas fa-video"></i></div><h3>FGT Studios</h3><p>Creative production and storytelling unit.</p></a>
-                            <!-- duplicate items for seamless loop -->
-                            <a href="https://abhiramimurali363-code.github.io/TOMERCON-DEVELOPERS/" class="featured-box" data-bg="https://images.pexels.com/photos/1181244/pexels-photo-1181244.jpeg?auto=compress&cs=tinysrgb&w=600"><div class="box-icon"><i class="fas fa-laptop-code"></i></div><h3>TOMERCON DEVELOPERS LLP</h3><p>The technology backbone building apps and digital systems.</p></a>
-                            <div class="featured-box" data-bg="https://images.pexels.com/photos/669615/pexels-photo-669615.jpeg?auto=compress&cs=tinysrgb&w=600"><div class="box-icon"><i class="fas fa-chart-line"></i></div><h3>Tomercon Ads</h3><p>Growth engine driving marketing and user acquisition.</p></div>
-                            <a href="https://asapriyavb02.github.io/TOMERCON-CONSULTANCY/" target="_blank" class="featured-box" data-bg="https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=600"><div class="box-icon"><i class="fas fa-handshake"></i></div><h3>Tomercon Consultancy</h3><p>Strategy unit focused on business scaling.</p></a>
-                            <a href="https://asapriyavb02.github.io/TOMERCON-FUSIONLABS/" target="_blank" class="featured-box" data-bg="https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=600"><div class="box-icon"><i class="fas fa-flask"></i></div><h3>Tomercon Fusion Labs</h3><p>Innovation hub for AI and future technologies.</p></a>
-                            <a href="fgt.html" class="featured-box" data-bg="https://images.pexels.com/photos/66134/pexels-photo-66134.jpeg?auto=compress&cs=tinysrgb&w=600"><div class="box-icon"><i class="fas fa-video"></i></div><h3>FGT Studios</h3><p>Creative production and storytelling unit.</p></a>
+                            <a href="https://abhiramimurali363-code.github.io/TOMERCON-DEVELOPERS/" class="featured-box" data-bg="https://images.pexels.com/photos/1181244/pexels-photo-1181244.jpeg?auto=compress&cs=tinysrgb&w=600">
+                                <div class="box-icon"><i class="fas fa-laptop-code"></i></div>
+                                <h3>TOMERCON DEVELOPERS LLP</h3>
+                                <p>The technology backbone building apps and digital systems.</p>
+                            </a>
+                            <div class="featured-box" data-bg="https://images.pexels.com/photos/669615/pexels-photo-669615.jpeg?auto=compress&cs=tinysrgb&w=600">
+                                <div class="box-icon"><i class="fas fa-chart-line"></i></div>
+                                <h3>Tomercon Ads</h3>
+                                <p>Growth engine driving marketing and user acquisition.</p>
+                            </div>
+                            <!-- FIXED: Added target="_blank" and rel for Consultancy -->
+                            <a href="https://asapriyavb02.github.io/TOMERCON-CONSULTANCY/" target="_blank" rel="noopener noreferrer" class="featured-box" data-bg="https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=600">
+                                <div class="box-icon"><i class="fas fa-handshake"></i></div>
+                                <h3>Tomercon Consultancy</h3>
+                                <p>Strategy unit focused on business scaling.</p>
+                            </a>
+                            <!-- FIXED: Added target="_blank" and rel for Fusion Labs -->
+                            <a href="https://asapriyavb02.github.io/TOMERCON-FUSIONLABS/" target="_blank" rel="noopener noreferrer" class="featured-box" data-bg="https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=600">
+                                <div class="box-icon"><i class="fas fa-flask"></i></div>
+                                <h3>Tomercon Fusion Labs</h3>
+                                <p>Innovation hub for AI and future technologies.</p>
+                            </a>
+                            <a href="fgt.html" class="featured-box" data-bg="https://images.pexels.com/photos/66134/pexels-photo-66134.jpeg?auto=compress&cs=tinysrgb&w=600">
+                                <div class="box-icon"><i class="fas fa-video"></i></div>
+                                <h3>FGT Studios</h3>
+                                <p>Creative production and storytelling unit.</p>
+                            </a>
+                            <a href="https://abhiramimurali363-code.github.io/TOMERCON-DEVELOPERS/" class="featured-box" data-bg="https://images.pexels.com/photos/1181244/pexels-photo-1181244.jpeg?auto=compress&cs=tinysrgb&w=600">
+                                <div class="box-icon"><i class="fas fa-laptop-code"></i></div>
+                                <h3>TOMERCON DEVELOPERS LLP</h3>
+                                <p>The technology backbone building apps and digital systems.</p>
+                            </a>
+                            <div class="featured-box" data-bg="https://images.pexels.com/photos/669615/pexels-photo-669615.jpeg?auto=compress&cs=tinysrgb&w=600">
+                                <div class="box-icon"><i class="fas fa-chart-line"></i></div>
+                                <h3>Tomercon Ads</h3>
+                                <p>Growth engine driving marketing and user acquisition.</p>
+                            </div>
+                            <a href="https://asapriyavb02.github.io/TOMERCON-CONSULTANCY/" target="_blank" rel="noopener noreferrer" class="featured-box" data-bg="https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=600">
+                                <div class="box-icon"><i class="fas fa-handshake"></i></div>
+                                <h3>Tomercon Consultancy</h3>
+                                <p>Strategy unit focused on business scaling.</p>
+                            </a>
+                            <a href="https://asapriyavb02.github.io/TOMERCON-FUSIONLABS/" target="_blank" rel="noopener noreferrer" class="featured-box" data-bg="https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=600">
+                                <div class="box-icon"><i class="fas fa-flask"></i></div>
+                                <h3>Tomercon Fusion Labs</h3>
+                                <p>Innovation hub for AI and future technologies.</p>
+                            </a>
+                            <a href="fgt.html" class="featured-box" data-bg="https://images.pexels.com/photos/66134/pexels-photo-66134.jpeg?auto=compress&cs=tinysrgb&w=600">
+                                <div class="box-icon"><i class="fas fa-video"></i></div>
+                                <h3>FGT Studios</h3>
+                                <p>Creative production and storytelling unit.</p>
+                            </a>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-
         <section id="ventures">
             <div class="container">
                 <div class="section-header-wrapper animate-on-scroll fade-up" data-animate>
@@ -673,72 +1028,293 @@
                     <button class="tab-btn active" data-tab="ventures-tab"><i class="fas fa-rocket"></i> Ventures</button>
                     <button class="tab-btn" data-tab="associations-tab"><i class="fas fa-handshake"></i> Associations</button>
                 </div>
-                <div class="tab-content active" id="ventures-tab"><div class="ventures-grid"><div class="venture-card" data-bg="https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=600"><div class="venture-icon"><i class="fas fa-robot"></i></div><h3>Learnyor</h3><p>AI-powered learning platform simplifying education for global learners.</p><div class="venture-details"><span><i class="fas fa-users"></i> 50K+ Learners</span><span><i class="fas fa-globe"></i> 25+ Countries</span><span><i class="fas fa-certificate"></i> 100+ Courses</span></div></div><div class="venture-card" data-bg="https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=600"><div class="venture-icon"><i class="fas fa-briefcase"></i></div><h3>QITE</h3><p>Career experience platform helping individuals choose the right path.</p><div class="venture-details"><span><i class="fas fa-user-graduate"></i> 10K+ Mentors</span><span><i class="fas fa-building"></i> 500+ Partners</span><span><i class="fas fa-chart-line"></i> 85% Success Rate</span></div></div></div></div>
-                <div class="tab-content" id="associations-tab"><div class="associations-grid"><div class="association-card" data-bg="https://images.pexels.com/photos/3184298/pexels-photo-3184298.jpeg?auto=compress&cs=tinysrgb&w=600"><div class="association-icon"><i class="fas fa-graduation-cap"></i></div><h3>EDUREVO</h3><p>Focused on transforming education through innovative learning solutions.</p><div class="association-stats"><span><i class="fas fa-school"></i> 200+ Schools</span><span><i class="fas fa-chalkboard-user"></i> 500+ Educators</span></div></div><div class="association-card" data-bg="https://images.pexels.com/photos/260024/pexels-photo-260024.jpeg?auto=compress&cs=tinysrgb&w=600"><div class="association-icon"><i class="fas fa-chart-line"></i></div><h3>CSRD</h3><p>Sports research and development organization for athlete excellence.</p><div class="association-stats"><span><i class="fas fa-medal"></i> 50+ Athletes Trained</span><span><i class="fas fa-microscope"></i> 15+ Research Projects</span></div></div><div class="association-card" data-bg="https://images.pexels.com/photos/260447/pexels-photo-260447.jpeg?auto=compress&cs=tinysrgb&w=600"><div class="association-icon"><i class="fas fa-fist-raised"></i></div><h3>TAEKWONDO ASSOCIATION OF KERALA</h3><p>Promoting Taekwondo and athlete development across the region.</p><div class="association-stats"><span><i class="fas fa-users"></i> 1000+ Members</span><span><i class="fas fa-trophy"></i> 25+ Championships</span></div></div></div></div>
+                <div class="tab-content active" id="ventures-tab">
+                    <div class="ventures-grid">
+                        <div class="venture-card" data-bg="https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=600">
+                            <div class="venture-icon"><i class="fas fa-robot"></i></div>
+                            <h3>Learnyor</h3>
+                            <p>AI-powered learning platform simplifying education for global learners.</p>
+                            <div class="venture-details">
+                                <span><i class="fas fa-users"></i> 50K+ Learners</span>
+                                <span><i class="fas fa-globe"></i> 25+ Countries</span>
+                                <span><i class="fas fa-certificate"></i> 100+ Courses</span>
+                            </div>
+                        </div>
+                        <div class="venture-card" data-bg="https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=600">
+                            <div class="venture-icon"><i class="fas fa-briefcase"></i></div>
+                            <h3>QITE</h3>
+                            <p>Career experience platform helping individuals choose the right path.</p>
+                            <div class="venture-details">
+                                <span><i class="fas fa-user-graduate"></i> 10K+ Mentors</span>
+                                <span><i class="fas fa-building"></i> 500+ Partners</span>
+                                <span><i class="fas fa-chart-line"></i> 85% Success Rate</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-content" id="associations-tab">
+                    <div class="associations-grid">
+                        <div class="association-card" data-bg="https://images.pexels.com/photos/3184298/pexels-photo-3184298.jpeg?auto=compress&cs=tinysrgb&w=600">
+                            <div class="association-icon"><i class="fas fa-graduation-cap"></i></div>
+                            <h3>EDUREVO</h3>
+                            <p>Focused on transforming education through innovative learning solutions.</p>
+                            <div class="association-stats">
+                                <span><i class="fas fa-school"></i> 200+ Schools</span>
+                                <span><i class="fas fa-chalkboard-user"></i> 500+ Educators</span>
+                            </div>
+                        </div>
+                        <div class="association-card" data-bg="https://images.pexels.com/photos/260024/pexels-photo-260024.jpeg?auto=compress&cs=tinysrgb&w=600">
+                            <div class="association-icon"><i class="fas fa-chart-line"></i></div>
+                            <h3>CSRD</h3>
+                            <p>Sports research and development organization for athlete excellence.</p>
+                            <div class="association-stats">
+                                <span><i class="fas fa-medal"></i> 50+ Athletes Trained</span>
+                                <span><i class="fas fa-microscope"></i> 15+ Research Projects</span>
+                            </div>
+                        </div>
+                        <div class="association-card" data-bg="https://images.pexels.com/photos/260447/pexels-photo-260447.jpeg?auto=compress&cs=tinysrgb&w=600">
+                            <div class="association-icon"><i class="fas fa-fist-raised"></i></div>
+                            <h3>TAEKWONDO ASSOCIATION OF KERALA</h3>
+                            <p>Promoting Taekwondo and athlete development across the region.</p>
+                            <div class="association-stats">
+                                <span><i class="fas fa-users"></i> 1000+ Members</span>
+                                <span><i class="fas fa-trophy"></i> 25+ Championships</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
         <section id="why">
             <div class="container">
-                <div class="animate-on-scroll fade-up" data-animate><span class="section-badge">WHY US</span><h2 class="section-title">Why Tomercon Groups</h2></div>
+                <div class="animate-on-scroll fade-up" data-animate>
+                    <span class="section-badge">WHY US</span>
+                    <h2 class="section-title">Why Tomercon Groups</h2>
+                </div>
                 <div class="grid-why">
-                    <div class="why-item animate-on-scroll flip-up" data-animate data-delay="100"><i class="fas fa-industry"></i><h4>Multi-industry expertise</h4><p>Deep knowledge across tech, marketing, education & sports</p></div>
-                    <div class="why-item animate-on-scroll flip-up" data-animate data-delay="150"><i class="fas fa-rocket"></i><h4>Strong execution mindset</h4><p>Ideas transformed into scalable realities</p></div>
-                    <div class="why-item animate-on-scroll flip-up" data-animate data-delay="200"><i class="fas fa-lightbulb"></i><h4>Innovation-driven approach</h4><p>AI-first, future-ready methodologies</p></div>
-                    <div class="why-item animate-on-scroll flip-up" data-animate data-delay="250"><i class="fas fa-link"></i><h4>Integrated ecosystem advantage</h4><p>Synergies that multiply growth potential</p></div>
-                    <div class="why-item animate-on-scroll flip-up" data-animate data-delay="300"><i class="fas fa-chart-line"></i><h4>Focus on long-term impact</h4><p>Sustainable value creation for all stakeholders</p></div>
+                    <div class="why-item animate-on-scroll flip-up" data-animate data-delay="100"><i class="fas fa-industry"></i>
+                        <h4>Multi-industry expertise</h4>
+                        <p>Deep knowledge across tech, marketing, education & sports</p>
+                    </div>
+                    <div class="why-item animate-on-scroll flip-up" data-animate data-delay="150"><i class="fas fa-rocket"></i>
+                        <h4>Strong execution mindset</h4>
+                        <p>Ideas transformed into scalable realities</p>
+                    </div>
+                    <div class="why-item animate-on-scroll flip-up" data-animate data-delay="200"><i class="fas fa-lightbulb"></i>
+                        <h4>Innovation-driven approach</h4>
+                        <p>AI-first, future-ready methodologies</p>
+                    </div>
+                    <div class="why-item animate-on-scroll flip-up" data-animate data-delay="250"><i class="fas fa-link"></i>
+                        <h4>Integrated ecosystem advantage</h4>
+                        <p>Synergies that multiply growth potential</p>
+                    </div>
+                    <div class="why-item animate-on-scroll flip-up" data-animate data-delay="300"><i class="fas fa-chart-line"></i>
+                        <h4>Focus on long-term impact</h4>
+                        <p>Sustainable value creation for all stakeholders</p>
+                    </div>
                 </div>
             </div>
         </section>
 
         <section id="cta">
-            <div class="container"><div class="cta-card animate-on-scroll zoom-in" data-animate><h2>Let's Build Something Impactful Together</h2><p>Partner with Tomercon Groups to scale your vision.</p><a href="contact.html" class="btn-primary">Get in touch <i class="fas fa-arrow-right"></i></a></div></div>
+            <div class="container">
+                <div class="cta-card animate-on-scroll zoom-in" data-animate>
+                    <h2>Let's Build Something Impactful Together</h2>
+                    <p>Partner with Tomercon Groups to scale your vision.</p>
+                    <a href="contact.html" class="btn-primary">Get in touch <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
         </section>
     </main>
 
-    <footer><div class="container"><p>© 2025 Tomercon Groups — tomerconbusiness.com | Global Ecosystem Architects</p><div class="social-links"><a href="https://www.linkedin.com/company/tomercon-developers/"><i class="fab fa-linkedin-in"></i></a><a href="#"><i class="fab fa-twitter"></i></a><a href="https://www.instagram.com/tomercon.groups?igsh=MXB4MWN3YjRkZHEzcw=="><i class="fab fa-instagram"></i></a></div></div></footer>
+    <footer>
+        <div class="container">
+            <p>© 2025 Tomercon Groups — tomerconbusiness.com | Global Ecosystem Architects</p>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/company/tomercon-developers/"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.instagram.com/tomercon.groups?igsh=MXB4MWN3YjRkZHEzcw=="><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
 
     <script>
         (function() {
+            // Mobile menu
             const mobileBtn = document.getElementById('mobileMenuBtn');
             const mobileNav = document.getElementById('mobileNav');
             if (mobileBtn && mobileNav) {
-                mobileBtn.addEventListener('click', () => { mobileNav.style.display = mobileNav.style.display === 'flex' ? 'none' : 'flex'; });
-                document.querySelectorAll('.mobile-nav a').forEach(link => { link.addEventListener('click', () => mobileNav.style.display = 'none'); });
+                mobileBtn.addEventListener('click', () => {
+                    mobileNav.style.display = mobileNav.style.display === 'flex' ? 'none' : 'flex';
+                });
+                document.querySelectorAll('.mobile-nav a').forEach(link => {
+                    link.addEventListener('click', () => mobileNav.style.display = 'none');
+                });
             }
+
+            // Smooth scroll only for hash links (ignore external links)
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function(e) {
                     const target = document.querySelector(this.getAttribute('href'));
-                    if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
+                    if (target) {
+                        e.preventDefault();
+                        target.scrollIntoView({ behavior: 'smooth' });
+                    }
                 });
             });
+
+            // Active nav highlight
             const sections = document.querySelectorAll('section[id]');
             const navLinks = document.querySelectorAll('.nav-link');
             function updateActiveLink() {
-                let current = ''; const scrollPos = window.scrollY + 120;
-                sections.forEach(section => { const top = section.offsetTop, bottom = top + section.offsetHeight; if (scrollPos >= top && scrollPos < bottom) current = section.getAttribute('id'); });
-                navLinks.forEach(link => { link.classList.remove('active'); const href = link.getAttribute('href'); if (href === `#${current}` || (current === 'hero' && href === 'index.html') || (current === '' && href === 'index.html')) link.classList.add('active'); });
+                let current = '';
+                const scrollPos = window.scrollY + 150;
+                sections.forEach(section => {
+                    const top = section.offsetTop;
+                    const bottom = top + section.offsetHeight;
+                    if (scrollPos >= top && scrollPos < bottom) current = section.getAttribute('id');
+                });
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    const href = link.getAttribute('href');
+                    if (href === `#${current}` || (current === 'hero' && href === 'index.html') || (current === '' && href === 'index.html')) {
+                        link.classList.add('active');
+                    }
+                });
             }
-            window.addEventListener('scroll', updateActiveLink); window.addEventListener('load', updateActiveLink);
+            window.addEventListener('scroll', updateActiveLink);
+            window.addEventListener('load', updateActiveLink);
+
+            // Intersection Observer for animations
             const animatedElements = document.querySelectorAll('.animate-on-scroll');
-            const observer = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) { const delay = entry.target.getAttribute('data-delay'); if (delay) setTimeout(() => entry.target.classList.add('animated'), parseInt(delay)); else entry.target.classList.add('animated'); } else { entry.target.classList.remove('animated'); } }); }, { threshold: 0.2 });
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const delay = entry.target.getAttribute('data-delay');
+                        if (delay) setTimeout(() => entry.target.classList.add('animated'), parseInt(delay));
+                        else entry.target.classList.add('animated');
+                    } else {
+                        entry.target.classList.remove('animated');
+                    }
+                });
+            }, { threshold: 0.15 });
             animatedElements.forEach(el => observer.observe(el));
-            const boxes = document.querySelectorAll('.featured-box'); boxes.forEach(box => { const bg = box.getAttribute('data-bg'); if (bg) box.style.setProperty('--hover-bg', `url('${bg}')`); });
-            const style = document.createElement('style'); style.textContent = `.featured-box::before { background-image: var(--hover-bg, none); opacity: var(--bg-opacity, 0); }`; document.head.appendChild(style);
-            const allCards = document.querySelectorAll('.venture-card, .association-card'); const cardStyle = document.createElement('style'); cardStyle.textContent = `.venture-card::before, .association-card::before { background-image: var(--hover-bg-card, none); }`; document.head.appendChild(cardStyle);
-            allCards.forEach(card => { const bg = card.getAttribute('data-bg'); if (bg) card.style.setProperty('--hover-bg-card', `url('${bg}')`); });
-            const tabBtns = document.querySelectorAll('.tab-btn'); const tabContents = document.querySelectorAll('.tab-content'); const sectionBadge = document.getElementById('sectionBadge'); const sectionTitle = document.getElementById('sectionTitle'); const sectionDesc = document.getElementById('sectionDesc');
-            let autoSwitchInterval; let isAutoSwitching = true; let isTransitioning = false;
-            const venturesContent = { badge: "NEXT‑GEN PLATFORMS", title: "Ventures & Associations", desc: "Next-generation platforms reshaping education and career discovery." };
-            const associationsContent = { badge: "OUR NETWORK", title: "Associations & Partners", desc: "Our extended network of partners and branches driving global impact across multiple sectors." };
-            function updateHeadings(badge, title, desc) { if (isTransitioning) return; isTransitioning = true; sectionBadge.style.opacity = '0'; sectionTitle.style.opacity = '0'; sectionDesc.style.opacity = '0'; setTimeout(() => { sectionBadge.textContent = badge; sectionTitle.textContent = title; sectionDesc.textContent = desc; sectionBadge.style.opacity = '1'; sectionTitle.style.opacity = '1'; sectionDesc.style.opacity = '1'; setTimeout(() => { isTransitioning = false; }, 300); }, 300); }
-            function switchToTab(tabId) { tabBtns.forEach(btn => btn.classList.remove('active')); tabContents.forEach(content => content.classList.remove('active')); const targetBtn = document.querySelector(`.tab-btn[data-tab="${tabId}"]`); const targetContent = document.getElementById(tabId); if (targetBtn && targetContent) { targetBtn.classList.add('active'); targetContent.classList.add('active'); if (tabId === 'ventures-tab') updateHeadings(venturesContent.badge, venturesContent.title, venturesContent.desc); else if (tabId === 'associations-tab') updateHeadings(associationsContent.badge, associationsContent.title, associationsContent.desc); } }
-            function getNextTab(currentTabId) { return currentTabId === 'ventures-tab' ? 'associations-tab' : 'ventures-tab'; }
-            function startAutoSwitch() { if (autoSwitchInterval) clearInterval(autoSwitchInterval); autoSwitchInterval = setInterval(() => { if (isAutoSwitching && !isTransitioning) { let activeTabId = null; tabContents.forEach(content => { if (content.classList.contains('active')) activeTabId = content.id; }); if (activeTabId) switchToTab(getNextTab(activeTabId)); } }, 5000); }
-            function stopAutoSwitchTemporarily() { isAutoSwitching = false; if (autoSwitchInterval) clearInterval(autoSwitchInterval); setTimeout(() => { isAutoSwitching = true; startAutoSwitch(); }, 10000); }
-            tabBtns.forEach(btn => { btn.addEventListener('click', () => { const tabId = btn.getAttribute('data-tab'); switchToTab(tabId); stopAutoSwitchTemporarily(); }); });
-            sectionBadge.style.transition = 'opacity 0.3s ease'; sectionTitle.style.transition = 'opacity 0.3s ease'; sectionDesc.style.transition = 'opacity 0.3s ease'; startAutoSwitch();
+
+            // Featured boxes background images
+            const boxes = document.querySelectorAll('.featured-box');
+            boxes.forEach(box => {
+                const bg = box.getAttribute('data-bg');
+                if (bg) box.style.setProperty('--hover-bg', `url('${bg}')`);
+                box.addEventListener('mouseenter', function() { this.style.setProperty('--bg-opacity', '0.85'); });
+                box.addEventListener('mouseleave', function() { this.style.setProperty('--bg-opacity', '0'); });
+            });
+            const style = document.createElement('style');
+            style.textContent = `.featured-box::before { background-image: var(--hover-bg, none); opacity: var(--bg-opacity, 0); }`;
+            document.head.appendChild(style);
+
+            // Unified hover background for venture & association cards
+            const allCards = document.querySelectorAll('.venture-card, .association-card');
+            const cardStyle = document.createElement('style');
+            cardStyle.textContent = `.venture-card::before, .association-card::before { background-image: var(--hover-bg-card, none); }`;
+            document.head.appendChild(cardStyle);
+            allCards.forEach(card => {
+                const bg = card.getAttribute('data-bg');
+                if (bg) card.style.setProperty('--hover-bg-card', `url('${bg}')`);
+            });
+
+            // Tabs functionality with auto-switch and dynamic headings
+            const tabBtns = document.querySelectorAll('.tab-btn');
+            const tabContents = document.querySelectorAll('.tab-content');
+            const sectionBadge = document.getElementById('sectionBadge');
+            const sectionTitle = document.getElementById('sectionTitle');
+            const sectionDesc = document.getElementById('sectionDesc');
+
+            let autoSwitchInterval;
+            let isAutoSwitching = true;
+            let isTransitioning = false;
+
+            const venturesContent = {
+                badge: "NEXT‑GEN PLATFORMS",
+                title: "Ventures & Associations",
+                desc: "Next-generation platforms reshaping education and career discovery."
+            };
+            const associationsContent = {
+                badge: "OUR NETWORK",
+                title: "Associations & Partners",
+                desc: "Our extended network of partners and branches driving global impact across multiple sectors."
+            };
+
+            function updateHeadings(badge, title, desc) {
+                if (isTransitioning) return;
+                isTransitioning = true;
+                sectionBadge.style.opacity = '0';
+                sectionTitle.style.opacity = '0';
+                sectionDesc.style.opacity = '0';
+                setTimeout(() => {
+                    sectionBadge.textContent = badge;
+                    sectionTitle.textContent = title;
+                    sectionDesc.textContent = desc;
+                    sectionBadge.style.opacity = '1';
+                    sectionTitle.style.opacity = '1';
+                    sectionDesc.style.opacity = '1';
+                    setTimeout(() => { isTransitioning = false; }, 300);
+                }, 300);
+            }
+
+            function switchToTab(tabId) {
+                tabBtns.forEach(btn => btn.classList.remove('active'));
+                tabContents.forEach(content => content.classList.remove('active'));
+                const targetBtn = document.querySelector(`.tab-btn[data-tab="${tabId}"]`);
+                const targetContent = document.getElementById(tabId);
+                if (targetBtn && targetContent) {
+                    targetBtn.classList.add('active');
+                    targetContent.classList.add('active');
+                    if (tabId === 'ventures-tab') updateHeadings(venturesContent.badge, venturesContent.title, venturesContent.desc);
+                    else if (tabId === 'associations-tab') updateHeadings(associationsContent.badge, associationsContent.title, associationsContent.desc);
+                }
+            }
+
+            function getNextTab(currentTabId) {
+                return currentTabId === 'ventures-tab' ? 'associations-tab' : 'ventures-tab';
+            }
+
+            function startAutoSwitch() {
+                if (autoSwitchInterval) clearInterval(autoSwitchInterval);
+                autoSwitchInterval = setInterval(() => {
+                    if (isAutoSwitching && !isTransitioning) {
+                        let activeTabId = null;
+                        tabContents.forEach(content => {
+                            if (content.classList.contains('active')) activeTabId = content.id;
+                        });
+                        if (activeTabId) switchToTab(getNextTab(activeTabId));
+                    }
+                }, 5000);
+            }
+
+            function stopAutoSwitchTemporarily() {
+                isAutoSwitching = false;
+                if (autoSwitchInterval) clearInterval(autoSwitchInterval);
+                setTimeout(() => {
+                    isAutoSwitching = true;
+                    startAutoSwitch();
+                }, 10000);
+            }
+
+            tabBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const tabId = btn.getAttribute('data-tab');
+                    switchToTab(tabId);
+                    stopAutoSwitchTemporarily();
+                });
+            });
+
+            sectionBadge.style.transition = 'opacity 0.3s ease';
+            sectionTitle.style.transition = 'opacity 0.3s ease';
+            sectionDesc.style.transition = 'opacity 0.3s ease';
+            startAutoSwitch();
         })();
     </script>
 </body>
+
 </html>
