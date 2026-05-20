@@ -1,18 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>FGT STUDIOS | Stories That Build Brands</title>
-    <!-- Google Fonts -->
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
-        rel="stylesheet">
-    <!-- Font Awesome 6 -->
+    <title>FGT Studios | Blue Horizon — Stories That Build Brands</title>
+    <!-- Google Font: Inter (standard, clean) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <!-- AOS Library -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -21,703 +15,614 @@
         }
 
         body {
-            background-color: #010101;
             font-family: 'Inter', sans-serif;
-            color: #f0f0f0;
-            overflow-x: hidden;
+            background: #0B1120;
+            color: #E2E8F0;
+            line-height: 1.5;
             scroll-behavior: smooth;
         }
 
-        ::-webkit-scrollbar {
-            width: 6px;
+        :root {
+            --blue-deep: #0A2540;
+            --blue-primary: #1E6F9F;
+            --blue-accent: #3B82F6;
+            --blue-light: #60A5FA;
+            --blue-glass: rgba(30, 111, 159, 0.2);
+            --card-bg: rgba(15, 25, 45, 0.75);
+            --border-light: rgba(59, 130, 246, 0.25);
+            --shadow: 0 25px 35px -12px rgba(0,0,0,0.3);
         }
 
-        ::-webkit-scrollbar-track {
-            background: #0a0a0a;
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: #3b9eff;
-            border-radius: 10px;
-        }
-
-        section {
-            position: relative;
-            min-height: 85vh;
-            display: flex;
-            align-items: center;
-            padding: 4rem 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-        }
-
-        section::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.75) 100%);
-            z-index: 0;
-        }
-
-        section::after {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle at 20% 40%, rgba(59, 158, 255, 0.08) 0%, transparent 70%);
-            z-index: 0;
-            pointer-events: none;
-        }
-
-        .container {
-            position: relative;
-            z-index: 2;
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 5%;
-            width: 100%;
-        }
-
-        /* Background images (unchanged) */
-        #hero { background-image: url('https://images.pexels.com/photos/3165335/pexels-photo-3165335.jpeg?auto=compress&cs=tinysrgb&w=1600'); background-position: center 30%; }
-        #about { background-image: url('https://images.pexels.com/photos/669996/pexels-photo-669996.jpeg?auto=compress&cs=tinysrgb&w=1600'); background-position: center 40%; }
-        #services { background-image: url('https://images.pexels.com/photos/66134/pexels-photo-66134.jpeg?auto=compress&cs=tinysrgb&w=1600'); background-position: center 50%; }
-        #strength { background-image: url('https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&w=1600'); background-position: center 35%; }
-        #role { background-image: url('https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=1600'); background-position: center 45%; }
-        #contact { background-image: url('https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=1600'); background-position: center 60%; }
-
-        /* Typography */
-        h1, h2, h3 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-weight: 600;
-            letter-spacing: -0.02em;
-            padding-bottom: 15px;
-        }
-
-        .hero-title {
-            font-size: clamp(3rem, 8vw, 5.5rem);
-            background: linear-gradient(135deg, #FFFFFF 20%, #a8e6cf 50%, #3b9eff 90%);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            line-height: 1.1;
-            margin-bottom: 1rem;
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-        }
-
-        .hero-sub {
-            font-size: clamp(1rem, 2.5vw, 1.35rem);
-            color: #f5f5f5;
-            max-width: 550px;
-            margin-bottom: 2rem;
-            text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
-            font-weight: 400;
-        }
-
-        .section-badge {
-            display: inline-block;
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 4px;
-            font-weight: 600;
-            color: #3b9eff;
-            margin-bottom: 0.8rem;
-            border-left: 3px solid #3b9eff;
-            padding-left: 12px;
-            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
-        }
-
-        .section-title {
-            font-size: clamp(1.8rem, 4vw, 3rem);
-            margin-bottom: 1rem;
-            color: #ffffff;
-            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
-            letter-spacing: -0.01em;
-        }
-
-        .section-desc {
-            font-size: 1.05rem;
-            line-height: 1.55;
-            color: #ececec;
-            max-width: 550px;
-            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
-            font-weight: 400;
-        }
-
-        /* ========== ORIGINAL CARD STYLE (from Tomercon Groups) – only used elsewhere ========== */
-        @keyframes borderPulse {
-            0% { border-color: rgba(59,158,255,0.3); box-shadow: 0 0 0 0 rgba(59,158,255,0.1); }
-            50% { border-color: rgba(59,158,255,0.8); box-shadow: 0 0 15px 2px rgba(59,158,255,0.2); }
-            100% { border-color: rgba(59,158,255,0.3); box-shadow: 0 0 0 0 rgba(59,158,255,0); }
-        }
-        .glass-card {
-            background: rgba(18, 28, 40, 0.92);
-            backdrop-filter: blur(8px);
-            border-radius: 2rem;
-            padding: 2rem;
-            border: 1px solid rgba(59,158,255,0.3);
-            animation: borderPulse 4s infinite ease-in-out;
-            transition: all 0.35s;
-        }
-        .glass-card:hover {
-            animation: none;
-            transform: translateY(-8px) scale(1.02);
-            border-color: #6bb3ff;
-            box-shadow: 0 20px 30px -12px rgba(0,0,0,0.4);
-        }
-
-        /* ========== NEW ABOUT SECTION STAT CARDS (from snippet) ========== */
-        .stat-card {
-            background: rgba(0, 0, 0, 0.7);
-            backdrop-filter: blur(8px);
-            border-radius: 24px;
-            padding: 1.2rem;
-            text-align: center;
-            min-width: 130px;
-            transition: transform 0.3s ease;
-        }
-        .stat-card:hover {
-            transform: translateY(-5px);
-        }
-        .stat-card i {
-            font-size: 2rem;
-            color: #3b9eff;
-        }
-        .stat-card h3 {
-            font-size: 1.2rem;
-            margin-top: 0.5rem;
-            color: #fff;
-        }
-        .stat-card p {
-            font-size: 0.8rem;
-            color: #ddd;
-        }
-
-        /* ========== OTHER SECTIONS – NO CARDS (clean, border-based) ========== */
-        /* Services section – horizontal scroll with dividers */
-        .services-scroll {
-            overflow-x: auto;
-            display: flex;
-            gap: 2rem;
-            padding: 1rem 0 2rem;
-            scrollbar-width: thin;
-            cursor: grab;
-        }
-        .services-scroll::-webkit-scrollbar {
-            height: 4px;
-        }
-        .services-scroll::-webkit-scrollbar-track {
-            background: #1a1a2e;
-        }
-        .services-scroll::-webkit-scrollbar-thumb {
-            background: #3b9eff;
-        }
-        .service-item {
-            min-width: 280px;
-            padding: 1.5rem;
-            border-left: 3px solid #3b9eff;
-            transition: 0.2s;
-            background: transparent;
-        }
-        .service-item:hover {
-            transform: translateX(6px);
-            background: rgba(59, 158, 255, 0.05);
-        }
-        .service-icon {
-            font-size: 2.2rem;
-            color: #3b9eff;
-            margin-bottom: 0.8rem;
-        }
-        .service-item h3 {
-            font-size: 1.4rem;
-            margin-bottom: 0.5rem;
-        }
-        .service-item p {
-            color: #e0e0e0;
-            font-size: 0.9rem;
-        }
-
-        /* Strength section – stats grid with simple numbers */
-        .strength-stats {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 3rem;
-            justify-content: center;
-            margin-top: 2rem;
-        }
-        .stat-block {
-            text-align: center;
-            padding: 1rem;
-            border-bottom: 2px solid #3b9eff;
-            min-width: 180px;
-        }
-        .stat-number {
-            font-size: 3rem;
-            font-weight: 800;
-            background: linear-gradient(135deg, #a8e6cf, #3b9eff);
-            background-clip: text;
-            -webkit-background-clip: text;
-            color: transparent;
-        }
-        .stat-label {
-            font-size: 1rem;
-            margin-top: 0.5rem;
-            color: #fff;
-        }
-        .stat-desc {
-            font-size: 0.85rem;
-            color: #c0c0c0;
-            margin-top: 0.3rem;
-        }
-
-        /* Role section – border based */
-        .eco-wrapper {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 2rem;
-            align-items: center;
-            justify-content: space-between;
-        }
-        .eco-text {
-            flex: 1.2;
-        }
-        .eco-visual {
-            flex: 0.9;
-            background: transparent;
-            border: 1px solid rgba(59, 158, 255, 0.4);
-            border-radius: 20px;
-            padding: 1.8rem;
-            text-align: center;
-        }
-        .pillar-list {
-            display: flex;
-            gap: 0.8rem;
-            flex-wrap: wrap;
-            margin: 1rem 0;
-        }
-        .pillar {
-            background: rgba(59, 158, 255, 0.22);
-            padding: 0.5rem 1.2rem;
-            border-radius: 40px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            color: #b3e0ff;
-        }
-
-        /* Contact section – clean form */
-        .contact-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 3rem;
-            margin-top: 1.8rem;
-        }
-        .contact-info, .contact-form {
-            flex: 1;
-            background: transparent;
-            padding: 20px;
-            border: #5aabff solid 0.5px;
-            border-radius: 20px;
-        }
-        .input-group {
-            margin-bottom: 1rem;
-        }
-        input, textarea {
-            width: 100%;
-            padding: 0.9rem 1.2rem;
-            background: rgba(25, 25, 35, 0.9);
-            border: 1px solid rgba(59, 158, 255, 0.5);
-            border-radius: 0;
-            color: white;
-            font-family: 'Inter', sans-serif;
-            outline: none;
-            font-size: 0.95rem;
-        }
-        input:focus, textarea:focus {
-            border-color: #3b9eff;
-            background: rgba(30, 30, 45, 0.95);
-        }
-        textarea {
-            resize: vertical;
-        }
-        .btn-primary {
-            background: linear-gradient(135deg, #a8e6cf, #3b9eff);
-            border: none;
-            color: #0a0a0a;
-            padding: 0.8rem 2rem;
-            border-radius: 40px;
-            font-weight: 700;
-            cursor: pointer;
-            transition: 0.3s;
-            font-size: 0.95rem;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        .btn-primary:hover {
-            background: linear-gradient(135deg, #bcf0e0, #5aabff);
-            transform: scale(1.02);
-            box-shadow: 0 0 15px rgba(59, 158, 255, 0.6);
-        }
-        .contact-detail-item {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 1.2rem;
-            color: #f0f0f0;
-            border-bottom: 1px solid rgba(59, 158, 255, 0.3);
-            padding-bottom: 0.8rem;
-        }
-        .contact-detail-item i {
-            width: 32px;
-            color: #3b9eff;
-            font-size: 1.3rem;
-        }
-
-        /* Navbar */
-        .navbar {
+        /* Full-page background with subtle moving gradient */
+        body::before {
+            content: '';
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
-            z-index: 100;
-            backdrop-filter: blur(12px);
-            background: rgba(10, 20, 36, 0.85);
-            border-bottom: 1px solid #1f4562;
+            height: 100%;
+            background: radial-gradient(circle at 20% 30%, #0A2540, #030712);
+            z-index: -2;
         }
-        .nav-container {
+
+        body::after {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.08;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Glass header */
+        header {
+            background: rgba(10, 37, 64, 0.85);
+            backdrop-filter: blur(12px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .navbar {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1rem 1.5rem;
-            max-width: 1280px;
-            margin: 0 auto;
+            padding: 1.2rem 0;
+            flex-wrap: wrap;
+            gap: 1.5rem;
         }
+
         .logo {
             font-size: 1.8rem;
             font-weight: 700;
-            font-family: 'DM Serif Display', serif;
-            background: linear-gradient(135deg, #a8e6cf, #3b9eff);
-            background-clip: text;
+            letter-spacing: -0.02em;
+            background: linear-gradient(135deg, #FFFFFF, var(--blue-light));
             -webkit-background-clip: text;
+            background-clip: text;
             color: transparent;
-            text-decoration: none;
         }
+
         .nav-links {
             display: flex;
             gap: 2rem;
             align-items: center;
             flex-wrap: wrap;
+            list-style: none;
         }
+
         .nav-links a {
             text-decoration: none;
-            color: #eef5ff;
             font-weight: 500;
+            color: #CBD5E1;
             transition: 0.2s;
-            position: relative;
+            font-size: 0.9rem;
         }
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: linear-gradient(135deg, #a8e6cf, #3b9eff);
-            transition: width 0.3s;
+
+        .nav-links a:hover {
+            color: var(--blue-light);
         }
-        .nav-links a:hover::after,
-        .nav-links a.active::after {
-            width: 100%;
+
+        .btn-outline-nav {
+            border: 1px solid var(--blue-accent);
+            padding: 0.5rem 1.2rem;
+            border-radius: 30px;
+            color: var(--blue-accent);
+            font-weight: 600;
+            transition: 0.2s;
         }
-        .mobile-menu-btn {
-            display: none;
-            font-size: 1.5rem;
-            background: none;
-            border: none;
-            color: #eef5ff;
-            cursor: pointer;
+
+        .btn-outline-nav:hover {
+            background: var(--blue-accent);
+            color: white;
         }
-        .mobile-nav {
-            display: none;
-            flex-direction: column;
-            padding: 1rem;
-            border-top: 1px solid #1f4562;
-            background: rgba(10, 20, 36, 0.85);
-            backdrop-filter: blur(12px);
-        }
-        .mobile-nav a {
-            padding: 0.5rem 0;
+
+        /* Buttons */
+        .btn-primary {
+            background: linear-gradient(95deg, var(--blue-primary), var(--blue-accent));
+            color: white;
+            padding: 0.85rem 2rem;
+            border-radius: 40px;
+            font-weight: 600;
+            display: inline-block;
             text-decoration: none;
-            color: #eef5ff;
+            transition: 0.2s;
+            border: none;
+            cursor: pointer;
+            font-size: 0.9rem;
+            box-shadow: 0 4px 12px rgba(59,130,246,0.3);
         }
-        @media (max-width: 768px) {
-            .nav-links { display: none; }
-            .mobile-menu-btn { display: block; }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 20px -8px rgba(59,130,246,0.5);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            border: 1px solid var(--blue-accent);
+            color: var(--blue-light);
+            padding: 0.75rem 1.8rem;
+            border-radius: 40px;
+            font-weight: 600;
+            transition: 0.2s;
+            display: inline-block;
+            text-decoration: none;
+            backdrop-filter: blur(4px);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(59,130,246,0.15);
+            border-color: var(--blue-light);
+        }
+
+        /* Hero with visible background image */
+        .hero {
+            padding: 7rem 0 6rem;
+            position: relative;
+            background: linear-gradient(135deg, rgba(10,37,64,0.85), rgba(3,7,18,0.75)), url('https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?q=80&w=2071&auto=format');
+            background-size: cover;
+            background-position: center 20%;
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .hero-grid {
+            max-width: 800px;
+        }
+
+        .hero-tag {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--blue-light);
+            letter-spacing: 1px;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            background: rgba(59,130,246,0.15);
+            padding: 0.25rem 1rem;
+            border-radius: 30px;
+            backdrop-filter: blur(4px);
+        }
+
+        .hero h1 {
+            font-size: 4.5rem;
+            font-weight: 800;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+            background: linear-gradient(145deg, #FFFFFF, var(--blue-light));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 1rem;
+        }
+
+        .hero-tagline {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: var(--blue-accent);
+            margin-bottom: 1.2rem;
+        }
+
+        .hero-desc {
+            color: #CBD5E1;
+            max-width: 550px;
+            margin-bottom: 2rem;
+            font-size: 1rem;
+        }
+
+        /* Sections */
+        section {
+            padding: 5rem 0;
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+        }
+
+        .section-sub {
+            color: #94A3B8;
+            max-width: 700px;
+            margin-bottom: 2.5rem;
+        }
+
+        /* Glass cards */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            backdrop-filter: blur(8px);
+            border-radius: 1.5rem;
+            padding: 2rem;
+            transition: 0.25s;
+            border: 1px solid var(--border-light);
+            box-shadow: var(--shadow);
+        }
+        .card:hover {
+            transform: translateY(-6px);
+            background: rgba(20, 40, 65, 0.85);
+            border-color: var(--blue-accent);
+        }
+        .card-icon {
+            font-size: 2.2rem;
+            color: var(--blue-accent);
+            margin-bottom: 1.2rem;
+        }
+        .card h3 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        .card p {
+            color: #A0B3D9;
+            font-size: 0.9rem;
+        }
+
+        /* Double feature (Strength + Role) */
+        .double-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        .feature-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(8px);
+            border-radius: 1.5rem;
+            padding: 2rem;
+            text-align: center;
+            border: 1px solid var(--border-light);
+            transition: 0.2s;
+        }
+        .feature-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--blue-accent);
+        }
+        .feature-card i {
+            font-size: 2.2rem;
+            color: var(--blue-accent);
+            margin-bottom: 0.8rem;
+        }
+        .feature-card h3 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        .feature-card p {
+            color: #A0B3D9;
+        }
+
+        /* Ecosystem grid */
+        .eco-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        .eco-item {
+            background: rgba(15, 25, 45, 0.7);
+            backdrop-filter: blur(4px);
+            border-radius: 1.2rem;
+            padding: 1.5rem;
+            text-align: center;
+            border: 1px solid var(--border-light);
+            transition: 0.2s;
+        }
+        .eco-item:hover {
+            background: rgba(30, 111, 159, 0.2);
+        }
+        .eco-item i {
+            font-size: 1.6rem;
+            color: var(--blue-accent);
+            margin-bottom: 0.6rem;
+        }
+        .eco-item h4 {
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+        }
+
+        /* Contact with image background */
+        #contact {
+            background: linear-gradient(135deg, rgba(10,37,64,0.9), rgba(3,7,18,0.85)), url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .contact-split {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 2rem;
+            background: rgba(10, 30, 50, 0.8);
+            backdrop-filter: blur(12px);
+            border-radius: 1.5rem;
+            overflow: hidden;
+            border: 1px solid var(--border-light);
+        }
+        .contact-info {
+            background: linear-gradient(135deg, var(--blue-deep), #0A2540);
+            padding: 2.5rem;
+        }
+        .contact-info .contact-line {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin: 1.2rem 0;
+        }
+        .contact-info i {
+            width: 1.8rem;
+            color: var(--blue-accent);
+        }
+        .contact-form {
+            padding: 2.5rem;
+        }
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 0.8rem;
+            margin-bottom: 1rem;
+            background: rgba(255,255,255,0.1);
+            border: 1px solid var(--border-light);
+            border-radius: 0.8rem;
+            font-family: inherit;
+            color: white;
+        }
+        .contact-form input:focus, .contact-form textarea:focus {
+            outline: none;
+            border-color: var(--blue-accent);
         }
 
         footer {
+            background: #030712;
             text-align: center;
-            padding: 1.5rem;
-            background: #050505;
+            padding: 2rem 0;
             font-size: 0.8rem;
-            color: #bbb;
-            border-top: 1px solid rgba(59, 158, 255, 0.2);
+            color: #6B7A8F;
+        }
+        footer a {
+            color: #6B7A8F;
+            margin: 0 10px;
+            transition: 0.2s;
+        }
+        footer a:hover {
+            color: var(--blue-accent);
+        }
+
+        @media (max-width: 800px) {
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            .hero-tagline {
+                font-size: 1.3rem;
+            }
+            .double-row {
+                grid-template-columns: 1fr;
+            }
+            .contact-split {
+                grid-template-columns: 1fr;
+            }
+            .navbar {
+                flex-direction: column;
+            }
+            .container {
+                padding: 0 1.5rem;
+            }
+            section {
+                padding: 3rem 0;
+            }
         }
     </style>
 </head>
-
 <body>
 
-    <div class="navbar">
-        <div class="nav-container">
-            <a href="fgt.html" class="logo">FGT Studios</a>
-            <div class="nav-links">
-                <a href="index.html">Home</a>
-                <a href="#about">About</a>
-                <a href="#services">Services</a>
-                <a href="#strength">Strength</a>
-                <a href="#role">Ecosystem</a>
-                <a href="#contact">Contact</a>
-            </div>
-            <button class="mobile-menu-btn" id="mobileMenuBtn"><i class="fas fa-bars"></i></button>
+<header>
+    <div class="container">
+        <div class="navbar">
+            <div class="logo">FGT STUDIOS</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#strength">Key Strength</a></li>
+                <li><a href="#ecosystem">Ecosystem</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#contact" class="btn-outline-nav">Get in touch</a></li>
+            </ul>
         </div>
-        <div class="mobile-nav" id="mobileNav">
-            <a href="index.html">Home</a>
-            <a href="#about">About</a>
-            <a href="#services">Services</a>
-            <a href="#strength">Strength</a>
-            <a href="#role">Ecosystem</a>
-            <a href="#contact">Contact</a>
+    </div>
+</header>
+
+<main>
+    <!-- Hero Section with background image -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-tag">✦ Blue Horizon Creative</div>
+                <h1>FGT STUDIOS</h1>
+                <div class="hero-tagline">Stories That Build Brands</div>
+                <p class="hero-desc">We deliver high-quality content, branding visuals, and storytelling solutions — engineered for global impact.</p>
+                <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                    <a href="#services" class="btn-primary">Discover →</a>
+                    <a href="#contact" class="btn-secondary">Let's talk</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section (exact wording) -->
+    <section id="about">
+        <div class="container">
+            <div class="hero-tag">About</div>
+            <h2 class="section-title">FGT Studios delivers high-quality content, branding visuals, and storytelling solutions.</h2>
+            <div class="card-grid" style="margin-top: 2rem;">
+                <div class="card">
+                    <i class="fas fa-video card-icon"></i>
+                    <h3>Video Production</h3>
+                    <p>Professional content creation.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-palette card-icon"></i>
+                    <h3>Branding Visuals</h3>
+                    <p>Design and identity.</p>
+                </div>
+                <div class="card">
+                    <i class="fab fa-instagram card-icon"></i>
+                    <h3>Social Media Content</h3>
+                    <p>Engaging digital content.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section (detailed but keeping exact short lines) -->
+    <section id="services">
+        <div class="container">
+            <div class="hero-tag">Services</div>
+            <h2 class="section-title">What we deliver</h2>
+            <p class="section-sub">Tailored creative solutions that elevate your brand narrative.</p>
+            <div class="card-grid">
+                <div class="card">
+                    <i class="fas fa-film card-icon"></i>
+                    <h3>Video Production</h3>
+                    <p>Professional content creation. From brand films to commercials, we produce cinematic stories that resonate.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-dice-d6 card-icon"></i>
+                    <h3>Branding Visuals</h3>
+                    <p>Design and identity. Complete visual systems, logos, and guidelines that build recognition and trust.</p>
+                </div>
+                <div class="card">
+                    <i class="fab fa-instagram card-icon"></i>
+                    <h3>Social Media Content</h3>
+                    <p>Engaging digital content. High‑performance assets for Instagram, LinkedIn, TikTok and beyond.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Strength + Role in Ecosystem (exact wording) -->
+    <div class="container" id="strength-ecosystem-wrapper" style="margin: 0 auto 3rem auto;">
+        <div class="double-row">
+            <div class="feature-card" id="strength">
+                <i class="fas fa-chart-line"></i>
+                <h3>Key Strength</h3>
+                <p>Content that drives engagement and conversion.</p>
+            </div>
+            <div class="feature-card" id="role">
+                <i class="fas fa-project-diagram"></i>
+                <h3>Role in Ecosystem</h3>
+                <p>Supports marketing and branding.</p>
+            </div>
         </div>
     </div>
 
-    <main>
-        <!-- HERO SECTION -->
-        <section id="hero">
-            <div class="container">
-                <div data-aos="fade-up" data-aos-duration="900">
-                    <span class="section-badge">CREATIVE POWERHOUSE</span>
-                    <h1 class="hero-title">Stories That <br>Build Brands</h1>
-                    <p class="hero-sub">High-impact narratives, cinematic visuals, and branding that resonates globally.</p>
-                    <button class="btn-primary" id="heroContactBtn">Get in touch <i class="fas fa-arrow-right"></i></button>
+    <!-- Ecosystem Integration -->
+    <section id="ecosystem">
+        <div class="container">
+            <div class="hero-tag">Ecosystem</div>
+            <h2 class="section-title">How we amplify your brand</h2>
+            <p class="section-sub">We act as a strategic creative partner across your entire marketing stack.</p>
+            <div class="eco-grid">
+                <div class="eco-item"><i class="fas fa-bullhorn"></i><h4>Marketing Support</h4><p>Campaign assets that convert</p></div>
+                <div class="eco-item"><i class="fas fa-check-circle"></i><h4>Brand Consistency</h4><p>Unified identity across channels</p></div>
+                <div class="eco-item"><i class="fas fa-book-open"></i><h4>Story-led Strategy</h4><p>Emotional connection at scale</p></div>
+                <div class="eco-item"><i class="fas fa-handshake"></i><h4>Creative Collaboration</h4><p>Seamless integration with your teams</p></div>
+            </div>
+            <div style="text-align: center; margin-top: 2rem; font-size: 0.9rem; color: var(--blue-light);">
+                <i class="fas fa-infinity"></i> End-to-end storytelling — from concept to global rollout.
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section with background image -->
+    <section id="contact">
+        <div class="container">
+            <div class="contact-split">
+                <div class="contact-info">
+                    <i class="fas fa-compass" style="font-size: 2rem; margin-bottom: 1rem; color: var(--blue-accent);"></i>
+                    <h3 style="font-size: 1.6rem; margin-bottom: 0.5rem;">Let's navigate your brand story</h3>
+                    <div class="contact-line"><i class="fas fa-envelope"></i> hello@fgtstudios.com</div>
+                    <div class="contact-line"><i class="fas fa-phone-alt"></i> +1 (415) 867‑5309</div>
+                    <div class="contact-line"><i class="fas fa-map-marker-alt"></i> Kozhikode · San Francisco</div>
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <input type="text" id="name" placeholder="Full name" required>
+                        <input type="email" id="email" placeholder="Email address" required>
+                        <textarea rows="4" id="message" placeholder="Tell us about your brand or project" required></textarea>
+                        <button type="submit" class="btn-primary" style="width: 100%;">Send inquiry →</button>
+                    </form>
+                    <p id="formFeedback" style="margin-top: 1rem; font-size: 0.8rem;"></p>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
+</main>
 
-        <!-- ABOUT SECTION – REPLACED WITH SNIPPET STYLE -->
-        <section id="about">
-            <div class="container">
-                <div class="about-wrapper" style="display: flex; flex-wrap: wrap; gap: 2rem; align-items: center;">
-                    <!-- Left text block – no glass-card wrapper, clean as in snippet -->
-                    <div data-aos="fade-right" style="flex: 1.2;">
-                        <span class="section-badge">WHO WE ARE</span>
-                        <h2 class="section-title">FGT Studios delivers high-quality content, branding visuals, and storytelling solutions.</h2>
-                        <p class="section-desc" style="max-width: 100%;">We blend strategic thinking with artistic excellence — transforming ideas into compelling brand experiences that captivate audiences and drive real results.</p>
-                    </div>
-                    <!-- Right stat cards – using new .stat-card class (from snippet) -->
-                    <div data-aos="fade-left" data-aos-delay="150" style="flex: 0.9; display: flex; gap: 1rem; flex-wrap: wrap; justify-content: flex-end;">
-                        <div class="stat-card">
-                            <i class="fas fa-play-circle"></i>
-                            <h3>360° Content</h3>
-                            <p>Concept to final cut</p>
-                        </div>
-                        <div class="stat-card">
-                            <i class="fas fa-palette"></i>
-                            <h3>Visual Identity</h3>
-                            <p>Logos & guidelines</p>
-                        </div>
-                        <div class="stat-card">
-                            <i class="fas fa-chart-line"></i>
-                            <h3>Data-Driven</h3>
-                            <p>Optimized stories</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+<footer>
+    <div class="container">
+        <p>© 2026 FGT STUDIOS — Stories That Build Brands</p>
+        <p style="margin-top: 0.5rem;">High-quality content · Branding visuals · Storytelling solutions</p>
+        <div style="margin-top: 1rem;">
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-behance"></i></a>
+        </div>
+    </div>
+</footer>
 
-        <!-- SERVICES SECTION – No cards (horizontal scroll) -->
-        <section id="services">
-            <div class="container">
-                <div data-aos="fade-up">
-                    <span class="section-badge">WHAT WE OFFER</span>
-                    <h2 class="section-title">Premium Creative Services</h2>
-                </div>
-                <div class="services-scroll" data-aos="fade-up" data-aos-delay="100">
-                    <div class="service-item">
-                        <div class="service-icon"><i class="fas fa-video"></i></div>
-                        <h3>Video Production</h3>
-                        <p>Professional content creation — commercials, brand films, motion graphics that elevate your message.</p>
-                    </div>
-                    <div class="service-item">
-                        <div class="service-icon"><i class="fas fa-brush"></i></div>
-                        <h3>Branding Visuals</h3>
-                        <p>Design and identity — from logo systems to complete visual language for global consistency.</p>
-                    </div>
-                    <div class="service-item">
-                        <div class="service-icon"><i class="fab fa-instagram"></i></div>
-                        <h3>Social Media Content</h3>
-                        <p>Engaging digital content — short-form videos, carousels, reels, strategic assets optimized for every platform.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- KEY STRENGTH SECTION – No cards (simple stats) -->
-        <section id="strength">
-            <div class="container">
-                <div data-aos="fade-up">
-                    <span class="section-badge">OUR EDGE</span>
-                    <h2 class="section-title">Key Strength</h2>
-                    <p class="section-desc" style="max-width: 700px;">We deliver measurable impact through data‑driven creativity.</p>
-                </div>
-                <div class="strength-stats">
-                    <div class="stat-block" data-aos="zoom-in" data-aos-delay="100">
-                        <div class="stat-number">+63%</div>
-                        <div class="stat-label">Engagement Boost</div>
-                        <div class="stat-desc">Average increase in audience interaction</div>
-                    </div>
-                    <div class="stat-block" data-aos="zoom-in" data-aos-delay="200">
-                        <div class="stat-number">2.5x</div>
-                        <div class="stat-label">Conversion Lift</div>
-                        <div class="stat-desc">Higher conversion rates from storytelling</div>
-                    </div>
-                    <div class="stat-block" data-aos="zoom-in" data-aos-delay="300">
-                        <div class="stat-number">Global</div>
-                        <div class="stat-label">Worldwide Resonance</div>
-                        <div class="stat-desc">Content that transcends borders</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ROLE IN ECOSYSTEM – No cards -->
-        <section id="role">
-            <div class="container">
-                <div class="eco-wrapper">
-                    <div class="eco-text" data-aos="fade-right">
-                        <span class="section-badge">ECOSYSTEM INTEGRATION</span>
-                        <h2 class="section-title">Role in Ecosystem</h2>
-                        <p class="section-desc" style="margin-bottom: 0.8rem;">FGT Studios is the creative engine that supports marketing and branding ecosystems — fueling awareness, retention, and loyalty.</p>
-                        <div class="pillar-list">
-                            <span class="pillar">📈 Marketing Amplification</span>
-                            <span class="pillar">🎨 Brand Consistency</span>
-                            <span class="pillar">💡 Story-Led Strategy</span>
-                            <span class="pillar">🤝 Creative Partnerships</span>
-                        </div>
-                        <button class="btn-primary" style="margin-top: 1rem;" id="learnMoreBtn">Learn more <i class="fas fa-arrow-right"></i></button>
-                    </div>
-                    <div class="eco-visual" data-aos="fade-left" data-aos-delay="150">
-                        <i class="fas fa-project-diagram" style="font-size: 2.8rem; color: #3b9eff; margin-bottom: 0.8rem;"></i>
-                        <h3 style="font-size: 1.5rem; color:#fff;">Integrated Creative Hub</h3>
-                        <p style="margin-top: 0.6rem;">Seamlessly connecting content production, brand design, and digital strategy — powering global narratives.</p>
-                        <div style="margin-top: 1rem;"><i class="fas fa-check-circle"></i> Marketing synergy · <i class="fas fa-check-circle"></i> Brand guardianship</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- CONTACT SECTION – No cards -->
-        <section id="contact">
-            <div class="container">
-                <div data-aos="fade-up">
-                    <span class="section-badge">CONNECT WITH US</span>
-                    <h2 class="section-title">Let's bring your story to life</h2>
-                    <p class="section-desc">Reach out for collaborations, creative inquiries, or just to say hello.</p>
-                </div>
-                <div class="contact-grid">
-                    <div class="contact-info" data-aos="fade-right">
-                        <h3><i class="fas fa-map-pin" style="color:#3b9eff;"></i> FGT STUDIOS</h3>
-                        <div class="contact-detail-item"><i class="fas fa-envelope"></i> <span>hello@fgtstudios.com</span></div>
-                        <div class="contact-detail-item"><i class="fas fa-phone-alt"></i> <span>+91 1234567890</span></div>
-                        <div class="contact-detail-item"><i class="fas fa-location-dot"></i> <span>Tomercon Developers, Thalancheri Paramba,<br>Kozhikode, Kerala - 673003, India</span></div>
-                        <div class="contact-detail-item"><i class="fab fa-instagram"></i> <span>@fgtstudios</span></div>
-                        <div class="contact-detail-item"><i class="fab fa-linkedin"></i> <span>FGT Studios</span></div>
-                    </div>
-                    <div class="contact-form" data-aos="fade-left">
-                        <h3>Send a message</h3>
-                        <form id="contactForm" onsubmit="event.preventDefault(); alert('✓ Thank you! FGT Studios will get back to you shortly.'); this.reset();">
-                            <div class="input-group"><input type="text" placeholder="Full name" required></div>
-                            <div class="input-group"><input type="email" placeholder="Email address" required></div>
-                            <div class="input-group"><textarea rows="3" placeholder="Tell us about your project..."></textarea></div>
-                            <button type="submit" class="btn-primary">Submit inquiry <i class="fas fa-paper-plane"></i></button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <p>© 2025 FGT STUDIOS — Stories That Build Brands. All visions realized.</p>
-        <p style="margin-top: 0.4rem;"><i class="fab fa-instagram"></i> <i class="fab fa-linkedin"></i> <i class="fab fa-x-twitter"></i> &nbsp; | &nbsp; hello@fgtstudios.com</p>
-    </footer>
-
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init({
-            duration: 700,
-            once: true,
-            offset: 60,
-            easing: 'ease-out-quad'
-        });
-
-        // Mobile menu toggle
-        const mobileBtn = document.getElementById('mobileMenuBtn');
-        const mobileNav = document.getElementById('mobileNav');
-        if (mobileBtn && mobileNav) {
-            mobileBtn.addEventListener('click', () => {
-                mobileNav.style.display = mobileNav.style.display === 'flex' ? 'none' : 'flex';
-            });
-            document.querySelectorAll('.mobile-nav a').forEach(link => {
-                link.addEventListener('click', () => mobileNav.style.display = 'none');
-            });
-        }
-
-        // Hero button contact scroll
-        const heroBtn = document.getElementById('heroContactBtn');
-        if (heroBtn) {
-            heroBtn.addEventListener('click', () => {
-                document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
-            });
-        }
-        // Learn more button
-        const learnBtn = document.getElementById('learnMoreBtn');
-        if (learnBtn) {
-            learnBtn.addEventListener('click', () => {
-                alert("FGT STUDIOS: Your partner in creative ecosystems — from strategy to execution.");
-            });
-        }
-
-        // Horizontal scroll drag for services
-        const scrollContainer = document.querySelector('.services-scroll');
-        if (scrollContainer) {
-            let isDown = false;
-            let startX, scrollLeft;
-            scrollContainer.addEventListener('mousedown', (e) => {
-                isDown = true;
-                startX = e.pageX - scrollContainer.offsetLeft;
-                scrollLeft = scrollContainer.scrollLeft;
-            });
-            scrollContainer.addEventListener('mouseleave', () => isDown = false);
-            scrollContainer.addEventListener('mouseup', () => isDown = false);
-            scrollContainer.addEventListener('mousemove', (e) => {
-                if (!isDown) return;
+<script>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const targetId = this.getAttribute('href');
+            if (targetId === "#" || targetId === "") return;
+            const target = document.querySelector(targetId);
+            if (target) {
                 e.preventDefault();
-                const x = e.pageX - scrollContainer.offsetLeft;
-                const walk = (x - startX) * 1.5;
-                scrollContainer.scrollLeft = scrollLeft - walk;
-            });
-        }
-    </script>
-</body>
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        });
+    });
 
+    const form = document.getElementById('contactForm');
+    const feedback = document.getElementById('formFeedback');
+    if (form) {
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const msg = document.getElementById('message').value.trim();
+            if (!name || !email || !msg) {
+                feedback.innerHTML = '<span style="color:#f87171;">❌ All fields required.</span>';
+                return;
+            }
+            if (!email.includes('@')) {
+                feedback.innerHTML = '<span style="color:#f87171;">⚠️ Valid email required.</span>';
+                return;
+            }
+            feedback.innerHTML = '<span style="color:#60A5FA;">✓ Thanks. We’ll respond within 24h.</span>';
+            form.reset();
+            setTimeout(() => feedback.innerHTML = '', 4000);
+        });
+    }
+</script>
+</body>
 </html>
